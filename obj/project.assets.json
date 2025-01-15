@@ -107,11 +107,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\seanr\\Documents\\GitHub\\GA_2D_Shooter\\GA_2D_Shooter.csproj",
-      "projectName": "GA_2D_Shooter",
-      "projectPath": "C:\\Users\\seanr\\Documents\\GitHub\\GA_2D_Shooter\\GA_2D_Shooter.csproj",
+      "projectUniqueName": "C:\\Users\\seanr\\Documents\\GitHub\\test\\Project002-TopDownShooter\\Project002.csproj",
+      "projectName": "Project002",
+      "projectPath": "C:\\Users\\seanr\\Documents\\GitHub\\test\\Project002-TopDownShooter\\Project002.csproj",
       "packagesPath": "C:\\Users\\seanr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\seanr\\Documents\\GitHub\\GA_2D_Shooter\\obj\\",
+      "outputPath": "C:\\Users\\seanr\\Documents\\GitHub\\test\\Project002-TopDownShooter\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\seanr\\AppData\\Roaming\\NuGet\\NuGet.Config",

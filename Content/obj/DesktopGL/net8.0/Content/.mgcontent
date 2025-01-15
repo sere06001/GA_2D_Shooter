@@ -4,16 +4,16 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/seanr/Documents/GitHub/GA_2D_Shooter/Content/bullet.png</File>
-    <File>C:/Users/seanr/Documents/GitHub/GA_2D_Shooter/Content/exp.png</File>
-    <File>C:/Users/seanr/Documents/GitHub/GA_2D_Shooter/Content/font.spritefont</File>
-    <File>C:/Users/seanr/Documents/GitHub/GA_2D_Shooter/Content/player.png</File>
-    <File>C:/Users/seanr/Documents/GitHub/GA_2D_Shooter/Content/tile1.png</File>
-    <File>C:/Users/seanr/Documents/GitHub/GA_2D_Shooter/Content/tile2.png</File>
-    <File>C:/Users/seanr/Documents/GitHub/GA_2D_Shooter/Content/tile3.png</File>
-    <File>C:/Users/seanr/Documents/GitHub/GA_2D_Shooter/Content/tile4.png</File>
-    <File>C:/Users/seanr/Documents/GitHub/GA_2D_Shooter/Content/tile5.png</File>
-    <File>C:/Users/seanr/Documents/GitHub/GA_2D_Shooter/Content/zombie.png</File>
+    <File>C:/Users/seanr/Documents/GitHub/test/Project002-TopDownShooter/Content/bullet.png</File>
+    <File>C:/Users/seanr/Documents/GitHub/test/Project002-TopDownShooter/Content/exp.png</File>
+    <File>C:/Users/seanr/Documents/GitHub/test/Project002-TopDownShooter/Content/font.spritefont</File>
+    <File>C:/Users/seanr/Documents/GitHub/test/Project002-TopDownShooter/Content/player.png</File>
+    <File>C:/Users/seanr/Documents/GitHub/test/Project002-TopDownShooter/Content/tile1.png</File>
+    <File>C:/Users/seanr/Documents/GitHub/test/Project002-TopDownShooter/Content/tile2.png</File>
+    <File>C:/Users/seanr/Documents/GitHub/test/Project002-TopDownShooter/Content/tile3.png</File>
+    <File>C:/Users/seanr/Documents/GitHub/test/Project002-TopDownShooter/Content/tile4.png</File>
+    <File>C:/Users/seanr/Documents/GitHub/test/Project002-TopDownShooter/Content/tile5.png</File>
+    <File>C:/Users/seanr/Documents/GitHub/test/Project002-TopDownShooter/Content/zombie.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
