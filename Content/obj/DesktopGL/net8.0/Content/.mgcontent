@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/seanr/Documents/GitHub/GA_2D_Shooter/Content/bullet.png</File>
+    <File>C:/Users/seanr/Documents/GitHub/GA_2D_Shooter/Content/exp.png</File>
+    <File>C:/Users/seanr/Documents/GitHub/GA_2D_Shooter/Content/font.spritefont</File>
+    <File>C:/Users/seanr/Documents/GitHub/GA_2D_Shooter/Content/player.png</File>
+    <File>C:/Users/seanr/Documents/GitHub/GA_2D_Shooter/Content/tile1.png</File>
+    <File>C:/Users/seanr/Documents/GitHub/GA_2D_Shooter/Content/tile2.png</File>
+    <File>C:/Users/seanr/Documents/GitHub/GA_2D_Shooter/Content/tile3.png</File>
+    <File>C:/Users/seanr/Documents/GitHub/GA_2D_Shooter/Content/tile4.png</File>
+    <File>C:/Users/seanr/Documents/GitHub/GA_2D_Shooter/Content/tile5.png</File>
+    <File>C:/Users/seanr/Documents/GitHub/GA_2D_Shooter/Content/zombie.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>
