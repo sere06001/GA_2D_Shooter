@@ -1,4 +1,4 @@
-namespace Project002;
+namespace GA_2d_shooter;
 
 public abstract class Weapon
 {

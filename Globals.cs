@@ -1,6 +1,6 @@
 using Microsoft.Xna.Framework.Content;
 
-namespace Project002;
+namespace GA_2d_shooter;
 
 public static class Globals
 {

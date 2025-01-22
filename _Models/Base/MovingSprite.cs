@@ -1,4 +1,4 @@
-namespace Project002;
+namespace GA_2d_shooter;
 
 public class MovingSprite(Texture2D tex, Vector2 pos) : Sprite(tex, pos)
 {
