@@ -5,6 +5,7 @@ public class Player : MovingSprite
     public Weapon Weapon { get; set; }
     private Weapon _weapon1;
     private Weapon _weapon2;
+    private Weapon _weapon3;
     public bool Dead { get; private set; }
     public int Experience { get; private set; }
 
@@ -27,15 +28,24 @@ public class Player : MovingSprite
     {
         _weapon1 = new MachineGun();
         _weapon2 = new Shotgun();
+        _weapon3 = new Sniper();
         Dead = false;
         Weapon = _weapon1;
         Position = GetStartPosition();
         Experience = 0;
     }
 
-    public void SwapWeapon()
+    public void EquipSlot(int slot)
     {
-        Weapon = (Weapon == _weapon1) ? _weapon2 : _weapon1;
+        switch (slot)
+        {
+            case 1: Weapon = _weapon1;
+                break;
+            case 2: Weapon = _weapon2;
+                break;
+            case 3: Weapon = _weapon3;
+                break;
+        }
     }
 
     private void CheckDeath(List<Zombie> zombies)
@@ -67,9 +77,20 @@ public class Player : MovingSprite
 
         Weapon.Update();
 
-        if (InputManager.SpacePressed)
+        if (InputManager.WeaponKey.HasValue)
         {
-            SwapWeapon();
+            switch (InputManager.WeaponKey.Value)
+            {
+                case Keys.D1:
+                    EquipSlot(1);
+                    break;
+                case Keys.D2:
+                    EquipSlot(2);
+                    break;
+                case Keys.D3:
+                    EquipSlot(3);
+                    break;
+            }
         }
 
         if (InputManager.MouseLeftDown)

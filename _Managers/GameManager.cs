@@ -27,7 +27,7 @@ public class GameManager
 
     public void Update()
     {
-        InputManager.Update();
+        InputManager.Update(_player);
         ExperienceManager.Update(_player);
         _player.Update(ZombieManager.Zombies);
         ZombieManager.Update(_player);

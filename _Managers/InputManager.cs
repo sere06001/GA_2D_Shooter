@@ -10,9 +10,9 @@ public static class InputManager
     public static bool MouseClicked { get; private set; }
     public static bool MouseRightClicked { get; private set; }
     public static bool MouseLeftDown { get; private set; }
-    public static bool SpacePressed { get; private set; }
+    public static Keys? WeaponKey { get; private set; }
 
-    public static void Update()
+    public static void Update(Player player)
     {
         var keyboardState = Keyboard.GetState();
         var mouseState = Mouse.GetState();
@@ -22,13 +22,23 @@ public static class InputManager
         if (keyboardState.IsKeyDown(Keys.S)) _direction.Y++;
         if (keyboardState.IsKeyDown(Keys.A)) _direction.X--;
         if (keyboardState.IsKeyDown(Keys.D)) _direction.X++;
+        if (keyboardState.IsKeyDown(Keys.R)) player.Weapon.Reload();
 
         MouseLeftDown = mouseState.LeftButton == ButtonState.Pressed;
         MouseClicked = MouseLeftDown && (_lastMouseState.LeftButton == ButtonState.Released);
         MouseRightClicked = mouseState.RightButton == ButtonState.Pressed
                             && (_lastMouseState.RightButton == ButtonState.Released);
 
-        SpacePressed = _lastKeyboardState.IsKeyUp(Keys.Space) && keyboardState.IsKeyDown(Keys.Space);
+        if (_lastKeyboardState.IsKeyUp(Keys.D1) && keyboardState.IsKeyDown(Keys.D1))
+            WeaponKey = Keys.D1;
+        else if (_lastKeyboardState.IsKeyUp(Keys.D2) && keyboardState.IsKeyDown(Keys.D2))
+            WeaponKey = Keys.D2;
+        else if (_lastKeyboardState.IsKeyUp(Keys.D3) && keyboardState.IsKeyDown(Keys.D3))
+            WeaponKey = Keys.D3;
+        else
+            WeaponKey = null;
+
+        //WeaponKeys = _lastKeyboardState.IsKeyUp(Keys.D1) && keyboardState.IsKeyDown(Keys.D1);
 
         _lastMouseState = mouseState;
         _lastKeyboardState = keyboardState;

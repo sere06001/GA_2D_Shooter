@@ -8,6 +8,7 @@ public abstract class Weapon
     public int Ammo { get; protected set; }
     protected float reloadTime;
     public bool Reloading { get; protected set; }
+    private KeyboardState key;
 
     protected Weapon()
     {
@@ -19,6 +20,7 @@ public abstract class Weapon
     {
         if (Reloading || (Ammo == maxAmmo)) return;
         cooldownLeft = reloadTime;
+        key = Keyboard.GetState();
         Reloading = true;
         Ammo = maxAmmo;
     }
