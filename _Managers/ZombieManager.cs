@@ -12,7 +12,7 @@ public static class ZombieManager
     public static void Init()
     {
         _texture = Globals.Content.Load<Texture2D>("zombie");
-        _spawnCooldown = 0.33f;
+        _spawnCooldown = 1f;
         _spawnTime = _spawnCooldown;
         _random = new();
         _padding = _texture.Width / 2;
