@@ -18,7 +18,7 @@ public class MachineGun : Weapon
             Rotation = player.Rotation,
             Lifespan = 2f,
             Speed = 600,
-            Damage = 1
+            Damage = 4
         };
 
         ProjectileManager.AddProjectile(pd);

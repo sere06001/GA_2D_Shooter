@@ -7,7 +7,7 @@ public class Zombie : MovingSprite
     public Zombie(Texture2D tex, Vector2 pos) : base(tex, pos)
     {
         Speed = 100;
-        HP = 2;
+        HP = 10;
     }
 
     public void TakeDamage(int dmg)
