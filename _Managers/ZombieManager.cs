@@ -59,8 +59,8 @@ public static class ZombieManager
         {
             _spawnCooldown -= 0.5f;
         }
-        Debug.WriteLine($"Zombie: {_totalZombieCount}");
-        Debug.WriteLine($"Cooldown: {_spawnCooldown}");
+        //Debug.WriteLine($"Zombie: {_totalZombieCount}");
+        //Debug.WriteLine($"Cooldown: {_spawnCooldown}");
     }
 
     public static void Update(Player player)
