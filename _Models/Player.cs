@@ -60,7 +60,7 @@ public class Player : MovingSprite
             if (z.HP <= 0) continue;
             if ((Position - z.Position).Length() < 50)
             {
-                //Dead = true;
+                Dead = true;
                 break;
             }
         }

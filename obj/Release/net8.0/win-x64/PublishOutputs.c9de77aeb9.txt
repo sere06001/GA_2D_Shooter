@@ -1,0 +1,14 @@
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Release\net8.0\win-x64\publish\2D Shooter.pdb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Release\net8.0\win-x64\publish\Content/bullet.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Release\net8.0\win-x64\publish\Content/exp.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Release\net8.0\win-x64\publish\Content/font.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Release\net8.0\win-x64\publish\Content/player.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Release\net8.0\win-x64\publish\Content/tile1.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Release\net8.0\win-x64\publish\Content/tile2.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Release\net8.0\win-x64\publish\Content/tile3.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Release\net8.0\win-x64\publish\Content/tile4.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Release\net8.0\win-x64\publish\Content/tile5.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Release\net8.0\win-x64\publish\Content/zombie.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Release\net8.0\win-x64\publish\SDL2.dll
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Release\net8.0\win-x64\publish\soft_oal.dll
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Release\net8.0\win-x64\publish\2D Shooter.exe
