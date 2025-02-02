@@ -34,3 +34,39 @@ C:\Users\Kreedy\Documents\GitHub\GA_2D_Shooter\obj\Debug\net8.0\refint\2D Shoote
 C:\Users\Kreedy\Documents\GitHub\GA_2D_Shooter\obj\Debug\net8.0\2D Shooter.pdb
 C:\Users\Kreedy\Documents\GitHub\GA_2D_Shooter\obj\Debug\net8.0\2D Shooter.genruntimeconfig.cache
 C:\Users\Kreedy\Documents\GitHub\GA_2D_Shooter\obj\Debug\net8.0\ref\2D Shooter.dll
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\bullet.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\exp.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\font.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\player.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\tile1.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\tile2.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\tile3.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\tile4.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\tile5.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\zombie.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\2D Shooter.exe
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\2D Shooter.deps.json
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\2D Shooter.runtimeconfig.json
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\2D Shooter.dll
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\2D Shooter.pdb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\MonoGame.Framework.dll
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\runtimes\linux-x64\native\libSDL2-2.0.so.0
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\runtimes\linux-x64\native\libopenal.so.1
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\runtimes\osx\native\libSDL2.dylib
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\runtimes\osx\native\libopenal.1.dylib
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\runtimes\win-x64\native\SDL2.dll
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\runtimes\win-x64\native\soft_oal.dll
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\runtimes\win-x86\native\SDL2.dll
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\runtimes\win-x86\native\soft_oal.dll
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\obj\Debug\net8.0\2D Shooter.csproj.AssemblyReference.cache
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\obj\Debug\net8.0\2D Shooter.GeneratedMSBuildEditorConfig.editorconfig
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\obj\Debug\net8.0\2D Shooter.AssemblyInfoInputs.cache
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\obj\Debug\net8.0\2D Shooter.AssemblyInfo.cs
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\obj\Debug\net8.0\2D Shooter.csproj.CoreCompileInputs.cache
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\obj\Debug\net8.0\2D Shooter.sourcelink.json
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\obj\Debug\net8.0\2D Shooter.csproj.Up2Date
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\obj\Debug\net8.0\2D Shooter.dll
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\obj\Debug\net8.0\refint\2D Shooter.dll
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\obj\Debug\net8.0\2D Shooter.pdb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\obj\Debug\net8.0\2D Shooter.genruntimeconfig.cache
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\obj\Debug\net8.0\ref\2D Shooter.dll

@@ -6,6 +6,7 @@ public class Player : MovingSprite
     private Weapon _weapon1;
     private Weapon _weapon2;
     private Weapon _weapon3;
+    private Weapon _weapon4;
     public bool Dead { get; private set; }
     public int Experience { get; private set; }
 
@@ -26,9 +27,10 @@ public class Player : MovingSprite
 
     public void Reset()
     {
-        _weapon1 = new MachineGun();
+        _weapon1 = new Pistol();
         _weapon2 = new Shotgun();
-        _weapon3 = new Sniper();
+        _weapon3 = new MachineGun();
+        _weapon4 = new Sniper();
         Dead = false;
         Weapon = _weapon1;
         Position = GetStartPosition();
@@ -44,6 +46,8 @@ public class Player : MovingSprite
             case 2: Weapon = _weapon2;
                 break;
             case 3: Weapon = _weapon3;
+                break;
+            case 4: Weapon = _weapon4;
                 break;
         }
     }
@@ -90,6 +94,9 @@ public class Player : MovingSprite
                 case Keys.D3:
                     EquipSlot(3);
                     break;
+                case Keys.D4:
+                    EquipSlot(4);
+                    break;
             }
         }
 
@@ -98,10 +105,10 @@ public class Player : MovingSprite
             Weapon.Fire(this);
         }
 
-        if (InputManager.MouseRightClicked)
+        /*if (InputManager.MouseRightClicked)
         {
             Weapon.Reload();
-        }
+        }*/
 
         CheckDeath(zombies);
     }
