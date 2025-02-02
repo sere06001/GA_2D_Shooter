@@ -28,9 +28,10 @@ public class Player : MovingSprite
     public void Reset()
     {
         _weapon1 = new Pistol();
-        _weapon2 = new Shotgun();
-        _weapon3 = new MachineGun();
-        _weapon4 = new Sniper();
+        _weapon2 = new Sniper();
+        _weapon3 = new Shotgun();
+        _weapon4 = new MachineGun();
+        
         Dead = false;
         Weapon = _weapon1;
         Position = GetStartPosition();
@@ -59,7 +60,7 @@ public class Player : MovingSprite
             if (z.HP <= 0) continue;
             if ((Position - z.Position).Length() < 50)
             {
-                Dead = true;
+                //Dead = true;
                 break;
             }
         }

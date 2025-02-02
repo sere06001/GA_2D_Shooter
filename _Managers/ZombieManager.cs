@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace GA_2d_shooter;
 
 public static class ZombieManager
@@ -8,14 +10,16 @@ public static class ZombieManager
     private static float _spawnTime;
     private static Random _random;
     private static int _padding;
+    public static int _totalZombieCount;
 
     public static void Init()
     {
         _texture = Globals.Content.Load<Texture2D>("zombie");
-        _spawnCooldown = 1f;
+        _spawnCooldown = 5f;
         _spawnTime = _spawnCooldown;
         _random = new();
         _padding = _texture.Width / 2;
+        _totalZombieCount = 0;
     }
 
     public static void Reset()
@@ -46,7 +50,17 @@ public static class ZombieManager
 
     public static void AddZombie()
     {
-        Zombies.Add(new(_texture, RandomPosition()));
+        if (Zombies.Count < 50)
+        {
+            Zombies.Add(new(_texture, RandomPosition()));
+            _totalZombieCount++;
+        }
+        if (_totalZombieCount % 5 == 0 && _totalZombieCount > 0 && _spawnCooldown > 0.5f)
+        {
+            _spawnCooldown -= 0.5f;
+        }
+        Debug.WriteLine($"Zombie: {_totalZombieCount}");
+        Debug.WriteLine($"Cooldown: {_spawnCooldown}");
     }
 
     public static void Update(Player player)

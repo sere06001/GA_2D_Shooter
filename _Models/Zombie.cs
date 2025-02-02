@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace GA_2d_shooter;
 
 public class Zombie : MovingSprite
@@ -6,7 +8,7 @@ public class Zombie : MovingSprite
 
     public Zombie(Texture2D tex, Vector2 pos) : base(tex, pos)
     {
-        Speed = 100;
+        Speed = 75;
         HP = 10;
     }
 
