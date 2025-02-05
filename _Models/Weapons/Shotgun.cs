@@ -19,8 +19,8 @@ public class Shotgun : Weapon
             Position = player.Position,
             Rotation = player.Rotation - (3 * ANGLE_STEP),
             Lifespan = 0.5f,
-            Speed = 1250,
-            Damage = 10
+            Speed = 500,
+            Damage = 100
         };
 
         for (int i = 0; i < 5; i++)

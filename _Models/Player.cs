@@ -15,6 +15,7 @@ public class Player : MovingSprite
     public Player(Texture2D tex) : base(tex, GetStartPosition())
     {
         Reset();
+        Speed = 200;
     }
 
     private static Vector2 GetStartPosition()
@@ -64,6 +65,7 @@ public class Player : MovingSprite
     
             if ((Position - z.Position).Length() < 50)
             {
+
                 if ((DateTime.Now - lastHitTime).TotalSeconds >= 2.5) //Iframe 2.5 seconds
                 {
                     HP++;

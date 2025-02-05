@@ -17,8 +17,8 @@ public class Pistol : Weapon
             Position = player.Position,
             Rotation = player.Rotation,
             Lifespan = 1f,
-            Speed = 1250,
-            Damage = 2
+            Speed = 500,
+            Damage = 50
         };
 
         ProjectileManager.AddProjectile(pd);
