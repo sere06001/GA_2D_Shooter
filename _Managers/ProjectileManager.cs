@@ -2,12 +2,12 @@ namespace GA_2d_shooter;
 
 public static class ProjectileManager
 {
-    private static Texture2D _texture;
+    private static Texture2D texture;
     public static List<Projectile> Projectiles { get; } = [];
 
     public static void Init(Texture2D tex)
     {
-        _texture = tex;
+        texture = tex;
     }
 
     public static void Reset()
@@ -17,7 +17,7 @@ public static class ProjectileManager
 
     public static void AddProjectile(ProjectileData data)
     {
-        Projectiles.Add(new(_texture, data));
+        Projectiles.Add(new(texture, data));
     }
 
     public static void Update(List<Zombie> zombies)

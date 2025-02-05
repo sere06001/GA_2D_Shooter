@@ -2,18 +2,18 @@ namespace GA_2d_shooter;
 
 public static class ExperienceManager
 {
-    private static Texture2D _texture;
+    private static Texture2D texture;
     public static List<Experience> Experience { get; } = [];
-    private static SpriteFont _font;
-    private static Vector2 _position;
-    private static Vector2 _textPosition;
-    private static string _playerExp;
+    private static SpriteFont font;
+    private static Vector2 position;
+    private static Vector2 textPosition;
+    private static string playerExp;
 
     public static void Init(Texture2D tex)
     {
-        _texture = tex;
-        _font = Globals.Content.Load<SpriteFont>("font");
-        _position = new(Globals.Bounds.X - (2 * _texture.Width), 0);
+        texture = tex;
+        font = Globals.Content.Load<SpriteFont>("font");
+        position = new(Globals.Bounds.X - (2 * texture.Width), 0);
     }
 
     public static void Reset()
@@ -23,7 +23,7 @@ public static class ExperienceManager
 
     public static void AddExperience(Vector2 pos)
     {
-        Experience.Add(new(_texture, pos));
+        Experience.Add(new(texture, pos));
     }
 
     public static void Update(Player player)
@@ -41,15 +41,15 @@ public static class ExperienceManager
 
         Experience.RemoveAll((e) => e.Lifespan <= 0);
 
-        _playerExp = player.Experience.ToString();
-        var x = _font.MeasureString(_playerExp).X / 2;
-        _textPosition = new(Globals.Bounds.X - x - 32, 14);
+        playerExp = player.Experience.ToString();
+        var x = font.MeasureString(playerExp).X / 2;
+        textPosition = new(Globals.Bounds.X - x - 32, 14);
     }
 
     public static void Draw()
     {
-        Globals.SpriteBatch.Draw(_texture, _position, null, Color.White * 0.75f, 0f, Vector2.Zero, 2f, SpriteEffects.None, 1f);
-        Globals.SpriteBatch.DrawString(_font, _playerExp, _textPosition, Color.White);
+        Globals.SpriteBatch.Draw(texture, position, null, Color.White * 0.75f, 0f, Vector2.Zero, 2f, SpriteEffects.None, 1f);
+        Globals.SpriteBatch.DrawString(font, playerExp, textPosition, Color.White);
 
         foreach (var e in Experience)
         {

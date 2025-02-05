@@ -2,18 +2,18 @@ namespace GA_2d_shooter;
 
 public class GameManager
 {
-    private readonly Player _player;
-    private readonly Background _bg;
+    private readonly Player player;
+    private readonly Background bg;
 
     public GameManager()
     {
-        _bg = new();
+        bg = new();
         var texture = Globals.Content.Load<Texture2D>("bullet");
         ProjectileManager.Init(texture);
         UIManager.Init(texture);
         ExperienceManager.Init(Globals.Content.Load<Texture2D>("exp"));
 
-        _player = new(Globals.Content.Load<Texture2D>("player"));
+        player = new(Globals.Content.Load<Texture2D>("player"));
         ZombieManager.Init();
     }
 
@@ -22,27 +22,27 @@ public class GameManager
         ProjectileManager.Reset();
         ZombieManager.Reset();
         ExperienceManager.Reset();
-        _player.Reset();
+        player.Reset();
     }
 
     public void Update()
     {
-        InputManager.Update(_player);
-        ExperienceManager.Update(_player);
-        _player.Update(ZombieManager.Zombies);
-        ZombieManager.Update(_player);
+        InputManager.Update(player);
+        ExperienceManager.Update(player);
+        player.Update(ZombieManager.Zombies);
+        ZombieManager.Update(player);
         ProjectileManager.Update(ZombieManager.Zombies);
 
-        if (_player.Dead) Restart();
+        if (player.Dead) Restart();
     }
 
     public void Draw()
     {
-        _bg.Draw();
+        bg.Draw();
         ExperienceManager.Draw();
         ProjectileManager.Draw();
-        _player.Draw();
+        player.Draw();
         ZombieManager.Draw();
-        UIManager.Draw(_player);
+        UIManager.Draw(player);
     }
 }
