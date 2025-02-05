@@ -17,7 +17,7 @@ public class MachineGun : Weapon
             Position = player.Position,
             Rotation = player.Rotation,
             Lifespan = 2f,
-            Speed = 600,
+            Speed = 1250,
             Damage = 4
         };
 

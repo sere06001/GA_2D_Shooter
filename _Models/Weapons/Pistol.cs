@@ -17,7 +17,7 @@ public class Pistol : Weapon
             Position = player.Position,
             Rotation = player.Rotation,
             Lifespan = 1f,
-            Speed = 300,
+            Speed = 1250,
             Damage = 2
         };
 

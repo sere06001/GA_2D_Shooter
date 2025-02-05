@@ -64,7 +64,7 @@ public class Player : MovingSprite
     
             if ((Position - z.Position).Length() < 50)
             {
-                if ((DateTime.Now - lastHitTime).TotalSeconds >= 0.5) //Iframe 0.5 seconds
+                if ((DateTime.Now - lastHitTime).TotalSeconds >= 2.5) //Iframe 2.5 seconds
                 {
                     HP++;
                     lastHitTime = DateTime.Now;

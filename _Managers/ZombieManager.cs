@@ -5,29 +5,31 @@ namespace GA_2d_shooter;
 public static class ZombieManager
 {
     public static List<Zombie> Zombies { get; } = [];
-    public static List<Tank> Tanks { get; } = [];
-    private static Texture2D _texture;
-    private static float _spawnCooldown;
-    private static float _spawnTime;
-    private static Random _random;
-    private static int _padding;
-    public static int _totalZombieCount;
+    private static Texture2D textureZombie;
+    private static Texture2D textureTank;
+    private static Texture2D textureFastie;
+    private static float spawnCooldown;
+    private static float spawnTime;
+    private static Random random;
+    private static int padding;
+    public static int totalZombieCount;
 
     public static void Init()
     {
-        _texture = Globals.Content.Load<Texture2D>("zombie");
-        _spawnCooldown = 5f;
-        _spawnTime = _spawnCooldown;
-        _random = new();
-        _padding = _texture.Width / 2;
-        _totalZombieCount = 0;
+        textureZombie = Globals.Content.Load<Texture2D>("zombie");
+        textureTank = Globals.Content.Load<Texture2D>("zombie");
+        textureFastie = Globals.Content.Load<Texture2D>("zombie");
+        spawnCooldown = 5f;
+        spawnTime = spawnCooldown;
+        random = new();
+        padding = textureZombie.Width / 2;
+        totalZombieCount = 0;
     }
 
     public static void Reset()
     {
         Zombies.Clear();
-        Tanks.Clear();
-        _spawnTime = _spawnCooldown;
+        spawnTime = spawnCooldown;
     }
 
     private static Vector2 RandomPosition()
@@ -36,15 +38,15 @@ public static class ZombieManager
         float h = Globals.Bounds.Y;
         Vector2 pos = new();
 
-        if (_random.NextDouble() <  w / (w + h))
+        if (random.NextDouble() <  w / (w + h))
         {
-            pos.X = (int)(_random.NextDouble() * w);
-            pos.Y = (int)(_random.NextDouble() < 0.5 ? -_padding : h + _padding);
+            pos.X = (int)(random.NextDouble() * w);
+            pos.Y = (int)(random.NextDouble() < 0.5 ? -padding : h + padding);
         }
         else
         {
-            pos.Y = (int)(_random.NextDouble() * h);
-            pos.X = (int)(_random.NextDouble() < 0.5 ? -_padding : w + _padding);
+            pos.Y = (int)(random.NextDouble() * h);
+            pos.X = (int)(random.NextDouble() < 0.5 ? -padding : w + padding);
         }
         
         return pos;
@@ -52,29 +54,36 @@ public static class ZombieManager
 
     public static void AddZombie()
     {
-        if (Zombies.Count < 50)
+        if (Zombies.Count < 50) //Limit max zombies on screen to 50
         {
-            Zombies.Add(new(_texture, RandomPosition()));
+            if (totalZombieCount % 10 == 0 && totalZombieCount > 0)
+            {
+                Zombies.Add(new Tank(textureTank, RandomPosition()));
+            }
+            if (totalZombieCount % 5 == 0 && totalZombieCount > 0)
+            {
+                Zombies.Add(new Fastie(textureFastie, RandomPosition()));
+            }
+
+            //Spawn regular zombies even if other zombie type spawns
+            Zombies.Add(new(textureZombie, RandomPosition()));
+            
 
 
-            _totalZombieCount++;
+            totalZombieCount++;
         }
-        if (_totalZombieCount % 5 == 0 && _totalZombieCount > 0 && _spawnCooldown > 0.5f)
+        if (totalZombieCount % 5 == 0 && totalZombieCount > 0 && spawnCooldown > 0.5f)
         {
-            _spawnCooldown -= 0.5f;
-        }
-        if (_totalZombieCount % 10 == 0 && _totalZombieCount > 0)
-        {
-            Tanks.Add(new(_texture, RandomPosition()));
+            spawnCooldown -= 0.5f;
         }
     }
 
     public static void Update(Player player)
     {
-        _spawnTime -= Globals.TotalSeconds;
-        while(_spawnTime <= 0)
+        spawnTime -= Globals.TotalSeconds;
+        while(spawnTime <= 0)
         {
-            _spawnTime += _spawnCooldown;
+            spawnTime += spawnCooldown;
             AddZombie();
         }
 
@@ -82,12 +91,7 @@ public static class ZombieManager
         {
             z.Update(player);
         }
-        foreach (var t in Tanks)
-        {
-            t.Update(player);
-        }
         Zombies.RemoveAll((z) => z.HP <= 0);
-        Tanks.RemoveAll((z) => z.HP <= 0);
     }
 
     public static void Draw()
@@ -95,10 +99,6 @@ public static class ZombieManager
         foreach (var z in Zombies)
         {
             z.Draw();
-        }
-        foreach (var t in Tanks)
-        {
-            t.Draw();
         }
     }
 }
