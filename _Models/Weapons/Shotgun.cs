@@ -2,6 +2,8 @@ namespace GA_2d_shooter;
 
 public class Shotgun : Weapon
 {
+    public override Texture2D ProjectileTexture => Globals.Content.Load<Texture2D>("zombie");
+    public override Texture2D ProjectileTextureUI => Globals.Content.Load<Texture2D>("zombie");
     private const float ANGLE_STEP = (float)(Math.PI / 16);
 
     public Shotgun()
@@ -26,7 +28,7 @@ public class Shotgun : Weapon
         for (int i = 0; i < 5; i++)
         {
             pd.Rotation += ANGLE_STEP;
-            ProjectileManager.AddProjectile(pd);
+            ProjectileManager.AddProjectile(pd, this);
         }
     }
 }

@@ -11,6 +11,7 @@ public static class UIManager
 
     public static void Draw(Player player)
     {
+        Texture2D bulletTexture = player.Weapon.ProjectileTextureUI;
         Color c = player.Weapon.Reloading ? Color.Red : Color.White;
 
         for (int i = 0; i < player.Weapon.Ammo; i++)

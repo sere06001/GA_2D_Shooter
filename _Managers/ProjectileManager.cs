@@ -15,9 +15,10 @@ public static class ProjectileManager
         Projectiles.Clear();
     }
 
-    public static void AddProjectile(ProjectileData data)
+    public static void AddProjectile(ProjectileData data, Weapon weapon)
     {
-        Projectiles.Add(new(texture, data));
+        Texture2D projectileTexture = weapon.ProjectileTexture;
+        Projectiles.Add(new(projectileTexture, data));
     }
 
     public static void Update(List<Zombie> zombies)

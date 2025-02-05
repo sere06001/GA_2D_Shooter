@@ -2,6 +2,8 @@ namespace GA_2d_shooter;
 
 public class MachineGun : Weapon
 {
+    public override Texture2D ProjectileTexture => Globals.Content.Load<Texture2D>("zombie");
+    public override Texture2D ProjectileTextureUI => Globals.Content.Load<Texture2D>("zombie");
     public MachineGun()
     {
         cooldown = 0.1f;
@@ -21,6 +23,6 @@ public class MachineGun : Weapon
             Damage = 40
         };
 
-        ProjectileManager.AddProjectile(pd);
+        ProjectileManager.AddProjectile(pd, this);
     }
 }

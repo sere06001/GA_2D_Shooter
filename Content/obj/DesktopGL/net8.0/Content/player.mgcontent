@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>c:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/player.png</SourceFile>
+  <SourceFile>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/player.png</SourceFile>
   <SourceTime>2025-01-16T10:03:34.6665204+01:00</SourceTime>
-  <DestFile>c:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/bin/DesktopGL/Content/player.xnb</DestFile>
-  <DestTime>2025-02-05T22:06:09.5321235+01:00</DestTime>
+  <DestFile>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/bin/DesktopGL/Content/player.xnb</DestFile>
+  <DestTime>2025-02-05T23:59:35.241012+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

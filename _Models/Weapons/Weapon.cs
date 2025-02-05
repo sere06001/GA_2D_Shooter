@@ -9,6 +9,8 @@ public abstract class Weapon
     protected float reloadTime;
     public bool Reloading { get; protected set; }
     private KeyboardState key;
+    public abstract Texture2D ProjectileTexture { get; }
+    public abstract Texture2D ProjectileTextureUI { get; }
 
     protected Weapon()
     {
