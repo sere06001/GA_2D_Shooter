@@ -3,12 +3,14 @@ namespace GA_2d_shooter;
 public class Player : MovingSprite
 {
     public Weapon Weapon { get; set; }
-    private Weapon _weapon1;
-    private Weapon _weapon2;
-    private Weapon _weapon3;
-    private Weapon _weapon4;
+    private Weapon Pistol;
+    private Weapon Sniper;
+    private Weapon Shotgun;
+    private Weapon MachineGun;
+    public int HP { get; private set; }
     public bool Dead { get; private set; }
     public int Experience { get; private set; }
+    private DateTime lastHitTime = DateTime.MinValue;
 
     public Player(Texture2D tex) : base(tex, GetStartPosition())
     {
@@ -27,13 +29,14 @@ public class Player : MovingSprite
 
     public void Reset()
     {
-        _weapon1 = new Pistol();
-        _weapon2 = new Sniper();
-        _weapon3 = new Shotgun();
-        _weapon4 = new MachineGun();
+        Pistol = new Pistol();
+        Sniper = new Sniper();
+        Shotgun = new Shotgun();
+        MachineGun = new MachineGun();
         
         Dead = false;
-        Weapon = _weapon1;
+        HP = 0;
+        Weapon = Pistol;
         Position = GetStartPosition();
         Experience = 0;
     }
@@ -42,13 +45,13 @@ public class Player : MovingSprite
     {
         switch (slot)
         {
-            case 1: Weapon = _weapon1;
+            case 1: Weapon = Pistol;
                 break;
-            case 2: Weapon = _weapon2;
+            case 2: Weapon = Sniper;
                 break;
-            case 3: Weapon = _weapon3;
+            case 3: Weapon = Shotgun;
                 break;
-            case 4: Weapon = _weapon4;
+            case 4: Weapon = MachineGun;
                 break;
         }
     }
@@ -58,10 +61,19 @@ public class Player : MovingSprite
         foreach (var z in zombies)
         {
             if (z.HP <= 0) continue;
+    
             if ((Position - z.Position).Length() < 50)
             {
-                Dead = true;
-                break;
+                if ((DateTime.Now - lastHitTime).TotalSeconds >= 0.5) //Iframe 0.5 seconds
+                {
+                    HP++;
+                    lastHitTime = DateTime.Now;
+                    if (HP >= 3)
+                    {
+                        Dead = true;
+                    }
+                    break;
+                }
             }
         }
     }
