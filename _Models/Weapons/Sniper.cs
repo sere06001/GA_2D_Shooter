@@ -7,8 +7,8 @@ public class Sniper : Weapon
     public Sniper()
     {
         cooldown = 1.5f;
-        maxAmmo = 10;
-        Ammo = maxAmmo;
+        MaxAmmo = 3;
+        Ammo = MaxAmmo;
         reloadTime = 2f;
     }
 

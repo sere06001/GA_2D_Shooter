@@ -4,10 +4,10 @@ public abstract class Weapon
 {
     protected float cooldown;
     protected float cooldownLeft;
-    protected int maxAmmo;
+    public int MaxAmmo {get; protected set; }
     public int Ammo { get; protected set; }
     protected float reloadTime;
-    public bool Reloading { get; protected set; }
+    public bool Reloading { get; set; }
     private KeyboardState key;
     public abstract Texture2D ProjectileTexture { get; }
     public abstract Texture2D ProjectileTextureUI { get; }
@@ -20,11 +20,11 @@ public abstract class Weapon
 
     public virtual void Reload()
     {
-        if (Reloading || (Ammo == maxAmmo)) return;
+        if (Reloading || (Ammo == MaxAmmo)) return;
         cooldownLeft = reloadTime;
         key = Keyboard.GetState();
         Reloading = true;
-        Ammo = maxAmmo;
+        Ammo = MaxAmmo;
     }
 
     protected abstract void CreateProjectiles(Player player);

@@ -7,8 +7,8 @@ public class Pistol : Weapon
     public Pistol()
     {
         cooldown = 0.5f;
-        maxAmmo = 10;
-        Ammo = maxAmmo;
+        MaxAmmo = 10;
+        Ammo = MaxAmmo;
         reloadTime = 1f;
     }
 

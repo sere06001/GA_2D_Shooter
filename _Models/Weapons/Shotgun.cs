@@ -9,8 +9,8 @@ public class Shotgun : Weapon
     public Shotgun()
     {
         cooldown = 0.75f;
-        maxAmmo = 8;
-        Ammo = maxAmmo;
+        MaxAmmo = 8;
+        Ammo = MaxAmmo;
         reloadTime = 3f;
     }
 

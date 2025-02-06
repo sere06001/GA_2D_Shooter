@@ -7,8 +7,8 @@ public class MachineGun : Weapon
     public MachineGun()
     {
         cooldown = 0.1f;
-        maxAmmo = 30;
-        Ammo = maxAmmo;
+        MaxAmmo = 30;
+        Ammo = MaxAmmo;
         reloadTime = 2f;
     }
 

@@ -3,6 +3,7 @@ namespace GA_2d_shooter;
 public class Player : MovingSprite
 {
     public Weapon Weapon { get; set; }
+    public Weapon prevWeapon { get; set; }
     private Weapon Pistol;
     private Weapon Sniper;
     private Weapon Shotgun;
@@ -38,22 +39,28 @@ public class Player : MovingSprite
         Dead = false;
         HP = 0;
         Weapon = Pistol;
+        prevWeapon = Weapon;
         Position = GetStartPosition();
         Experience = 0;
     }
 
     public void EquipSlot(int slot)
     {
+        if (Weapon != null && prevWeapon != Weapon)
+        {  
+            prevWeapon = Weapon;
+        }
+
         switch (slot)
         {
-            case 1: Weapon = Pistol;
-                break;
-            case 2: Weapon = Sniper;
-                break;
-            case 3: Weapon = Shotgun;
-                break;
-            case 4: Weapon = MachineGun;
-                break;
+            case 1: Weapon = Pistol; break;
+            case 2: Weapon = Sniper; break;
+            case 3: Weapon = Shotgun; break;
+            case 4: Weapon = MachineGun; break;
+        }
+        if (Weapon == prevWeapon && Weapon.Reloading)
+        {
+            Weapon.Reloading = false;
         }
     }
 
@@ -72,7 +79,7 @@ public class Player : MovingSprite
                     lastHitTime = DateTime.Now;
                     if (HP >= 3)
                     {
-                        Dead = true;
+                        //Dead = true;
                     }
                     break;
                 }
@@ -82,6 +89,12 @@ public class Player : MovingSprite
 
     public void Update(List<Zombie> zombies)
     {
+        if (prevWeapon != null && prevWeapon != Weapon && 
+        prevWeapon.Ammo < prevWeapon.MaxAmmo && !prevWeapon.Reloading)
+        {
+            prevWeapon.Reload();
+        }
+
         if (InputManager.Direction != Vector2.Zero)
         {
             var dir = Vector2.Normalize(InputManager.Direction);
@@ -95,6 +108,7 @@ public class Player : MovingSprite
         Rotation = (float)Math.Atan2(toMouse.Y, toMouse.X);
 
         Weapon.Update();
+        if (prevWeapon != Weapon) prevWeapon?.Update();
 
         if (InputManager.WeaponKey.HasValue)
         {
