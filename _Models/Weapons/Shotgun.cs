@@ -2,8 +2,8 @@ namespace GA_2d_shooter;
 
 public class Shotgun : Weapon
 {
-    public override Texture2D ProjectileTexture => Globals.Content.Load<Texture2D>("zombie");
-    public override Texture2D ProjectileTextureUI => Globals.Content.Load<Texture2D>("zombie");
+    public override Texture2D ProjectileTexture => Globals.Content.Load<Texture2D>("bullet");
+    public override Texture2D ProjectileTextureUI => Globals.Content.Load<Texture2D>("bullet");
     private const float ANGLE_STEP = (float)(Math.PI / 16);
 
     public Shotgun()
