@@ -50,12 +50,7 @@ public abstract class Weapon
     {
         return $"{Ammo}/{MaxAmmo}";
     }
-    public virtual void DrawAmmo(SpriteBatch spriteBatch, SpriteFont font, Vector2 position)
-    {
-        spriteBatch.DrawString(font, GetAmmo(), position, Color.White);
-    }
-
-
+    
 
     public virtual void Update()
     {

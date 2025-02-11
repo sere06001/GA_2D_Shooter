@@ -21,7 +21,7 @@ public static class UIManager
         }*/
         if (player.Weapon != null)
         {
-            Vector2 ammoPosition = new(50, 50);
+            Vector2 ammoPosition = new(1000, 600);
             Globals.SpriteBatch.DrawString(Globals.Font, player.Weapon.GetAmmo(), ammoPosition, c);
         }
     }
