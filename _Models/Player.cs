@@ -7,6 +7,7 @@ public class Player : MovingSprite
     private Weapon Pistol;
     private Weapon Sniper;
     private Weapon Shotgun;
+    private Weapon Minigun;
     private Weapon MachineGun;
     public int HP { get; private set; }
     public bool Dead { get; private set; }
@@ -35,6 +36,7 @@ public class Player : MovingSprite
         Sniper = new Sniper();
         Shotgun = new Shotgun();
         MachineGun = new MachineGun();
+        Minigun = new Minigun();
         
         Dead = false;
         HP = 0;
@@ -57,6 +59,7 @@ public class Player : MovingSprite
             case 2: Weapon = Sniper; break;
             case 3: Weapon = Shotgun; break;
             case 4: Weapon = MachineGun; break;
+            case 5: Weapon = Minigun; break;
         }
         if (Weapon == prevWeapon && Weapon.Reloading)
         {
@@ -125,6 +128,9 @@ public class Player : MovingSprite
                     break;
                 case Keys.D4:
                     EquipSlot(4);
+                    break;
+                case Keys.D5:
+                    EquipSlot(5);
                     break;
             }
         }

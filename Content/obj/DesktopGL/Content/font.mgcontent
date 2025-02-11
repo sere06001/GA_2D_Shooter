@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/font.spritefont</SourceFile>
+  <SourceTime>2025-01-16T10:03:34.6484531+01:00</SourceTime>
+  <DestFile>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/bin/DesktopGL/Content/font.xnb</DestFile>
+  <DestTime>2025-02-11T12:24:21.2091016+01:00</DestTime>
+  <Importer>FontDescriptionImporter</Importer>
+  <ImporterTime>2024-08-16T19:05:56+02:00</ImporterTime>
+  <Processor>FontDescriptionProcessor</Processor>
+  <ProcessorTime>2024-08-16T19:05:56+02:00</ProcessorTime>
+  <Parameters>
+    <Key>PremultiplyAlpha</Key>
+    <Value>True</Value>
+  </Parameters>
+  <Parameters>
+    <Key>TextureFormat</Key>
+    <Value>Compressed</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

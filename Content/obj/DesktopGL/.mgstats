@@ -1,0 +1,13 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/bullet.png","C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/bin/DesktopGL/Content/bullet.xnb","TextureProcessor","Texture2DContent",2275,725,0,1000719
+"C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/exp.png","C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/bin/DesktopGL/Content/exp.xnb","TextureProcessor","Texture2DContent",3730,4053,0,008334
+"C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/font.spritefont","C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/bin/DesktopGL/Content/font.xnb","FontDescriptionProcessor","SpriteFontContent",2066,44066,0,0825384
+"C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/PistolBullet.png","C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/bin/DesktopGL/Content/PistolBullet.xnb","TextureProcessor","Texture2DContent",701,949,0,0035689
+"C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/PistolBulletUI.png","C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/bin/DesktopGL/Content/PistolBulletUI.xnb","TextureProcessor","Texture2DContent",5202,9597,0,0075778
+"C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/player.png","C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/bin/DesktopGL/Content/player.xnb","TextureProcessor","Texture2DContent",6485,12117,0,0041892
+"C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/tile1.png","C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/bin/DesktopGL/Content/tile1.xnb","TextureProcessor","Texture2DContent",10821,262229,0,0212467
+"C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/tile2.png","C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/bin/DesktopGL/Content/tile2.xnb","TextureProcessor","Texture2DContent",10455,262229,0,0136478
+"C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/tile3.png","C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/bin/DesktopGL/Content/tile3.xnb","TextureProcessor","Texture2DContent",6654,262229,0,0155929
+"C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/tile4.png","C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/bin/DesktopGL/Content/tile4.xnb","TextureProcessor","Texture2DContent",7556,262229,0,0163514
+"C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/tile5.png","C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/bin/DesktopGL/Content/tile5.xnb","TextureProcessor","Texture2DContent",2101,262229,0,0133599
+"C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/zombie.png","C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/bin/DesktopGL/Content/zombie.xnb","TextureProcessor","Texture2DContent",9588,14677,0,0065605
