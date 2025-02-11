@@ -46,6 +46,17 @@ public abstract class Weapon
         CreateProjectiles(player);
     }
 
+    public virtual string GetAmmoStatus()
+    {
+        return Reloading ? "Reloading..." : $"{Ammo}/{MaxAmmo}";
+    }
+    public virtual void DrawAmmo(SpriteBatch spriteBatch, SpriteFont font, Vector2 position)
+    {
+        spriteBatch.DrawString(font, GetAmmoStatus(), position, Color.White);
+    }
+
+
+
     public virtual void Update()
     {
         if (cooldownLeft > 0)

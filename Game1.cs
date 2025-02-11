@@ -20,6 +20,8 @@ public class Game1 : Game
         _graphics.PreferredBackBufferHeight = Globals.Bounds.Y;
         _graphics.ApplyChanges();
 
+        Globals.Font = Content.Load<SpriteFont>("font");
+
         Globals.Content = Content;
         _gameManager = new();
 
