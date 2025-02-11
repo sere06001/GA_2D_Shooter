@@ -12,6 +12,10 @@
         <Start>&#32;</Start>
         <End>&#126;</End>
       </CharacterRegion>
+      <CharacterRegion>
+        <Start>&#x221E;</Start> <!-- Unicode for Infinity Symbol -->
+        <End>&#x221E;</End>
+      </CharacterRegion>
     </CharacterRegions>
   </Asset>
 </XnaContent>

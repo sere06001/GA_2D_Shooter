@@ -9,7 +9,7 @@ public class Minigun : Weapon
         cooldown = 0.07f;
         MaxAmmo = 100;
         Ammo = MaxAmmo;
-        reloadTime = 10f;
+        reloadTime = 0f;
     }
 
     protected override void CreateProjectiles(Player player)
@@ -24,5 +24,9 @@ public class Minigun : Weapon
         };
 
         ProjectileManager.AddProjectile(pd, this);
+    }
+    public override string GetAmmo()
+    {
+        return $"∞";
     }
 }
