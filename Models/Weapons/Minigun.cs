@@ -27,6 +27,6 @@ public class Minigun : Weapon
     }
     public override string GetAmmo()
     {
-        return $"100/∞";
+        return $"{Ammo}/∞";
     }
 }
