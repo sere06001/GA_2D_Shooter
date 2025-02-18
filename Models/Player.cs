@@ -92,7 +92,7 @@ public class Player : MovingSprite
 
     public void Update(List<Zombie> zombies)
     {
-        if (prevWeapon != null && prevWeapon != Weapon && 
+        if (prevWeapon != null && prevWeapon != Weapon && prevWeapon != Minigun && 
         prevWeapon.Ammo < prevWeapon.MaxAmmo && !prevWeapon.Reloading)
         {
             prevWeapon.Reload();

@@ -72,3 +72,5 @@ C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\obj\Debug\net8.0\2D Shooter.genruntimecon
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\obj\Debug\net8.0\ref\2D Shooter.dll
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\PistolBullet.xnb
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\PistolBulletUI.xnb
+C:\Users\Kreedy\Documents\GitHub\GA_2D_Shooter\bin\Debug\net8.0\Content\PistolBullet.xnb
+C:\Users\Kreedy\Documents\GitHub\GA_2D_Shooter\bin\Debug\net8.0\Content\PistolBulletUI.xnb
