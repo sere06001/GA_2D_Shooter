@@ -19,8 +19,14 @@ public static class UIManager
             Vector2 pos = new(0, i * bulletTexture.Height * 2);
             Globals.SpriteBatch.Draw(bulletTexture, pos, null, c * 0.75f, 0, Vector2.Zero, 2, SpriteEffects.None, 1);
         }*/
-        Vector2 hpPosition = new(0, 0);
-        Globals.SpriteBatch.Draw(player.HPTexture, hpPosition, c);
+
+        
+        for (int i = 0; i < player.HP; i++)
+        {
+            Vector2 hpPosition = new(i*50, 0);
+            Globals.SpriteBatch.Draw(player.HPTexture, hpPosition, Color.White);
+        }
+
         if (player.Weapon != null)
         {
             Vector2 ammoPosition = new(Globals.Bounds.X*0.85f, Globals.Bounds.Y*0.8f);

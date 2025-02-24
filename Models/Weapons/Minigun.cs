@@ -19,7 +19,7 @@ public class Minigun : Weapon
             Rotation = player.Rotation,
             Lifespan = 20f,
             Speed = 1000,
-            Damage = 20
+            Damage = 30
         };
 
         ProjectileManager.AddProjectile(pd, this);

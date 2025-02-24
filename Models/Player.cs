@@ -40,7 +40,7 @@ public class Player : MovingSprite
         Minigun = new Minigun();
         
         Dead = false;
-        HP = 0;
+        HP = 3;
         Weapon = Pistol;
         prevWeapon = Weapon;
         Position = GetStartPosition();
@@ -79,11 +79,11 @@ public class Player : MovingSprite
 
                 if ((DateTime.Now - lastHitTime).TotalSeconds >= 2.5) //Iframe 2.5 seconds
                 {
-                    HP++;
+                    HP--;
                     lastHitTime = DateTime.Now;
-                    if (HP >= 3)
+                    if (HP <= 0)
                     {
-                        //Dead = true;
+                        Dead = true;
                     }
                     break;
                 }
