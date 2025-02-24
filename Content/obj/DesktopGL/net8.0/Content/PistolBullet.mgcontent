@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/Kreedy/Documents/GitHub/GA_2D_Shooter/Content/PistolBullet.png</SourceFile>
-  <SourceTime>2025-02-18T22:45:26.8087347+01:00</SourceTime>
-  <DestFile>C:/Users/Kreedy/Documents/GitHub/GA_2D_Shooter/Content/bin/DesktopGL/Content/PistolBullet.xnb</DestFile>
-  <DestTime>2025-02-18T22:46:52.1865892+01:00</DestTime>
+  <SourceFile>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/PistolBullet.png</SourceFile>
+  <SourceTime>2025-02-06T00:01:04.1997684+01:00</SourceTime>
+  <DestFile>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/bin/DesktopGL/Content/PistolBullet.xnb</DestFile>
+  <DestTime>2025-02-24T10:47:00.8487807+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

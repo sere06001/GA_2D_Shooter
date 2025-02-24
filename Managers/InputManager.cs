@@ -22,7 +22,7 @@ public static class InputManager
         if (keyboardState.IsKeyDown(Keys.S)) direction.Y++;
         if (keyboardState.IsKeyDown(Keys.A)) direction.X--;
         if (keyboardState.IsKeyDown(Keys.D)) direction.X++;
-        if (keyboardState.IsKeyDown(Keys.R) && !(player.Weapon is Minigun)) player.Weapon.Reload();
+        if (keyboardState.IsKeyDown(Keys.R)) player.Weapon.Reload();
 
         MouseLeftDown = mouseState.LeftButton == ButtonState.Pressed;
         MouseClicked = MouseLeftDown && (lastMouseState.LeftButton == ButtonState.Released);

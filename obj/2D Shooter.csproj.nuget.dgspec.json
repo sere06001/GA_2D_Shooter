@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kreedy\\Documents\\GitHub\\GA_2D_Shooter\\2D Shooter.csproj": {}
+    "C:\\GA-Monogame\\GA_2DSpel\\GA_2D_Shooter\\2D Shooter.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kreedy\\Documents\\GitHub\\GA_2D_Shooter\\2D Shooter.csproj": {
+    "C:\\GA-Monogame\\GA_2DSpel\\GA_2D_Shooter\\2D Shooter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kreedy\\Documents\\GitHub\\GA_2D_Shooter\\2D Shooter.csproj",
+        "projectUniqueName": "C:\\GA-Monogame\\GA_2DSpel\\GA_2D_Shooter\\2D Shooter.csproj",
         "projectName": "2D Shooter",
-        "projectPath": "C:\\Users\\Kreedy\\Documents\\GitHub\\GA_2D_Shooter\\2D Shooter.csproj",
-        "packagesPath": "C:\\Users\\Kreedy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kreedy\\Documents\\GitHub\\GA_2D_Shooter\\obj\\",
+        "projectPath": "C:\\GA-Monogame\\GA_2DSpel\\GA_2D_Shooter\\2D Shooter.csproj",
+        "packagesPath": "C:\\Users\\sere06001\\.nuget\\packages\\",
+        "outputPath": "C:\\GA-Monogame\\GA_2DSpel\\GA_2D_Shooter\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Kreedy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sere06001\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
