@@ -2,8 +2,7 @@ namespace GA_2d_shooter;
 
 public class Sniper : Weapon
 {
-    public override Texture2D ProjectileTexture => Globals.Content.Load<Texture2D>("bullet");
-    public override Texture2D ProjectileTextureUI => Globals.Content.Load<Texture2D>("bullet");
+    public override Texture2D ProjectileTexture => Globals.Content.Load<Texture2D>("SniperBullet25");
     public Sniper()
     {
         cooldown = 1.5f;

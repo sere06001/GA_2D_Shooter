@@ -5,6 +5,15 @@
   <Config />
   <SourceFiles>
     <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/bullet.png</File>
+    <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/Heart.png</File>
+    <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/Heart50.png</File>
+    <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/Pellet.png</File>
+    <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/Pellet25.png</File>
+    <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/ShotgunShell.png</File>
+    <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/SniperBullet.png</File>
+    <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/SniperBullet25.png</File>
+    <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/PistolBulletNew.png</File>
+    <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/PistolBulletNew25.png</File>
     <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/PistolBullet.png</File>
     <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/PistolBulletUI.png</File>
     <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/exp.png</File>
@@ -18,6 +27,15 @@
     <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/zombie.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

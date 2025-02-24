@@ -2,6 +2,7 @@ namespace GA_2d_shooter;
 
 public class Player : MovingSprite
 {
+    public Texture2D HPTexture => Globals.Content.Load<Texture2D>("Heart50");
     public Weapon Weapon { get; set; }
     public Weapon prevWeapon { get; set; }
     private Weapon Pistol;

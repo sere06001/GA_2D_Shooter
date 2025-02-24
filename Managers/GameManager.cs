@@ -32,7 +32,7 @@ public class GameManager
         player.Update(ZombieManager.Zombies);
         ZombieManager.Update(player);
         ProjectileManager.Update(ZombieManager.Zombies);
-        if (player.Dead) Restart();
+        if (player.Dead) Restart(); //Add menu screen
     }
 
     public void Draw()

@@ -2,8 +2,7 @@ namespace GA_2d_shooter;
 
 public class Pistol : Weapon
 {
-    public override Texture2D ProjectileTexture => Globals.Content.Load<Texture2D>("PistolBullet");
-    public override Texture2D ProjectileTextureUI => Globals.Content.Load<Texture2D>("PistolBulletUI");
+    public override Texture2D ProjectileTexture => Globals.Content.Load<Texture2D>("PistolBulletNew25");
     public Pistol()
     {
         cooldown = 0.5f;

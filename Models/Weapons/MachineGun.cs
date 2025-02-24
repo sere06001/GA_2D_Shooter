@@ -2,11 +2,10 @@ namespace GA_2d_shooter;
 
 public class MachineGun : Weapon
 {
-    public override Texture2D ProjectileTexture => Globals.Content.Load<Texture2D>("bullet");
-    public override Texture2D ProjectileTextureUI => Globals.Content.Load<Texture2D>("bullet");
+    public override Texture2D ProjectileTexture => Globals.Content.Load<Texture2D>("SniperBullet25");
     public MachineGun()
     {
-        cooldown = 0.1f;
+        cooldown = 0.2f;
         MaxAmmo = 30;
         Ammo = MaxAmmo;
         reloadTime = 2f;
@@ -20,7 +19,7 @@ public class MachineGun : Weapon
             Rotation = player.Rotation,
             Lifespan = 2f,
             Speed = 750,
-            Damage = 40
+            Damage = 50
         };
 
         ProjectileManager.AddProjectile(pd, this);

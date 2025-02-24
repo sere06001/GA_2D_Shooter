@@ -2,7 +2,7 @@ namespace GA_2d_shooter;
 
 public static class UIManager
 {
-    private static Texture2D bulletTexture;
+    private static Texture2D bulletTexture; //Default bullet texture if none is assigned in weapon subclass
 
     public static void Init(Texture2D tex)
     {
@@ -11,7 +11,7 @@ public static class UIManager
 
     public static void Draw(Player player)
     {
-        Texture2D bulletTexture = player.Weapon.ProjectileTextureUI;
+        //Texture2D bulletTexture = player.Weapon.ProjectileTextureUI;
         Color c = player.Weapon.Reloading ? Color.Red : Color.White;
 
         /*for (int i = 0; i < player.Weapon.Ammo; i++)
@@ -19,9 +19,11 @@ public static class UIManager
             Vector2 pos = new(0, i * bulletTexture.Height * 2);
             Globals.SpriteBatch.Draw(bulletTexture, pos, null, c * 0.75f, 0, Vector2.Zero, 2, SpriteEffects.None, 1);
         }*/
+        Vector2 hpPosition = new(0, 0);
+        Globals.SpriteBatch.Draw(player.HPTexture, hpPosition, c);
         if (player.Weapon != null)
         {
-            Vector2 ammoPosition = new(Globals.Bounds.X-200, Globals.Bounds.Y-100);
+            Vector2 ammoPosition = new(Globals.Bounds.X*0.85f, Globals.Bounds.Y*0.8f);
             Globals.SpriteBatch.DrawString(Globals.Font, player.Weapon.GetAmmo(), ammoPosition, c);
         }
     }
