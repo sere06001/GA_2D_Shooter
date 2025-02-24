@@ -3,6 +3,7 @@ namespace GA_2d_shooter;
 public class MachineGun : Weapon
 {
     public override Texture2D ProjectileTexture => Globals.Content.Load<Texture2D>("SniperBullet25");
+    public override Texture2D WeaponIcon => Globals.Content.Load<Texture2D>("SMGIcon");
     public MachineGun()
     {
         cooldown = 0.2f;

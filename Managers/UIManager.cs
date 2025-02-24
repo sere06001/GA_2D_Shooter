@@ -27,10 +27,12 @@ public static class UIManager
             Globals.SpriteBatch.Draw(player.HPTexture, hpPosition, Color.White);
         }
 
+        int halfX = Globals.Bounds.X/2;
+
         for (int i = 0; i < player.WeaponList.Count; i++)
         {
-            Vector2 hpPosition = new(i*50+100, 5);
-            Globals.SpriteBatch.Draw(player.WeaponList[i].Texture, hpPosition, Color.White);
+            Vector2 hpPosition = new(i*150 + halfX/2, 5);
+            Globals.SpriteBatch.Draw(player.WeaponList[i].WeaponIcon, hpPosition, Color.White);
         }
 
         if (player.Weapon != null)
