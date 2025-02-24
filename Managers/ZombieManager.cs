@@ -59,7 +59,7 @@ public static class ZombieManager
     {
         textureZombie = Globals.Content.Load<Texture2D>($"Zombie{random.Next(1,5)}");
         textureTank = Globals.Content.Load<Texture2D>("ZombieTank");
-        textureFastie = Globals.Content.Load<Texture2D>($"ZombieFastie{random.Next(1,5)}");
+        textureFastie = Globals.Content.Load<Texture2D>($"ZombieFastie{random.Next(1,3)}");
     }
 
     public static void AddZombie()
@@ -67,6 +67,7 @@ public static class ZombieManager
         if (Zombies.Count < 50) //Limit max zombies on screen to 50
         {
             RandomTexture();
+            
             if (totalZombieCount % 10 == 0 && totalZombieCount > 0)
             {
                 Zombies.Add(new Tank(textureTank, RandomPosition()));

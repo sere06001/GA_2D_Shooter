@@ -10,6 +10,7 @@ public class Player : MovingSprite
     private Weapon Shotgun;
     private Weapon Minigun;
     private Weapon MachineGun;
+    public List<Weapon> WeaponList = new List<Weapon>();
     public int HP { get; private set; }
     public bool Dead { get; private set; }
     public int Experience { get; private set; }
@@ -38,6 +39,11 @@ public class Player : MovingSprite
         Shotgun = new Shotgun();
         MachineGun = new MachineGun();
         Minigun = new Minigun();
+        WeaponList.Add(Pistol);
+        WeaponList.Add(Sniper);
+        WeaponList.Add(Shotgun);
+        WeaponList.Add(MachineGun);
+        WeaponList.Add(Minigun);
         
         Dead = false;
         HP = 3;
@@ -83,7 +89,7 @@ public class Player : MovingSprite
                     lastHitTime = DateTime.Now;
                     if (HP <= 0)
                     {
-                        Dead = true;
+                        //Dead = true;
                     }
                     break;
                 }

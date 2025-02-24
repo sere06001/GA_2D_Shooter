@@ -10,6 +10,7 @@ public abstract class Weapon
     public bool Reloading { get; set; }
     private KeyboardState key;
     public abstract Texture2D ProjectileTexture { get; }
+    public abstract Texture2D WeaponIcon {get; protected set;}
 
     protected Weapon()
     {
