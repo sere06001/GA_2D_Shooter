@@ -23,7 +23,7 @@ public static class UIManager
         
         for (int i = 0; i < player.HP; i++)
         {
-            Vector2 hpPosition = new(i*50, 0);
+            Vector2 hpPosition = new(i*50+5, 5);
             Globals.SpriteBatch.Draw(player.HPTexture, hpPosition, Color.White);
         }
 

@@ -26,8 +26,10 @@
     <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/tile5.png</File>
     <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/zombie.png</File>
     <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/ZombieTank.png</File>
+    <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/ZombieFastie.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

@@ -84,3 +84,4 @@ C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\SniperBullet25.x
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\Pellet25.xnb
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\Heart50.xnb
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\ZombieTank.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\ZombieFastie.xnb
