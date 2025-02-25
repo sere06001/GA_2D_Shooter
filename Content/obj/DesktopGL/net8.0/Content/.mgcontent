@@ -37,8 +37,10 @@
     <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/ShotgunIcon.png</File>
     <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/SMGIcon.png</File>
     <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/MinigunIcon.png</File>
+    <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/MinigunIconTest.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

@@ -116,3 +116,4 @@ C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\PistolIcon.xnb
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\ShotgunIcon.xnb
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\SMGIcon.xnb
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\SniperIcon.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\MinigunIconTest.xnb

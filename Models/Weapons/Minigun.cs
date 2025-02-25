@@ -3,7 +3,7 @@ namespace GA_2d_shooter;
 public class Minigun : Weapon
 {
     public override Texture2D ProjectileTexture => Globals.Content.Load<Texture2D>("PistolBulletNew25");
-    public override Texture2D WeaponIcon => Globals.Content.Load<Texture2D>("MinigunIcon");
+    public override Texture2D WeaponIcon => Globals.Content.Load<Texture2D>("MinigunIconTest");
     public Minigun()
     {
         cooldown = 0.07f;
