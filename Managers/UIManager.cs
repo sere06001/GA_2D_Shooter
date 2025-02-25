@@ -3,6 +3,8 @@ namespace GA_2d_shooter;
 public static class UIManager
 {
     private static Texture2D bulletTexture; //Default bullet texture if none is assigned in weapon subclass
+    private static Texture2D weaponTexture;
+    private static Texture2D middleWeapon;
 
     public static void Init(Texture2D tex)
     {
@@ -39,7 +41,14 @@ public static class UIManager
         if (totalWeapons > 0)
         {
             int middleIndex = totalWeapons / 2;
-            Texture2D middleWeapon = player.WeaponList[middleIndex].WeaponIcon;
+            if (player.Weapon == player.WeaponList[middleIndex])
+            {
+                middleWeapon = player.WeaponList[middleIndex].WeaponIconSelected;
+            }
+            else
+            {
+                middleWeapon = player.WeaponList[middleIndex].WeaponIcon;
+            }
             int middleWeaponWidth = middleWeapon.Width;
 
             int middleX = halfX - (middleWeaponWidth / 2);
@@ -47,7 +56,14 @@ public static class UIManager
             int currentX = middleX;
             for (int i = middleIndex - 1; i >= 0; i--)
             {
-                Texture2D weaponTexture = player.WeaponList[i].WeaponIcon;
+                if (player.WeaponList[i] == player.Weapon)
+                {
+                    weaponTexture = player.WeaponList[i].WeaponIconSelected;
+                }
+                else
+                {
+                    weaponTexture = player.WeaponList[i].WeaponIcon;
+                }
                 currentX -= weaponTexture.Width + spacing;
                 Globals.SpriteBatch.Draw(weaponTexture, new Vector2(currentX, 5), Color.White);
             }
@@ -57,7 +73,14 @@ public static class UIManager
             currentX = middleX + middleWeaponWidth + spacing;
             for (int i = middleIndex + 1; i < totalWeapons; i++)
             {
-                Texture2D weaponTexture = player.WeaponList[i].WeaponIcon;
+                if (player.WeaponList[i] == player.Weapon)
+                {
+                    weaponTexture = player.WeaponList[i].WeaponIconSelected;
+                }
+                else
+                {
+                    weaponTexture = player.WeaponList[i].WeaponIcon;
+                }
                 Globals.SpriteBatch.Draw(weaponTexture, new Vector2(currentX, 5), Color.White);
                 currentX += weaponTexture.Width + spacing;
             }

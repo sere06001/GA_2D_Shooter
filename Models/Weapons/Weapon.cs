@@ -11,6 +11,7 @@ public abstract class Weapon
     private KeyboardState key;
     public abstract Texture2D ProjectileTexture { get; }
     public abstract Texture2D WeaponIcon { get; }
+    public abstract Texture2D WeaponIconSelected { get;}
 
     protected Weapon()
     {

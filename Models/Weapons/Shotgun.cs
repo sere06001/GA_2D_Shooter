@@ -3,7 +3,8 @@ namespace GA_2d_shooter;
 public class Shotgun : Weapon
 {
     public override Texture2D ProjectileTexture => Globals.Content.Load<Texture2D>("Pellet25");
-    public override Texture2D WeaponIcon => Globals.Content.Load<Texture2D>("ShotgunIcon");
+    public override Texture2D WeaponIcon => Globals.Content.Load<Texture2D>("ShotgunIconKey2");
+    public override Texture2D WeaponIconSelected => Globals.Content.Load<Texture2D>("ShotgunIconKey");
     private float ANGLE_STEP;
     private int pelletCount;
 

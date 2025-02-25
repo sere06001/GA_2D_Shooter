@@ -33,13 +33,31 @@
     <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/ZombieFastie1.png</File>
     <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/ZombieFastie2.png</File>
     <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/PistolIcon.png</File>
+    <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/PistolIconKey.png</File>
+    <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/PistolIconKey2.png</File>
     <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/SniperIcon.png</File>
+    <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/SniperIconKey.png</File>
+    <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/SniperIconKey2.png</File>
     <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/ShotgunIcon.png</File>
+    <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/ShotgunIconKey.png</File>
+    <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/ShotgunIconKey2.png</File>
     <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/SMGIcon.png</File>
+    <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/SMGIconKey.png</File>
+    <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/SMGIconKey2.png</File>
     <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/MinigunIcon.png</File>
-    <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/MinigunIconTest.png</File>
+    <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/MinigunIconKey.png</File>
+    <File>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/MinigunIconKey2.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
