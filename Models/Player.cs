@@ -79,10 +79,24 @@ public class Player : MovingSprite
         foreach (var z in zombies)
         {
             if (z.HP <= 0) continue;
-    
-            if ((Position - z.Position).Length() < 50)
-            {
 
+            int hitRange;
+
+            switch (z)
+            {
+                case Fastie:
+                    hitRange = 60;
+                    break;
+                case Tank:
+                    hitRange = 60;
+                    break;
+                default:
+                    hitRange = 45;
+                    break;
+            }
+
+            if ((Position - z.Position).Length() < hitRange)
+            {
                 if ((DateTime.Now - lastHitTime).TotalSeconds >= 2.5) //Iframe 2.5 seconds
                 {
                     HP--;
