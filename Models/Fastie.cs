@@ -7,7 +7,7 @@ public class Fastie : Zombie
 
     public Fastie(Texture2D tex, Vector2 pos) : base(tex, pos)
     {
-        Speed = 150;
+        Speed = 175;
         HP = 100;
     }
 }

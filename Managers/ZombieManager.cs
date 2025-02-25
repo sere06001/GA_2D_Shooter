@@ -20,7 +20,7 @@ public static class ZombieManager
         textureZombie = Globals.Content.Load<Texture2D>("Zombie1");
         textureTank = Globals.Content.Load<Texture2D>("ZombieTank");
         textureFastie = Globals.Content.Load<Texture2D>("ZombieFastie1");
-        spawnCooldownReset = 5f;
+        spawnCooldownReset = 1f;
         spawnCooldown = spawnCooldownReset;
         spawnTime = spawnCooldown;
         random = new();
