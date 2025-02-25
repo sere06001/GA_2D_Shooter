@@ -67,7 +67,6 @@ public static class ZombieManager
         if (Zombies.Count < 1) //Limit max zombies on screen to 50
         {
             RandomTexture();
-            Zombies.Add(new Tank(textureTank, RandomPosition()));
             
             if (totalZombieCount % 10 == 0 && totalZombieCount > 0)
             {
@@ -79,7 +78,7 @@ public static class ZombieManager
             }
 
             //Spawn regular zombies even if other zombie type spawns
-            //Zombies.Add(new(textureZombie, RandomPosition()));
+            Zombies.Add(new(textureZombie, RandomPosition()));
             
 
 
