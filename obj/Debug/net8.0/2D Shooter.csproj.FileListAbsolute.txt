@@ -111,3 +111,8 @@ C:\Users\Kreedy\Documents\GitHub\GA_2D_Shooter\bin\Debug\net8.0\Content\ZombieFa
 C:\Users\Kreedy\Documents\GitHub\GA_2D_Shooter\bin\Debug\net8.0\Content\ZombieFastie2.xnb
 C:\Users\Kreedy\Documents\GitHub\GA_2D_Shooter\bin\Debug\net8.0\Content\zombieold.xnb
 C:\Users\Kreedy\Documents\GitHub\GA_2D_Shooter\bin\Debug\net8.0\Content\ZombieTank.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\MinigunIcon.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\PistolIcon.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\ShotgunIcon.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\SMGIcon.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\SniperIcon.xnb

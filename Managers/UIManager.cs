@@ -20,25 +20,57 @@ public static class UIManager
             Globals.SpriteBatch.Draw(bulletTexture, pos, null, c * 0.75f, 0, Vector2.Zero, 2, SpriteEffects.None, 1);
         }*/
 
+        Vector2 pos = new (0,0);
+
         
         for (int i = 0; i < player.HP; i++)
         {
-            Vector2 hpPosition = new(i*50+5, 5);
-            Globals.SpriteBatch.Draw(player.HPTexture, hpPosition, Color.White);
+            pos = new(i*50+5, 5);
+            Globals.SpriteBatch.Draw(player.HPTexture, pos, Color.White);
         }
 
-        int halfX = Globals.Bounds.X/2;
 
-        for (int i = 0; i < player.WeaponList.Count; i++)
+
+        int halfX = Globals.Bounds.X / 2;
+        int totalWeapons = player.WeaponList.Count;
+
+        int spacing = 25;
+
+        if (totalWeapons > 0)
         {
-            Vector2 hpPosition = new(i*150 + halfX/2, 5);
-            Globals.SpriteBatch.Draw(player.WeaponList[i].WeaponIcon, hpPosition, Color.White);
+            int middleIndex = totalWeapons / 2;
+            Texture2D middleWeapon = player.WeaponList[middleIndex].WeaponIcon;
+            int middleWeaponWidth = middleWeapon.Width;
+
+            int middleX = halfX - (middleWeaponWidth / 2);
+
+            int currentX = middleX;
+            for (int i = middleIndex - 1; i >= 0; i--)
+            {
+                Texture2D weaponTexture = player.WeaponList[i].WeaponIcon;
+                currentX -= weaponTexture.Width + spacing;
+                Globals.SpriteBatch.Draw(weaponTexture, new Vector2(currentX, 5), Color.White);
+            }
+
+            Globals.SpriteBatch.Draw(middleWeapon, new Vector2(middleX, 5), Color.White);
+
+            currentX = middleX + middleWeaponWidth + spacing;
+            for (int i = middleIndex + 1; i < totalWeapons; i++)
+            {
+                Texture2D weaponTexture = player.WeaponList[i].WeaponIcon;
+                Globals.SpriteBatch.Draw(weaponTexture, new Vector2(currentX, 5), Color.White);
+                currentX += weaponTexture.Width + spacing;
+            }
         }
+
+
+
+
 
         if (player.Weapon != null)
         {
-            Vector2 ammoPosition = new(Globals.Bounds.X*0.85f, Globals.Bounds.Y*0.8f);
-            Globals.SpriteBatch.DrawString(Globals.Font, player.Weapon.GetAmmo(), ammoPosition, c);
+            pos = new(Globals.Bounds.X*0.85f, Globals.Bounds.Y*0.8f);
+            Globals.SpriteBatch.DrawString(Globals.Font, player.Weapon.GetAmmo(), pos, c);
         }
     }
 }

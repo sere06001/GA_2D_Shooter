@@ -84,7 +84,7 @@ public static class ZombieManager
 
             totalZombieCount++;
         }
-        if (totalZombieCount % 5 == 0 && totalZombieCount > 0 && spawnCooldown > 0.5f)
+        if (totalZombieCount % 5 == 0 && totalZombieCount > 0 && spawnCooldown > 1f)
         {
             spawnCooldown -= 0.5f;
         }
