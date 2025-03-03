@@ -5,12 +5,13 @@ namespace GA_2d_shooter;
 public class Zombie : MovingSprite
 {
     public int HP { get; set; }
-    public float HitRange { get; protected set; } = 45;
+    public float HitRange { get; protected set; }
 
     public Zombie(Texture2D tex, Vector2 pos) : base(tex, pos)
     {
         Speed = 100;
         HP = 200;
+        HitRange = tex.Width;
     }
 
     public void TakeDamage(int dmg)

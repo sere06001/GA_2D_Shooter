@@ -10,7 +10,6 @@ public class GameManager
         bg = new();
         var texture = Globals.Content.Load<Texture2D>("bullet");
         ProjectileManager.Init(texture);
-        UIManager.Init(texture);
         ExperienceManager.Init(Globals.Content.Load<Texture2D>("exp"));
 
         player = new(Globals.Content.Load<Texture2D>("player"));

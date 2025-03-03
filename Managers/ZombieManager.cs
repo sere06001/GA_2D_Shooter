@@ -64,26 +64,25 @@ public static class ZombieManager
 
     public static void AddZombie()
     {
-        if (Zombies.Count < 100) //Limit max zombies on screen to 50
+        if (Zombies.Count < 1) //Limit max zombies on screen to 50
         {
             RandomTexture();
             
             if (totalZombieCount % 10 == 0 && totalZombieCount > 0)
             {
                 Zombies.Add(new Tank(textureTank, RandomPosition()));
+                totalZombieCount++;
             }
             if (totalZombieCount % 5 == 0 && totalZombieCount > 0)
             {
                 Zombies.Add(new Fastie(textureFastie, RandomPosition()));
+                totalZombieCount++;
             }
-
             //Spawn regular zombies even if other zombie type spawns
             Zombies.Add(new(textureZombie, RandomPosition()));
-            
-
-
             totalZombieCount++;
         }
+        
         if (totalZombieCount % 5 == 0 && totalZombieCount > 0 && spawnCooldown > 1f)
         {
             spawnCooldown -= 0.5f;

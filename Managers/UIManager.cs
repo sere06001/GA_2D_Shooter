@@ -2,14 +2,8 @@ namespace GA_2d_shooter;
 
 public static class UIManager
 {
-    private static Texture2D bulletTexture; //Default bullet texture if none is assigned in weapon subclass
     private static Texture2D weaponTexture;
     private static Texture2D middleWeapon;
-
-    public static void Init(Texture2D tex)
-    {
-        bulletTexture = tex;
-    }
 
     public static void Draw(Player player)
     {
