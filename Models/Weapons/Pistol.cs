@@ -5,6 +5,7 @@ public class Pistol : Weapon
     public override Texture2D ProjectileTexture => Globals.Content.Load<Texture2D>("PistolBulletNew25");
     public override Texture2D WeaponIcon => Globals.Content.Load<Texture2D>("PistolIconKey2");
     public override Texture2D WeaponIconSelected => Globals.Content.Load<Texture2D>("PistolIconKey");
+    public override Texture2D WeaponIconLocked => Globals.Content.Load<Texture2D>("PistolIconLocked");
     public Pistol()
     {
         cooldown = 0.5f;

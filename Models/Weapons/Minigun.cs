@@ -5,6 +5,7 @@ public class Minigun : Weapon
     public override Texture2D ProjectileTexture => Globals.Content.Load<Texture2D>("PistolBulletNew25");
     public override Texture2D WeaponIcon => Globals.Content.Load<Texture2D>("MinigunIconKey2");
     public override Texture2D WeaponIconSelected => Globals.Content.Load<Texture2D>("MinigunIconKey");
+    public override Texture2D WeaponIconLocked => Globals.Content.Load<Texture2D>("MinigunIconLocked");
     public Minigun()
     {
         cooldown = 0.07f;

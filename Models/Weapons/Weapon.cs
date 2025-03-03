@@ -12,6 +12,7 @@ public abstract class Weapon
     public abstract Texture2D ProjectileTexture { get; }
     public abstract Texture2D WeaponIcon { get; }
     public abstract Texture2D WeaponIconSelected { get;}
+    public abstract Texture2D WeaponIconLocked { get;}
 
     protected Weapon()
     {

@@ -5,6 +5,7 @@ public class MachineGun : Weapon
     public override Texture2D ProjectileTexture => Globals.Content.Load<Texture2D>("PistolBulletNew25");
     public override Texture2D WeaponIcon => Globals.Content.Load<Texture2D>("SMGIconKey2");
     public override Texture2D WeaponIconSelected => Globals.Content.Load<Texture2D>("SMGIconKey");
+    public override Texture2D WeaponIconLocked => Globals.Content.Load<Texture2D>("SMGIconLocked");
     public MachineGun()
     {
         cooldown = 0.2f;

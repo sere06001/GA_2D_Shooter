@@ -356,6 +356,18 @@
 /processorParam:TextureFormat=Color
 /build:PistolIcon.png
 
+#begin PistolIconLocked.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:PistolIconLocked.png
+
 #begin PistolIconKey.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -391,6 +403,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:SniperIcon.png
+
+#begin SniperIconLocked.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SniperIconLocked.png
 
 #begin SniperIconKey.png
 /importer:TextureImporter
@@ -428,6 +452,18 @@
 /processorParam:TextureFormat=Color
 /build:ShotgunIcon.png
 
+#begin ShotgunIconLocked.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:ShotgunIconLocked.png
+
 #begin ShotgunIconKey.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -464,6 +500,18 @@
 /processorParam:TextureFormat=Color
 /build:SMGIcon.png
 
+#begin SMGIconLocked.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SMGIconLocked.png
+
 #begin SMGIconKey.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -499,6 +547,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:MinigunIcon.png
+
+#begin MinigunIconLocked.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:MinigunIconLocked.png
 
 #begin MinigunIconKey.png
 /importer:TextureImporter

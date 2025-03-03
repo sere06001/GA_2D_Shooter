@@ -5,6 +5,7 @@ public class Shotgun : Weapon
     public override Texture2D ProjectileTexture => Globals.Content.Load<Texture2D>("Pellet25");
     public override Texture2D WeaponIcon => Globals.Content.Load<Texture2D>("ShotgunIconKey2");
     public override Texture2D WeaponIconSelected => Globals.Content.Load<Texture2D>("ShotgunIconKey");
+    public override Texture2D WeaponIconLocked => Globals.Content.Load<Texture2D>("ShotgunIconLocked");
     private float ANGLE_STEP;
     private int pelletCount;
 
