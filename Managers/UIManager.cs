@@ -47,7 +47,14 @@ public static class UIManager
             }
             else
             {
-                middleWeapon = player.WeaponList[middleIndex].WeaponIcon;
+                if (player.WeaponList[middleIndex].IsUnlocked)
+                {
+                    middleWeapon = player.WeaponList[middleIndex].WeaponIcon;
+                }
+                else
+                {
+                    middleWeapon = player.WeaponList[middleIndex].WeaponIconLocked;
+                }
             }
             int middleWeaponWidth = middleWeapon.Width;
 
@@ -62,7 +69,14 @@ public static class UIManager
                 }
                 else
                 {
-                    weaponTexture = player.WeaponList[i].WeaponIcon;
+                    if (player.WeaponList[i].IsUnlocked)
+                    {
+                        weaponTexture = player.WeaponList[i].WeaponIcon;
+                    }
+                    else
+                    {
+                        weaponTexture = player.WeaponList[i].WeaponIconLocked;
+                    }
                 }
                 currentX -= weaponTexture.Width + spacing;
                 Globals.SpriteBatch.Draw(weaponTexture, new Vector2(currentX, 5), Color.White);
@@ -79,7 +93,14 @@ public static class UIManager
                 }
                 else
                 {
-                    weaponTexture = player.WeaponList[i].WeaponIcon;
+                    if (player.WeaponList[i].IsUnlocked)
+                    {
+                        weaponTexture = player.WeaponList[i].WeaponIcon;
+                    }
+                    else
+                    {
+                        weaponTexture = player.WeaponList[i].WeaponIconLocked;
+                    }
                 }
                 Globals.SpriteBatch.Draw(weaponTexture, new Vector2(currentX, 5), Color.White);
                 currentX += weaponTexture.Width + spacing;

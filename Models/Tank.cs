@@ -7,6 +7,7 @@ public class Tank : Zombie
 
     public Tank(Texture2D tex, Vector2 pos) : base(tex, pos)
     {
+        HitRange = 60;
         Speed = 75;
         HP = 1000;
     }

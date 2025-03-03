@@ -80,22 +80,7 @@ public class Player : MovingSprite
         {
             if (z.HP <= 0) continue;
 
-            int hitRange;
-
-            switch (z)
-            {
-                case Fastie:
-                    hitRange = 60;
-                    break;
-                case Tank:
-                    hitRange = 60;
-                    break;
-                default:
-                    hitRange = 45;
-                    break;
-            }
-
-            if ((Position - z.Position).Length() < hitRange)
+            if ((Position - z.Position).Length() < z.HitRange)
             {
                 if ((DateTime.Now - lastHitTime).TotalSeconds >= 2.5) //Iframe 2.5 seconds
                 {

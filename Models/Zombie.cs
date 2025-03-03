@@ -5,6 +5,7 @@ namespace GA_2d_shooter;
 public class Zombie : MovingSprite
 {
     public int HP { get; set; }
+    public float HitRange { get; protected set; } = 45;
 
     public Zombie(Texture2D tex, Vector2 pos) : base(tex, pos)
     {
