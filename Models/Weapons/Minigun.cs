@@ -8,6 +8,7 @@ public class Minigun : Weapon
     public override Texture2D WeaponIconLocked => Globals.Content.Load<Texture2D>("MinigunIconLocked");
     public Minigun()
     {
+        XPforUnlock = 40;
         cooldown = 0.07f;
         MaxAmmo = 100;
         Ammo = MaxAmmo;

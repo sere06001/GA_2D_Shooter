@@ -8,6 +8,7 @@ public class Pistol : Weapon
     public override Texture2D WeaponIconLocked => Globals.Content.Load<Texture2D>("PistolIconLocked");
     public Pistol()
     {
+        XPforUnlock = 0;
         cooldown = 0.5f;
         MaxAmmo = 10;
         Ammo = MaxAmmo;

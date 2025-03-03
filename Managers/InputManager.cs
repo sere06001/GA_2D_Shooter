@@ -32,16 +32,16 @@ public static class InputManager
         if (lastKeyboardState.IsKeyUp(Keys.D1) && keyboardState.IsKeyDown(Keys.D1))
             WeaponKey = Keys.D1;
         else if (lastKeyboardState.IsKeyUp(Keys.D2) && keyboardState.IsKeyDown(Keys.D2)
-        && player.Experience >= 0)
+        && player.Sniper.IsUnlocked)
             WeaponKey = Keys.D2;
         else if (lastKeyboardState.IsKeyUp(Keys.D3) && keyboardState.IsKeyDown(Keys.D3) 
-        && player.Experience >= 0)
+        && player.Shotgun.IsUnlocked)
             WeaponKey = Keys.D3;
         else if (lastKeyboardState.IsKeyUp(Keys.D4) && keyboardState.IsKeyDown(Keys.D4) 
-        && player.Experience >= 0)
+        && player.SMG.IsUnlocked)
             WeaponKey = Keys.D4;
         else if (lastKeyboardState.IsKeyUp(Keys.D5) && keyboardState.IsKeyDown(Keys.D5) 
-        && player.Experience >= 0)
+        && player.Minigun.IsUnlocked)
             WeaponKey = Keys.D5;
         else
             WeaponKey = null;

@@ -44,6 +44,14 @@ public static class ExperienceManager
         playerExp = player.Experience.ToString();
         var x = font.MeasureString(playerExp).X / 2;
         textPosition = new(Globals.Bounds.X - x - 32, 14);
+
+        foreach (Weapon gun in player.WeaponList)
+        {
+            if (player.Experience >= gun.XPforUnlock)
+            {
+                gun.UnlockGun();
+            }
+        }
     }
 
     public static void Draw()

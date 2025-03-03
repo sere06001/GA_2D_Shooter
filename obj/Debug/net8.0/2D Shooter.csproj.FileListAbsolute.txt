@@ -127,3 +127,7 @@ C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\SMGIconKey.xnb
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\SMGIconKey2.xnb
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\SniperIconKey2.xnb
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\SniperIconLocked.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\MinigunIconLocked.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\PistolIconLocked.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\ShotgunIconLocked.xnb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\SMGIconLocked.xnb

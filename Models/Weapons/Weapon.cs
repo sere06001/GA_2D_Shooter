@@ -13,6 +13,8 @@ public abstract class Weapon
     public abstract Texture2D WeaponIcon { get; }
     public abstract Texture2D WeaponIconSelected { get;}
     public abstract Texture2D WeaponIconLocked { get;}
+    public bool IsUnlocked { get; protected set; } = false;
+    public int XPforUnlock { get; protected set; }
 
     protected Weapon()
     {
@@ -53,6 +55,10 @@ public abstract class Weapon
         return $"{Ammo}/{MaxAmmo}";
     }
     
+    public void UnlockGun()
+    {
+        IsUnlocked = true;
+    }
 
     public virtual void Update()
     {

@@ -5,11 +5,11 @@ public class Player : MovingSprite
     public Texture2D HPTexture => Globals.Content.Load<Texture2D>("Heart50");
     public Weapon Weapon { get; set; }
     public Weapon prevWeapon { get; set; }
-    private Weapon Pistol;
-    private Weapon Sniper;
-    private Weapon Shotgun;
-    private Weapon Minigun;
-    private Weapon MachineGun;
+    public Weapon Pistol;
+    public Weapon Sniper;
+    public Weapon Shotgun;
+    public Weapon Minigun;
+    public Weapon SMG;
     public List<Weapon> WeaponList = new List<Weapon>();
     public int HP { get; private set; }
     public bool Dead { get; private set; }
@@ -37,12 +37,12 @@ public class Player : MovingSprite
         Pistol = new Pistol();
         Sniper = new Sniper();
         Shotgun = new Shotgun();
-        MachineGun = new MachineGun();
+        SMG = new SMG();
         Minigun = new Minigun();
         WeaponList.Add(Pistol);
         WeaponList.Add(Sniper);
         WeaponList.Add(Shotgun);
-        WeaponList.Add(MachineGun);
+        WeaponList.Add(SMG);
         WeaponList.Add(Minigun);
         
         Dead = false;
@@ -65,7 +65,7 @@ public class Player : MovingSprite
             case 1: Weapon = Pistol; break;
             case 2: Weapon = Sniper; break;
             case 3: Weapon = Shotgun; break;
-            case 4: Weapon = MachineGun; break;
+            case 4: Weapon = SMG; break;
             case 5: Weapon = Minigun; break;
         }
         if (Weapon == prevWeapon && Weapon.Reloading)

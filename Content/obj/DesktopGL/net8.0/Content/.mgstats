@@ -1,2 +1,5 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/SniperIconLocked.png","C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/bin/DesktopGL/Content/SniperIconLocked.xnb","TextureProcessor","Texture2DContent",4080,60085,0,523388
+"C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/MinigunIconLocked.png","C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/bin/DesktopGL/Content/MinigunIconLocked.xnb","TextureProcessor","Texture2DContent",4097,60085,0,0902525
+"C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/PistolIconLocked.png","C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/bin/DesktopGL/Content/PistolIconLocked.xnb","TextureProcessor","Texture2DContent",3566,60085,0,7033231
+"C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/ShotgunIconLocked.png","C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/bin/DesktopGL/Content/ShotgunIconLocked.xnb","TextureProcessor","Texture2DContent",3902,60085,0,0639235
+"C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/SMGIconLocked.png","C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/bin/DesktopGL/Content/SMGIconLocked.xnb","TextureProcessor","Texture2DContent",4680,60085,0,0502041
