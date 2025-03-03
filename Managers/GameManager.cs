@@ -4,9 +4,11 @@ public class GameManager
 {
     private readonly Player player;
     private readonly Background bg;
+    private readonly Game1 game;
 
-    public GameManager()
+    public GameManager(Game1 game)
     {
+        this.game = game;
         bg = new();
         var texture = Globals.Content.Load<Texture2D>("bullet");
         ProjectileManager.Init(texture);
@@ -26,12 +28,15 @@ public class GameManager
 
     public void Update()
     {
-        InputManager.Update(player);
-        ExperienceManager.Update(player);
-        player.Update(ZombieManager.Zombies);
-        ZombieManager.Update(player);
-        ProjectileManager.Update(ZombieManager.Zombies);
-        if (player.Dead) Restart(); //Add menu screen
+        if (game.IsActive)
+        {
+            InputManager.Update(player);
+            ExperienceManager.Update(player);
+            player.Update(ZombieManager.Zombies);
+            ZombieManager.Update(player);
+            ProjectileManager.Update(ZombieManager.Zombies);
+            if (player.Dead) Restart(); //Add menu screen
+        }
     }
 
     public void Draw()
