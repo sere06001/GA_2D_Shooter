@@ -101,7 +101,7 @@ public static class UIManager
             }
         }
 
-        string timeString = $"{Globals.Minutes:D2}:{Globals.Seconds:D2}:{Globals.Hundredths:00}";
+        string timeString = $"{Globals.Minutes:D2}:{Globals.Seconds:D2}.{Globals.Hundredths:00}";
         pos = new(Globals.Bounds.X*0.89f, Globals.Bounds.Y*0f);
         Globals.SpriteBatch.DrawString(Globals.Font, $"{timeString}", pos, Color.White);
 
