@@ -22,7 +22,6 @@ public class GameManager
     {
         ProjectileManager.Reset();
         ZombieManager.Reset();
-        ExperienceManager.Reset();
         player.Reset();
     }
 
