@@ -21,7 +21,6 @@ public class Game1 : Game
         _graphics.ApplyChanges();
 
         Globals.Font = Content.Load<SpriteFont>("font");
-asdw
         Globals.Content = Content;
         _gameManager = new(this);
 

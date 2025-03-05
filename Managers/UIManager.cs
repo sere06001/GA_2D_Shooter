@@ -4,7 +4,7 @@ public static class UIManager
 {
     private static Texture2D weaponTexture;
     private static Texture2D middleWeapon;
-
+    private static Vector2 pos;
     public static void Draw(Player player)
     {
         //Texture2D bulletTexture = player.Weapon.ProjectileTextureUI;
@@ -16,7 +16,7 @@ public static class UIManager
             Globals.SpriteBatch.Draw(bulletTexture, pos, null, c * 0.75f, 0, Vector2.Zero, 2, SpriteEffects.None, 1);
         }*/
 
-        Vector2 pos = new (0,0);
+        
 
         
         for (int i = 0; i < player.HP; i++)
@@ -101,9 +101,9 @@ public static class UIManager
             }
         }
 
-
-
-
+        string timeString = $"{Globals.Minutes:D2}:{Globals.Seconds:D2}:{Globals.Hundredths:00}";
+        pos = new(Globals.Bounds.X*0.89f, Globals.Bounds.Y*0f);
+        Globals.SpriteBatch.DrawString(Globals.Font, $"{timeString}", pos, Color.White);
 
         if (player.Weapon != null)
         {

@@ -64,7 +64,7 @@ public static class ZombieManager
 
     public static void AddZombie()
     {
-        if (Zombies.Count < 1) //Limit max zombies on screen to 50
+        if (Zombies.Count < 100) //Limit max zombies on screen to 50
         {
             RandomTexture();
             
@@ -82,7 +82,7 @@ public static class ZombieManager
             Zombies.Add(new(textureZombie, RandomPosition()));
             totalZombieCount++;
         }
-        
+
         if (totalZombieCount % 5 == 0 && totalZombieCount > 0 && spawnCooldown > 1f)
         {
             spawnCooldown -= 0.5f;
