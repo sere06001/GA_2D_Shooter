@@ -34,7 +34,7 @@ public class GameManager
             ExperienceManager.Update(player);
             player.Update(ZombieManager.Zombies);
             ZombieManager.Update(player);
-            ProjectileManager.Update(ZombieManager.Zombies);
+            ProjectileManager.Update(ZombieManager.Zombies, player);
             if (player.Dead) Restart(); //Add menu screen
         }
     }

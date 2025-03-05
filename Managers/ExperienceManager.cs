@@ -28,19 +28,6 @@ public static class ExperienceManager
 
     public static void Update(Player player)
     {
-        foreach (var e in Experience)
-        {
-            e.Update();
-
-            if ((e.Position - player.Position).Length() < 50)
-            {
-                e.Collect();
-                player.GetExperience(1);
-            }
-        }
-
-        Experience.RemoveAll((e) => e.Lifespan <= 0);
-
         playerExp = player.Experience.ToString();
         var x = font.MeasureString(playerExp).X / 2;
         textPosition = new(Globals.Bounds.X - x - 32, 14);

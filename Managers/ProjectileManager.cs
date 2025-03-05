@@ -21,7 +21,7 @@ public static class ProjectileManager
         Projectiles.Add(new(projectileTexture, data));
     }
 
-    public static void Update(List<Zombie> zombies)
+    public static void Update(List<Zombie> zombies, Player player)
     {
         foreach (var p in Projectiles)
         {
@@ -31,7 +31,7 @@ public static class ProjectileManager
                 if (z.HP <= 0) continue;
                 if ((p.Position - z.Position).Length() < 32)
                 {
-                    z.TakeDamage(p.Damage);
+                    z.TakeDamage(p.Damage, player);
                     p.Destroy();
                     break;
                 }

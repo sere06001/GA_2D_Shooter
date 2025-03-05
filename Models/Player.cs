@@ -20,6 +20,7 @@ public class Player : MovingSprite
     {
         Reset();
         Speed = 200;
+        Experience = SaveManager.LoadExperience();
     }
 
     private static Vector2 GetStartPosition()
@@ -27,9 +28,10 @@ public class Player : MovingSprite
         return new(Globals.Bounds.X / 2, Globals.Bounds.Y / 2);
     }
 
-    public void GetExperience(int exp)
+    public void AddExperience(int exp)
     {
         Experience += exp;
+        SaveManager.SaveExperience(Experience);
     }
 
     public void Reset()
@@ -50,7 +52,6 @@ public class Player : MovingSprite
         Weapon = Pistol;
         prevWeapon = Weapon;
         Position = GetStartPosition();
-        Experience = 0;
     }
 
     public void EquipSlot(int slot)

@@ -14,10 +14,10 @@ public class Zombie : MovingSprite
         HitRange = tex.Width;
     }
 
-    public void TakeDamage(int dmg)
+    public void TakeDamage(int dmg, Player player)
     {
         HP -= dmg;
-        if (HP <= 0) ExperienceManager.AddExperience(Position);
+        if (HP <= 0) player.AddExperience(1);
     }
 
     public void Update(Player player)
