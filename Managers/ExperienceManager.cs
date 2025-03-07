@@ -16,10 +16,10 @@ public static class ExperienceManager
     public static void Update(Player player)
     {
         position = new (player.Position.X, player.Position.Y);
-        position = new (position.X, position.Y);
+        position = new (position.X+Globals.Bounds.X/2-texture.Width, position.Y-Globals.Bounds.Y/2-texture.Height+50);
         playerExp = player.Experience.ToString();
         var x = Globals.Font.MeasureString(playerExp).X / 2;
-        textPosition = new(Globals.Bounds.X - x - 32, 14);
+        textPosition = new(position.X - texture.Width, position.Y+texture.Height/2);
 
         foreach (Weapon gun in player.WeaponList)
         {
