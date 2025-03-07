@@ -32,7 +32,7 @@ public static class ExperienceManager
 
     public static void Draw()
     {
-        Globals.SpriteBatch.Draw(texture, position, null, Color.White * 0.75f, 10f, Vector2.Zero, 2f, SpriteEffects.None, 1f);
+        Globals.SpriteBatch.Draw(texture, position, null, Color.White * 1f, 1f, Vector2.Zero, 2f, SpriteEffects.None, 1f);
         Globals.SpriteBatch.DrawString(font, playerExp, textPosition, Color.White);
     }
 }

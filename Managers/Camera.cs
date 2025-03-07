@@ -10,11 +10,11 @@ namespace GA_2d_shooter
         public float Zoom { get; set; } = 1f;
         public float LerpFactor { get; set; } = 0.1f; // Controls smoothness
 
-        private Viewport _viewport;
+        private Viewport viewport;
 
         public Camera(Viewport viewport)
         {
-            _viewport = viewport;
+            this.viewport = viewport;
             Position = Vector2.Zero; // Initialize at (0,0)
         }
 
@@ -22,12 +22,12 @@ namespace GA_2d_shooter
         {
             if (player == null) return;
 
-            Vector2 targetPosition = player.Position - new Vector2(_viewport.Width / 2, _viewport.Height / 2);
+            Vector2 targetPosition = player.Position;
             Position = Vector2.Lerp(Position, targetPosition, LerpFactor);
 
             Transform = Matrix.CreateTranslation(new Vector3(-Position, 0)) *
                         Matrix.CreateScale(Zoom) *
-                        Matrix.CreateTranslation(new Vector3(_viewport.Width / 2, _viewport.Height / 2, 0));
+                        Matrix.CreateTranslation(new Vector3(viewport.Width / 2, viewport.Height / 2, 0));
         }
     }
 }

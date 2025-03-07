@@ -5,7 +5,7 @@ public class Game1 : Game
     private readonly GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
     private GameManager _gameManager;
-    private Camera _camera;
+    public Camera _camera;
 
     public Game1()
     {
@@ -56,11 +56,11 @@ public class Game1 : Game
     protected override void Draw(GameTime gameTime)
     {
         GraphicsDevice.Clear(Color.DarkGray);
-    
+
         _spriteBatch.Begin(transformMatrix: _camera.Transform);
         _gameManager.Draw();
         _spriteBatch.End();
-    
+
         base.Draw(gameTime);
     }
 

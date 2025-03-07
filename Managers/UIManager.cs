@@ -5,7 +5,7 @@ public static class UIManager
     private static Texture2D weaponTexture;
     private static Texture2D middleWeapon;
     private static Vector2 pos;
-    public static void Draw(Player player)
+    public static void Draw(Player player, Camera camera)
     {
         //Texture2D bulletTexture = player.Weapon.ProjectileTextureUI;
         Color c = player.Weapon.Reloading ? Color.Red : Color.White;
