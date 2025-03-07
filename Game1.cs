@@ -5,6 +5,7 @@ public class Game1 : Game
     private readonly GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
     private GameManager _gameManager;
+    private Camera _camera;
 
     public Game1()
     {
@@ -24,6 +25,8 @@ public class Game1 : Game
         Globals.Content = Content;
         _gameManager = new(this);
 
+        _camera = new Camera(GraphicsDevice.Viewport);
+
         base.Initialize();
     }
 
@@ -41,17 +44,24 @@ public class Game1 : Game
         Globals.Update(gameTime);
         _gameManager.Update();
 
+        if (_gameManager.player != null)
+        {
+            _camera.Follow(_gameManager.player);
+        }
+
         base.Update(gameTime);
     }
+
 
     protected override void Draw(GameTime gameTime)
     {
         GraphicsDevice.Clear(Color.DarkGray);
-
-        _spriteBatch.Begin();
+    
+        _spriteBatch.Begin(transformMatrix: _camera.Transform);
         _gameManager.Draw();
         _spriteBatch.End();
-
+    
         base.Draw(gameTime);
     }
+
 }

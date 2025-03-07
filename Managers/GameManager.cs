@@ -2,7 +2,7 @@ namespace GA_2d_shooter;
 
 public class GameManager
 {
-    private readonly Player player;
+    public readonly Player player;
     private readonly Background bg;
     private readonly Game1 game;
 
