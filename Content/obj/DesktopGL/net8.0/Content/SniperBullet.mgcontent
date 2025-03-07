@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>c:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/SniperBullet.png</SourceFile>
+  <SourceFile>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/SniperBullet.png</SourceFile>
   <SourceTime>2025-02-24T11:01:18.1328962+01:00</SourceTime>
-  <DestFile>c:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/bin/DesktopGL/Content/SniperBullet.xnb</DestFile>
-  <DestTime>2025-03-07T09:28:07.0517375+01:00</DestTime>
+  <DestFile>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/bin/DesktopGL/Content/SniperBullet.xnb</DestFile>
+  <DestTime>2025-03-07T09:43:55.8170151+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

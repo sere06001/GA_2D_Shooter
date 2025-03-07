@@ -5,7 +5,7 @@ public class GameManager
     public readonly Player player;
     private readonly Background bg;
     private readonly Game1 game;
-    private readonly Camera camera;
+    public Camera camera;
 
     public GameManager(Game1 game)
     {
@@ -17,7 +17,7 @@ public class GameManager
 
         player = new(Globals.Content.Load<Texture2D>("player"));
         ZombieManager.Init();
-        camera = game._camera;
+        camera = new Camera(game.GraphicsDevice.Viewport);
     }
 
     public void Restart()
