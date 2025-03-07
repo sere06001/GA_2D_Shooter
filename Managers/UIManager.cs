@@ -7,18 +7,20 @@ public static class UIManager
     private static Vector2 pos;
     public static void Draw(Player player, Camera camera)
     {
-        int x = 0;
-        int y = 0;
+        float windowWidth = Globals.Bounds.X;
+        float windowHeight = Globals.Bounds.Y;
+        float x = player.Position.X;
+        float y = player.Position.Y;
 
         Color c = player.Weapon.Reloading ? Color.Red : Color.White;
         
         for (int i = 0; i < player.HP; i++)
         {
-            pos = new(i*50+5, 5);
+            pos = new(i*50+5+x-windowWidth/2, y-windowHeight/2+5);
             Globals.SpriteBatch.Draw(player.HPTexture, pos, Color.White);
         }
 
-        float halfX = player.Position.X / 2;
+        float halfX = x / 2;
         int totalWeapons = player.WeaponList.Count;
 
         int spacing = 25;
@@ -64,10 +66,11 @@ public static class UIManager
                     }
                 }
                 currentX -= weaponTexture.Width + spacing;
-                Globals.SpriteBatch.Draw(weaponTexture, new Vector2(currentX, 5), Color.White);
+                pos = new (currentX + x/2, y-windowHeight*0.95f/2);
+                Globals.SpriteBatch.Draw(weaponTexture, pos, Color.White);
             }
-
-            Globals.SpriteBatch.Draw(middleWeapon, new Vector2(middleX, 5), Color.White);
+            pos = new (middleX + x/2, y-windowHeight*0.95f/2);
+            Globals.SpriteBatch.Draw(middleWeapon, pos, Color.White);
 
             currentX = middleX + middleWeaponWidth + spacing;
             for (int i = middleIndex + 1; i < totalWeapons; i++)
@@ -87,18 +90,19 @@ public static class UIManager
                         weaponTexture = player.WeaponList[i].WeaponIconLocked;
                     }
                 }
-                Globals.SpriteBatch.Draw(weaponTexture, new Vector2(currentX, 5), Color.White);
+                pos = new(currentX + x/2, y-windowHeight*0.95f/2);
+                Globals.SpriteBatch.Draw(weaponTexture, pos, Color.White);
                 currentX += weaponTexture.Width + spacing;
             }
         }
 
         string timeString = $"{Globals.Minutes:D2}:{Globals.Seconds:D2}.{Globals.Hundredths:00}";
-        pos = new(player.Position.X*0.89f, player.Position.Y*0f);
+        pos = new(x+windowWidth/2-Globals.Font.MeasureString(timeString).X-5, y-windowHeight/2);
         Globals.SpriteBatch.DrawString(Globals.Font, $"{timeString}", pos, Color.White);
 
         if (player.Weapon != null)
         {
-            pos = new(player.Position.X+200, player.Position.Y+200);
+            pos = new(x+400, y+200);
             Globals.SpriteBatch.DrawString(Globals.Font, player.Weapon.GetAmmo(), pos, c);
         }
     }

@@ -8,7 +8,7 @@ namespace GA_2d_shooter
         public Matrix Transform { get; private set; }
         public Vector2 Position { get; private set; }
         public float Zoom { get; set; } = 1f;
-        public float LerpFactor { get; set; } = 0.1f; // Controls smoothness
+        public float LerpFactor { get; set; } = 1f; // Controls smoothness
 
         private Viewport viewport;
 
