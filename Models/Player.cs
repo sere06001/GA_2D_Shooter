@@ -97,7 +97,7 @@ public class Player : MovingSprite
         }
     }
 
-    public void Update(List<Zombie> zombies)
+    public void Update(List<Zombie> zombies, Camera camera)
     {
         if (prevWeapon != null && prevWeapon != Weapon && prevWeapon != Minigun && 
         prevWeapon.Ammo < prevWeapon.MaxAmmo && !prevWeapon.Reloading)

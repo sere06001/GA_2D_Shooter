@@ -29,15 +29,15 @@ public class GameManager
 
     public void Update()
     {
-        if (game.IsActive)
-        {
+        //if (game.IsActive)
+        //{
             InputManager.Update(player);
             ExperienceManager.Update(player);
-            player.Update(ZombieManager.Zombies);
+            player.Update(ZombieManager.Zombies, camera);
             ZombieManager.Update(player);
             ProjectileManager.Update(ZombieManager.Zombies, player);
             if (player.Dead) Restart(); //Add menu screen
-        }
+        //}
     }
 
     public void Draw()

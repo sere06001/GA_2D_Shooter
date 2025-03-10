@@ -5,6 +5,7 @@ public static class UIManager
     private static Texture2D weaponTexture;
     private static Texture2D middleWeapon;
     private static Vector2 pos;
+    private static Vector2 aaa = new(0,0);
     public static void Draw(Player player, Camera camera)
     {
         float windowWidth = Globals.Bounds.X;
@@ -99,6 +100,19 @@ public static class UIManager
         string timeString = $"{Globals.Minutes:D2}:{Globals.Seconds:D2}.{Globals.Hundredths:00}";
         pos = new(x+windowWidth/2-Globals.Font.MeasureString(timeString).X-5, y-windowHeight/2);
         Globals.SpriteBatch.DrawString(Globals.Font, $"{timeString}", pos, Color.White);
+        pos = new(x, y-200);
+        Globals.SpriteBatch.DrawString(Globals.Font, $"{player.Position}", pos, Color.White);
+        pos = new(x, y-100);
+        Globals.SpriteBatch.DrawString(Globals.Font, $"{player.Rotation}", pos, Color.White);
+        pos = new(x, y);
+        Globals.SpriteBatch.DrawString(Globals.Font, $"{InputManager.MousePosition}", pos, Color.White);
+        pos = new(x, y+100);
+        
+        if (InputManager.MouseLeftDown)
+        {
+            aaa = InputManager.MousePosition;
+        }
+        Globals.SpriteBatch.DrawString(Globals.Font, $"{aaa}", pos, Color.White);
 
         if (player.Weapon != null)
         {

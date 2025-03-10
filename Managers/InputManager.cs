@@ -11,7 +11,6 @@ public static class InputManager
     //public static bool MouseRightClicked { get; private set; }
     public static bool MouseLeftDown { get; private set; }
     public static Keys? WeaponKey { get; private set; }
-
     public static void Update(Player player)
     {
         var keyboardState = Keyboard.GetState();
@@ -47,6 +46,8 @@ public static class InputManager
             WeaponKey = null;
 
         //WeaponKeys = lastKeyboardState.IsKeyUp(Keys.D1) && keyboardState.IsKeyDown(Keys.D1);
+
+        
 
         lastMouseState = mouseState;
         lastKeyboardState = keyboardState;

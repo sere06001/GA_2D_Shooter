@@ -6,7 +6,7 @@ namespace GA_2d_shooter
     public class Camera
     {
         public Matrix Transform { get; private set; }
-        public Vector2 Position { get; private set; }
+        public Vector2 Position { get; set; }
         public float Zoom { get; set; } = 1f;
         public float LerpFactor { get; set; } = 1f; // Controls smoothness
 
