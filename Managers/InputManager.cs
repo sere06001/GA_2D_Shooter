@@ -5,13 +5,25 @@ public static class InputManager
     private static MouseState lastMouseState;
     private static KeyboardState lastKeyboardState;
     private static Vector2 direction;
+    private static Camera camera;
+
     public static Vector2 Direction => direction;
-    public static Vector2 MousePosition => Mouse.GetState().Position.ToVector2();
-    //public static bool MouseClicked { get; private set; }
+    public static Vector2 MouseScreenPosition => Mouse.GetState().Position.ToVector2();
+    private static Player currentPlayer;
+    public static Vector2 MouseWorldPosition;
     public static bool MouseLeftDown { get; private set; }
     public static Keys? WeaponKey { get; private set; }
+
+    public static void Init(Camera cam)
+    {
+        camera = cam;
+    }
     public static void Update(Player player)
     {
+        currentPlayer = player;
+        var screenCenter = new Vector2(Globals.Bounds.X / 2, Globals.Bounds.Y / 2);
+        MouseWorldPosition = (MouseScreenPosition - screenCenter) / camera.Zoom + currentPlayer.Position;
+        
         var keyboardState = Keyboard.GetState();
         var mouseState = Mouse.GetState();
 

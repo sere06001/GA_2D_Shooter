@@ -18,6 +18,7 @@ public class GameManager
         player = new(Globals.Content.Load<Texture2D>("player"));
         ZombieManager.Init();
         camera = new Camera(game.GraphicsDevice.Viewport);
+        InputManager.Init(camera);
     }
 
     public void Restart()

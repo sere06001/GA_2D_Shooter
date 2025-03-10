@@ -116,7 +116,7 @@ public class Player : MovingSprite
             );
         }
 
-        var toMouse = InputManager.MousePosition - Position;
+        var toMouse = InputManager.MouseWorldPosition - Position;
         Rotation = (float)Math.Atan2(toMouse.Y, toMouse.X);
 
         Weapon.Update();

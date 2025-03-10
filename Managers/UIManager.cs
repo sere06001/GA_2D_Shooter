@@ -105,7 +105,7 @@ public static class UIManager
         pos = new(x, y-100);
         Globals.SpriteBatch.DrawString(Globals.Font, $"Rot: {player.Rotation}", pos, Color.White);
         pos = new(x-100, y);
-        Globals.SpriteBatch.DrawString(Globals.Font, $"Mouse Pos: {InputManager.MousePosition}", pos, Color.White);
+        Globals.SpriteBatch.DrawString(Globals.Font, $"Mouse Pos: {InputManager.MouseWorldPosition}", pos, Color.White);
 
         if (player.Weapon != null)
         {
