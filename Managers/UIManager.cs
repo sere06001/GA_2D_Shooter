@@ -101,12 +101,11 @@ public static class UIManager
         pos = new(x+windowWidth/2-Globals.Font.MeasureString(timeString).X-5, y-windowHeight/2);
         Globals.SpriteBatch.DrawString(Globals.Font, $"{timeString}", pos, Color.White);
         pos = new(x, y-200);
-        Globals.SpriteBatch.DrawString(Globals.Font, $"{player.Position}", pos, Color.White);
+        Globals.SpriteBatch.DrawString(Globals.Font, $"Pos: {player.Position}", pos, Color.White);
         pos = new(x, y-100);
-        Globals.SpriteBatch.DrawString(Globals.Font, $"{player.Rotation}", pos, Color.White);
-        pos = new(x, y);
-        Globals.SpriteBatch.DrawString(Globals.Font, $"{InputManager.MousePosition}", pos, Color.White);
-        pos = new(x, y+100);
+        Globals.SpriteBatch.DrawString(Globals.Font, $"Rot: {player.Rotation}", pos, Color.White);
+        pos = new(x-100, y);
+        Globals.SpriteBatch.DrawString(Globals.Font, $"Mouse Pos: {InputManager.MousePosition}", pos, Color.White);
 
         if (player.Weapon != null)
         {

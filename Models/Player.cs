@@ -99,11 +99,11 @@ public class Player : MovingSprite
 
     public void Update(List<Zombie> zombies, Camera camera)
     {
-        if (prevWeapon != null && prevWeapon != Weapon && prevWeapon != Minigun && 
+        /*if (prevWeapon != null && prevWeapon != Weapon && prevWeapon != Minigun && 
         prevWeapon.Ammo < prevWeapon.MaxAmmo && !prevWeapon.Reloading)
         {
             prevWeapon.Reload();
-        }
+        }*/ //Auto reloader
 
         if (InputManager.Direction != Vector2.Zero)
         {
@@ -146,11 +146,6 @@ public class Player : MovingSprite
         {
             Weapon.Fire(this);
         }
-
-        /*if (InputManager.MouseRightClicked)
-        {
-            Weapon.Reload();
-        }*/
 
         CheckDeath(zombies);
     }

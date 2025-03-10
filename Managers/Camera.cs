@@ -7,15 +7,17 @@ namespace GA_2d_shooter
     {
         public Matrix Transform { get; private set; }
         public Vector2 Position { get; set; }
-        public float Zoom { get; set; } = 1f;
-        public float LerpFactor { get; set; } = 1f; // Controls smoothness
+        public float Zoom { get; set; }
+        public float LerpFactor { get; set; }
 
         public Viewport viewport;
 
         public Camera(Viewport viewport)
         {
             this.viewport = viewport;
-            Position = Vector2.Zero; // Initialize at (0,0)
+            Position = Vector2.Zero;
+            Zoom = 1f;
+            LerpFactor = 1f; //Controls smoothness
         }
 
         public void Follow(Player player)
