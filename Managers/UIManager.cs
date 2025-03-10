@@ -107,12 +107,6 @@ public static class UIManager
         pos = new(x, y);
         Globals.SpriteBatch.DrawString(Globals.Font, $"{InputManager.MousePosition}", pos, Color.White);
         pos = new(x, y+100);
-        
-        if (InputManager.MouseLeftDown)
-        {
-            aaa = InputManager.MousePosition;
-        }
-        Globals.SpriteBatch.DrawString(Globals.Font, $"{aaa}", pos, Color.White);
 
         if (player.Weapon != null)
         {
