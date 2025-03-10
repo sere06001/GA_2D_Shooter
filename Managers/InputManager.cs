@@ -6,7 +6,7 @@ public static class InputManager
     private static KeyboardState lastKeyboardState;
     private static Vector2 direction;
     public static Vector2 Direction => direction;
-    public static Vector2 MousePosition = Mouse.GetState().Position.ToVector2();
+    public static Vector2 MousePosition => Mouse.GetState().Position.ToVector2();
     //public static bool MouseClicked { get; private set; }
     public static bool MouseLeftDown { get; private set; }
     public static Keys? WeaponKey { get; private set; }

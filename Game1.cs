@@ -12,14 +12,16 @@ public class Game1 : Game
         _graphics = new GraphicsDeviceManager(this);
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
+        _graphics.IsFullScreen = true;
     }
 
     protected override void Initialize()
     {
-        Globals.Bounds = new(1200, 600);
-        _graphics.PreferredBackBufferWidth = Globals.Bounds.X;
-        _graphics.PreferredBackBufferHeight = Globals.Bounds.Y;
+        _graphics.PreferredBackBufferWidth = GraphicsDevice.Adapter.CurrentDisplayMode.Width;
+        _graphics.PreferredBackBufferHeight = GraphicsDevice.Adapter.CurrentDisplayMode.Height;
         _graphics.ApplyChanges();
+
+        Globals.Bounds = new(_graphics.PreferredBackBufferWidth, _graphics.PreferredBackBufferHeight);
 
         Globals.Font = Content.Load<SpriteFont>("font");
         Globals.Content = Content;
