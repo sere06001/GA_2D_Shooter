@@ -14,6 +14,7 @@ public class Player : MovingSprite
     public int HP { get; private set; }
     public bool Dead { get; private set; }
     public int Experience { get; private set; }
+    private float Iframe { get;  set; }
     private DateTime lastHitTime = DateTime.MinValue;
 
     public Player(Texture2D tex) : base(tex, GetStartPosition())
@@ -21,6 +22,7 @@ public class Player : MovingSprite
         Reset();
         Speed = 200;
         Experience = SaveManager.LoadExperience();
+        Iframe = 3f; //3 sec iframe
     }
 
     private static Vector2 GetStartPosition()
@@ -83,7 +85,7 @@ public class Player : MovingSprite
 
             if ((Position - z.Position).Length() < z.HitRange)
             {
-                if ((DateTime.Now - lastHitTime).TotalSeconds >= 2.5) //Iframe 2.5 seconds
+                if ((DateTime.Now - lastHitTime).TotalSeconds >= Iframe)
                 {
                     HP--;
                     lastHitTime = DateTime.Now;

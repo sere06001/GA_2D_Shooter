@@ -6,8 +6,8 @@ public static class InputManager
     private static KeyboardState lastKeyboardState;
     private static Vector2 direction;
     public static Vector2 Direction => direction;
-    public static Vector2 MousePosition => Mouse.GetState().Position.ToVector2();
-    public static bool MouseClicked { get; private set; }
+    public static Vector2 MousePosition = Mouse.GetState().Position.ToVector2();
+    //public static bool MouseClicked { get; private set; }
     public static bool MouseLeftDown { get; private set; }
     public static Keys? WeaponKey { get; private set; }
     public static void Update(Player player)
@@ -23,7 +23,7 @@ public static class InputManager
         if (keyboardState.IsKeyDown(Keys.R)) player.Weapon.Reload();
 
         MouseLeftDown = mouseState.LeftButton == ButtonState.Pressed;
-        MouseClicked = MouseLeftDown && (lastMouseState.LeftButton == ButtonState.Released);
+        //MouseClicked = MouseLeftDown && (lastMouseState.LeftButton == ButtonState.Released);
 
         if (lastKeyboardState.IsKeyUp(Keys.D1) && keyboardState.IsKeyDown(Keys.D1))
             WeaponKey = Keys.D1;

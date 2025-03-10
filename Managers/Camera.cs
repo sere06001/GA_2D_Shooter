@@ -16,7 +16,7 @@ namespace GA_2d_shooter
         {
             this.viewport = viewport;
             Position = Vector2.Zero;
-            Zoom = 1f;
+            Zoom = 0.9f;
             LerpFactor = 1f; //Controls smoothness
         }
 
