@@ -1,6 +1,3 @@
-using System;
-using System.IO;
-
 namespace GA_2d_shooter
 {
     public static class SaveManager

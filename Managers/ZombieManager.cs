@@ -1,5 +1,3 @@
-using System.Diagnostics;
-
 namespace GA_2d_shooter;
 
 public static class ZombieManager

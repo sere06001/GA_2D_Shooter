@@ -1,6 +1,3 @@
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-
 namespace GA_2d_shooter
 {
     public class Camera
