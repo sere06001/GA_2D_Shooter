@@ -10,7 +10,7 @@ namespace GA_2d_shooter
         public float Zoom { get; set; } = 1f;
         public float LerpFactor { get; set; } = 1f; // Controls smoothness
 
-        private Viewport viewport;
+        public Viewport viewport;
 
         public Camera(Viewport viewport)
         {
