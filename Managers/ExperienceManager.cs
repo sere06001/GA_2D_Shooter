@@ -4,8 +4,8 @@ public static class ExperienceManager
 {
     private static Texture2D texture;
     private static Vector2 position;
-    private static Vector2 textPosition;
     private static string playerExp;
+    private static Vector2 centeredPosition;
 
     public static void Init(Texture2D tex)
     {
@@ -15,11 +15,21 @@ public static class ExperienceManager
 
     public static void Update(Player player)
     {
-        position = new (player.Position.X, player.Position.Y);
-        position = new (position.X+Globals.Bounds.X/2-texture.Width, position.Y-Globals.Bounds.Y/2-texture.Height+50);
+        position = new(player.Position.X, player.Position.Y);
+    
+        position = new(
+            position.X + Globals.Bounds.X/2 - texture.Width*2,  // Account for 2x scale
+            position.Y - Globals.Bounds.Y/2 + 50
+        );
+
         playerExp = player.Experience.ToString();
-        var x = Globals.Font.MeasureString(playerExp).X / 2;
-        textPosition = new(position.X - texture.Width, position.Y+texture.Height/2);
+    
+        Vector2 textSize = Globals.Font.MeasureString(playerExp);
+        
+        centeredPosition = new Vector2(
+            position.X + texture.Width - textSize.X/2,
+            position.Y + texture.Height - textSize.Y/2
+        );
 
         foreach (Weapon gun in player.WeaponList)
         {
@@ -32,7 +42,11 @@ public static class ExperienceManager
 
     public static void Draw()
     {
-        Globals.SpriteBatch.Draw(texture, position, null, Color.White * 1f, 1f, Vector2.Zero, 2f, SpriteEffects.None, 1f);
-        Globals.SpriteBatch.DrawString(Globals.Font, playerExp, textPosition, Color.White);
+        if (texture == null || Globals.Font == null || Globals.SpriteBatch == null || string.IsNullOrEmpty(playerExp))
+            return;
+
+        Globals.SpriteBatch.Draw(texture, position, null, Color.White * 1f, 0f, Vector2.Zero, 2f, SpriteEffects.None, 1f);
+        
+        Globals.SpriteBatch.DrawString(Globals.Font, playerExp, centeredPosition, Color.White);
     }
 }
