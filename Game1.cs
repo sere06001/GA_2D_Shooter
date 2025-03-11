@@ -16,10 +16,6 @@ public class Game1 : Game
         IsMouseVisible = true;
         _graphics.IsFullScreen = true;
     }
-    public void Settings()
-    {
-        
-    }
 
     protected override void Initialize()
     {
@@ -47,8 +43,8 @@ public class Game1 : Game
 
     protected override void Update(GameTime gameTime)
     {
-        if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-            Exit();
+        if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+            isInMenu = true;
 
         if (isInMenu)
         {

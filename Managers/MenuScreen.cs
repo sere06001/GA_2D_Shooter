@@ -23,6 +23,10 @@ public class MenuScreen
             );
         }
     }
+    public void Settings()
+    {
+        
+    }
     public void Update(GameTime gameTime)
     {
         KeyboardState currentKeyState = Keyboard.GetState();
@@ -38,7 +42,7 @@ public class MenuScreen
                     game.isInMenu = false;
                     break;
                 case 1: //Settings
-                    game.Settings();
+                    Settings();
                     break;
                 case 2: //Exit
                     game.Exit();

@@ -15,9 +15,9 @@ public static class Globals
     public static void Update(GameTime gt)
     {
         float totalTime = (float)gt.TotalGameTime.TotalSeconds;
-        Minutes = (int)(totalTime / 60);   // Get minutes
-        Seconds = (int)(totalTime % 60);   // Get remaining seconds
-        Hundredths = (totalTime % 1) * 100; // Get hundredths of a second
+        Minutes = (int)(totalTime / 60);
+        Seconds = (int)(totalTime % 60);
+        Hundredths = totalTime % 1 * 100;
         TotalSeconds = (float)gt.ElapsedGameTime.TotalSeconds;
     }
 }
