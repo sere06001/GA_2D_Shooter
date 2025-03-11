@@ -28,7 +28,36 @@ public class Zombie : MovingSprite
         if (toPlayer.Length() > 4)
         {
             var dir = Vector2.Normalize(toPlayer);
-            Position += dir * Speed * Globals.TotalSeconds;
+            Vector2 newPosition = Position + dir * Speed * Globals.TotalSeconds;
+
+            // Check collision with other zombies
+            bool canMove = true;
+            foreach (var otherZombie in ZombieManager.Zombies)
+            {
+                if (otherZombie != this)
+                {
+                    float distance = Vector2.Distance(newPosition, otherZombie.Position);
+                    float minDistance = (texture.Width + otherZombie.texture.Width) / 3f; // Adjust divisor for tighter/looser packing
+                    if (otherZombie is Fastie)
+                    {
+                        canMove = true;
+                    }
+                                        
+                    if (distance < minDistance)
+                    {
+                        canMove = false;
+                        // Add slight repulsion to prevent stacking
+                        Vector2 awayFromOther = Vector2.Normalize(Position - otherZombie.Position);
+                        Position += awayFromOther * Speed * Globals.TotalSeconds * 0.1f;
+                        break;
+                    }
+                }
+            }
+
+            if (canMove)
+            {
+                Position = newPosition;
+            }
         }
     }
 }
