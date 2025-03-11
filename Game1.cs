@@ -6,6 +6,8 @@ public class Game1 : Game
     private SpriteBatch _spriteBatch;
     private GameManager _gameManager;
     public Camera _camera;
+    private MenuScreen menuScreen;
+    public bool isInMenu = true;
 
     public Game1()
     {
@@ -30,6 +32,7 @@ public class Game1 : Game
         _camera = new Camera(GraphicsDevice.Viewport);
 
         base.Initialize();
+        menuScreen = new MenuScreen(this);
     }
 
     protected override void LoadContent()
@@ -43,25 +46,43 @@ public class Game1 : Game
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
 
-        Globals.Update(gameTime);
-        _gameManager.Update();
-
-        if (_gameManager.player != null)
+        if (isInMenu)
         {
-            _camera.Follow(_gameManager.player);
+            menuScreen.Update(gameTime);
         }
+        else
+        {
+            Globals.Update(gameTime);
+            _gameManager.Update();
 
+            if (_gameManager.player != null)
+            {
+                _camera.Follow(_gameManager.player);
+            }
+        }
+        
         base.Update(gameTime);
     }
 
 
     protected override void Draw(GameTime gameTime)
     {
-        GraphicsDevice.Clear(Color.DarkGray);
+        GraphicsDevice.Clear(Color.Red);
 
-        _spriteBatch.Begin(transformMatrix: _camera.Transform);
-        _gameManager.Draw();
-        _spriteBatch.End();
+        
+        if (isInMenu)
+        {
+            _spriteBatch.Begin();
+            menuScreen.Draw(_spriteBatch);
+            _spriteBatch.End();
+        }
+        else
+        {
+            _spriteBatch.Begin(transformMatrix: _camera.Transform);
+            _gameManager.Draw();
+            _spriteBatch.End();
+        }
+        
 
         base.Draw(gameTime);
     }
