@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>c:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/ShotgunIconLocked.png</SourceFile>
+  <SourceFile>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/ShotgunIconLocked.png</SourceFile>
   <SourceTime>2025-03-03T11:27:45.1028405+01:00</SourceTime>
-  <DestFile>c:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/bin/DesktopGL/Content/ShotgunIconLocked.xnb</DestFile>
-  <DestTime>2025-03-11T10:38:31.9325166+01:00</DestTime>
+  <DestFile>C:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/bin/DesktopGL/Content/ShotgunIconLocked.xnb</DestFile>
+  <DestTime>2025-03-11T11:57:10.2486769+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

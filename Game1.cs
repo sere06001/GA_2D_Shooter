@@ -16,6 +16,10 @@ public class Game1 : Game
         IsMouseVisible = true;
         _graphics.IsFullScreen = true;
     }
+    public void Settings()
+    {
+        
+    }
 
     protected override void Initialize()
     {

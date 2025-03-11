@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/pd0821xBl4=",
+  "dgSpecHash": "3pmW/j3eLSk=",
   "success": true,
-  "projectFilePath": "c:\\GA-Monogame\\GA_2DSpel\\GA_2D_Shooter\\2D Shooter.csproj",
+  "projectFilePath": "C:\\GA-Monogame\\GA_2DSpel\\GA_2D_Shooter\\2D Shooter.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sere06001\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\monogame.content.builder.task.3.8.1.303.nupkg.sha512",
     "C:\\Users\\sere06001\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.1.303\\monogame.framework.desktopgl.3.8.1.303.nupkg.sha512"
