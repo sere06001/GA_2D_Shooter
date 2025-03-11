@@ -10,7 +10,6 @@ public static class ZombieManager
     private static float spawnCooldown;
     private static float spawnTime;
     private static Random random;
-    private static int padding;
     public static int totalZombieCount;
 
     public static void Init()
@@ -22,7 +21,6 @@ public static class ZombieManager
         spawnCooldown = spawnCooldownReset;
         spawnTime = spawnCooldown;
         random = new();
-        padding = textureZombie.Width / 2;
         totalZombieCount = 0;
     }
 
@@ -33,24 +31,63 @@ public static class ZombieManager
         spawnTime = spawnCooldown;
     }
 
-    private static Vector2 RandomPosition()
+    private static Vector2 RandomPosition(Player player)
     {
-        float w = Globals.Bounds.X;
-        float h = Globals.Bounds.Y;
-        Vector2 pos = new();
+        float screenWidth = Globals.Bounds.X;
+        float screenHeight = Globals.Bounds.Y;
 
-        if (random.NextDouble() <  w / (w + h))
+        Vector2 playerPos = player.Position;
+
+        float spawnBuffer = 50f; //Extra distance
+        float minX = playerPos.X - screenWidth/2 - spawnBuffer;
+        float maxX = playerPos.X + screenWidth/2 + spawnBuffer;
+        float minY = playerPos.Y - screenHeight/2 - spawnBuffer;
+        float maxY = playerPos.Y + screenHeight/2 + spawnBuffer;
+
+        Vector2 spawnPos;
+        do
         {
-            pos.X = (int)(random.NextDouble() * w);
-            pos.Y = (int)(random.NextDouble() < 0.5 ? -padding : h + padding);
-        }
-        else
-        {
-            pos.Y = (int)(random.NextDouble() * h);
-            pos.X = (int)(random.NextDouble() < 0.5 ? -padding : w + padding);
-        }
-        
-        return pos;
+            //Randomly choose edge (0=top, 1=right, 2=bottom, 3=left)
+            int edge = random.Next(4);
+
+            switch (edge)
+            {
+                case 0: //Top
+                    spawnPos = new Vector2(
+                        random.Next((int)minX, (int)maxX),
+                        minY
+                    );
+                    break;
+                case 1: //Right
+                    spawnPos = new Vector2(
+                        maxX,
+                        random.Next((int)minY, (int)maxY)
+                    );
+                    break;
+                case 2: //Bottom
+                    spawnPos = new Vector2(
+                        random.Next((int)minX, (int)maxX),
+                        maxY
+                    );
+                    break;
+                default: //Left
+                    spawnPos = new Vector2(
+                        minX,
+                        random.Next((int)minY, (int)maxY)
+                    );
+                    break;
+            }
+        } while (IsPositionVisible(spawnPos, playerPos, screenWidth, screenHeight));
+
+        return spawnPos;
+    }
+
+    private static bool IsPositionVisible(Vector2 position, Vector2 playerPos, float screenWidth, float screenHeight)
+    {
+        return position.X > playerPos.X - screenWidth/2 &&
+               position.X < playerPos.X + screenWidth/2 &&
+               position.Y > playerPos.Y - screenHeight/2 &&
+               position.Y < playerPos.Y + screenHeight/2;
     }
 
     public static void RandomTexture()
@@ -60,24 +97,24 @@ public static class ZombieManager
         textureFastie = Globals.Content.Load<Texture2D>($"ZombieFastie{random.Next(1,3)}");
     }
 
-    public static void AddZombie()
+    public static void AddZombie(Player player)
     {
-        if (Zombies.Count < 00) //Limit max zombies on screen to 100
+        if (Zombies.Count < 100) //Limit max zombies on screen to 100
         {
             RandomTexture();
             
             if (totalZombieCount % 10 == 0 && totalZombieCount > 0)
             {
-                Zombies.Add(new Tank(textureTank, RandomPosition()));
+                Zombies.Add(new Tank(textureTank, RandomPosition(player)));
                 totalZombieCount++;
             }
             if (totalZombieCount % 5 == 0 && totalZombieCount > 0)
             {
-                Zombies.Add(new Fastie(textureFastie, RandomPosition()));
+                Zombies.Add(new Fastie(textureFastie, RandomPosition(player)));
                 totalZombieCount++;
             }
             //Spawn regular zombies even if other zombie type spawns
-            Zombies.Add(new(textureZombie, RandomPosition()));
+            Zombies.Add(new(textureZombie, RandomPosition(player)));
             totalZombieCount++;
         }
 
@@ -93,7 +130,7 @@ public static class ZombieManager
         while(spawnTime <= 0)
         {
             spawnTime += spawnCooldown;
-            AddZombie();
+            AddZombie(player);
         }
 
         foreach (var z in Zombies)
