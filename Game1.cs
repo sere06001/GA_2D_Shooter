@@ -4,10 +4,11 @@ public class Game1 : Game
 {
     private readonly GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
-    private GameManager _gameManager;
-    public Camera _camera;
+    private GameManager gameManager;
+    public Camera camera;
     private MenuScreen menuScreen;
     public bool isInMenu = true;
+    public bool isFirstTimeStartingGame = true;
 
     public Game1()
     {
@@ -15,6 +16,10 @@ public class Game1 : Game
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
         _graphics.IsFullScreen = true;
+    }
+    public void Restart()
+    {
+        gameManager.Restart();
     }
 
     protected override void Initialize()
@@ -27,9 +32,9 @@ public class Game1 : Game
 
         Globals.Font = Content.Load<SpriteFont>("font");
         Globals.Content = Content;
-        _gameManager = new(this);
+        gameManager = new(this);
 
-        _camera = new Camera(GraphicsDevice.Viewport);
+        camera = new Camera(GraphicsDevice.Viewport);
 
         base.Initialize();
         menuScreen = new MenuScreen(this);
@@ -53,11 +58,11 @@ public class Game1 : Game
         else
         {
             Globals.Update(gameTime);
-            _gameManager.Update();
+            gameManager.Update();
 
-            if (_gameManager.player != null)
+            if (gameManager.player != null)
             {
-                _camera.Follow(_gameManager.player);
+                camera.Follow(gameManager.player);
             }
         }
         
@@ -78,8 +83,8 @@ public class Game1 : Game
         }
         else
         {
-            _spriteBatch.Begin(transformMatrix: _camera.Transform);
-            _gameManager.Draw();
+            _spriteBatch.Begin(transformMatrix: camera.Transform);
+            gameManager.Draw();
             _spriteBatch.End();
         }
         

@@ -6,6 +6,7 @@ public static class UIManager
     private static Texture2D middleWeapon;
     private static Vector2 pos;
 
+
     public static void Draw(Player player, Camera camera)
     {
         float windowWidth = Globals.Bounds.X;

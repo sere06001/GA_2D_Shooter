@@ -12,14 +12,23 @@ public class MenuScreen
     {
         this.game = game;
         menuPositions = new Vector2[menuItems.Length];
-        
+
         float centerX = Globals.Bounds.X / 2;
-        float startY = Globals.Bounds.Y / 3;
+        float centerY = Globals.Bounds.Y / 2;
+
+        // Calculate text height and add some padding
+        float textHeight = Globals.Font.MeasureString(menuItems[0]).Y;
+        float spacing = textHeight * 2f; // Double the text height for spacing
+
+        // Find middle item index
+        int middleIndex = menuItems.Length / 2;
+
+        // Calculate positions relative to middle
         for (int i = 0; i < menuItems.Length; i++)
         {
             menuPositions[i] = new Vector2(
                 centerX,
-                startY + i * 80
+                centerY + (i - middleIndex) * spacing
             );
         }
     }
@@ -36,17 +45,37 @@ public class MenuScreen
             selectedIndex = (selectedIndex - 1 + menuItems.Length) % menuItems.Length;
         if (currentKeyState.IsKeyDown(Keys.Enter) && !prevKeyState.IsKeyDown(Keys.Enter))
         {
-            switch (selectedIndex)
+            if (game.isFirstTimeStartingGame)
             {
-                case 0: //Start Game
-                    game.isInMenu = false;
-                    break;
-                case 1: //Settings
-                    Settings();
-                    break;
-                case 2: //Exit
-                    game.Exit();
-                    break;
+                switch (selectedIndex)
+                {
+                    case 0: //Start new game
+                        game.isInMenu = false;
+                        break;
+                    case 1: //Settings
+                        Settings();
+                        break;
+                    case 2: //Exit
+                        game.Exit();
+                        break;
+                }
+                game.isFirstTimeStartingGame = false;
+            }
+            else
+            {
+                switch (selectedIndex)
+                {
+                    case 0: //Start new game
+                        game.isInMenu = false;
+                        game.Restart();
+                        break;
+                    case 1: //Resume
+                        game.isInMenu = false;
+                        break;
+                    case 2: //Exit
+                        game.Exit();
+                        break;
+                }
             }
         }
         prevKeyState = currentKeyState;

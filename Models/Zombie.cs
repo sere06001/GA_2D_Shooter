@@ -34,14 +34,16 @@ public class Zombie : MovingSprite
             bool canMove = true;
             foreach (var otherZombie in ZombieManager.Zombies)
             {
+                if (this is Tank || this is Fastie)
+                {
+                    canMove = true;
+                    break;
+                }
+                
                 if (otherZombie != this)
                 {
                     float distance = Vector2.Distance(newPosition, otherZombie.Position);
-                    float minDistance = (texture.Width + otherZombie.texture.Width) / 3f; // Adjust divisor for tighter/looser packing
-                    if (otherZombie is Fastie)
-                    {
-                        canMove = true;
-                    }
+                    float minDistance = (texture.Width + otherZombie.texture.Width) / 3f;
                                         
                     if (distance < minDistance)
                     {
