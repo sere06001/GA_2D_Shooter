@@ -42,22 +42,31 @@ public static class UIManager
             }
         }
     }
+    public static void DebugUI(Player player, float x, float y)
+    {
+        pos = new(x, y-200);
+        Globals.SpriteBatch.DrawString(Globals.Font, $"Pos: {player.Position}", pos, Color.White);
+        pos = new(x, y-100);
+        Globals.SpriteBatch.DrawString(Globals.Font, $"Rot: {player.Rotation}", pos, Color.White);
+        pos = new(x-100, y);
+        Globals.SpriteBatch.DrawString(Globals.Font, $"Mouse Pos: {InputManager.MouseWorldPosition}", pos, Color.White);
+    }
     public static void Draw(Player player, Camera camera)
     {
         float windowWidth = Globals.Bounds.X;
         float windowHeight = Globals.Bounds.Y;
-        float x = player.Position.X;
-        float y = player.Position.Y;
+        float playerX = player.Position.X;
+        float playerY = player.Position.Y;
 
         Color c = player.Weapon.Reloading ? Color.Red : Color.White;
         
         for (int i = 0; i < player.HP; i++)
         {
-            pos = new(i*50+5+x-windowWidth/2, y-windowHeight/2+5);
+            pos = new(i*50+5+playerX-windowWidth/2, playerY-windowHeight/2+5);
             Globals.SpriteBatch.Draw(player.HPTexture, pos, Color.White);
         }
 
-        float halfX = x / 2;
+        float halfX = playerX / 2;
         int totalWeapons = player.WeaponList.Count;
 
         int spacing = 25;
@@ -75,35 +84,31 @@ public static class UIManager
             {
                 GetNonMiddleWepUI(player, i);
                 currentX -= weaponTexture.Width + spacing;
-                pos = new (currentX + x/2, y-windowHeight*0.95f/2);
+                pos = new (currentX + playerX/2, playerY-windowHeight*0.95f/2);
                 Globals.SpriteBatch.Draw(weaponTexture, pos, Color.White);
             }
-            pos = new (middleX + x/2, y-windowHeight*0.95f/2);
+            pos = new (middleX + playerX/2, playerY-windowHeight*0.95f/2);
             Globals.SpriteBatch.Draw(middleWeapon, pos, Color.White);
 
             currentX = middleX + middleWeaponWidth + spacing;
             for (int i = middleIndex + 1; i < totalWeapons; i++)
             {
                 GetNonMiddleWepUI(player, i);
-                pos = new(currentX + x/2, y-windowHeight*0.95f/2);
+                pos = new(currentX + playerX/2, playerY-windowHeight*0.95f/2);
                 Globals.SpriteBatch.Draw(weaponTexture, pos, Color.White);
                 currentX += weaponTexture.Width + spacing;
             }
         }
 
         string timeString = $"{Globals.Minutes:D2}:{Globals.Seconds:D2}.{Globals.Hundredths:00}";
-        pos = new(x+windowWidth/2-Globals.Font.MeasureString(timeString).X-5, y-windowHeight/2);
+        pos = new(playerX+windowWidth/2-Globals.Font.MeasureString(timeString).X-5, playerY-windowHeight/2);
         Globals.SpriteBatch.DrawString(Globals.Font, $"{timeString}", pos, Color.White);
-        pos = new(x, y-200);
-        Globals.SpriteBatch.DrawString(Globals.Font, $"Pos: {player.Position}", pos, Color.White);
-        pos = new(x, y-100);
-        Globals.SpriteBatch.DrawString(Globals.Font, $"Rot: {player.Rotation}", pos, Color.White);
-        pos = new(x-100, y);
-        Globals.SpriteBatch.DrawString(Globals.Font, $"Mouse Pos: {InputManager.MouseWorldPosition}", pos, Color.White);
+
+        DebugUI(player, playerX, playerY);
 
         if (player.Weapon != null)
         {
-            pos = new(x+400, y+200);
+            pos = new(playerX+400, playerY+200);
             Globals.SpriteBatch.DrawString(Globals.Font, player.Weapon.GetAmmo(), pos, c);
         }
     }
