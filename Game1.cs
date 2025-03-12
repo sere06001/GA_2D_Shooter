@@ -8,7 +8,7 @@ public class Game1 : Game
     public Camera camera;
     private MenuScreen menuScreen;
     public bool isInMenu = true;
-    public bool isFirstTimeStartingGame = true;
+    public bool isFirstTimeInMenu = true;
 
     public Game1()
     {
@@ -50,6 +50,8 @@ public class Game1 : Game
     {
         if (Keyboard.GetState().IsKeyDown(Keys.Escape))
             isInMenu = true;
+        if (Keyboard.GetState().IsKeyDown(Keys.F11))
+            _graphics.IsFullScreen = !_graphics.IsFullScreen;
 
         if (isInMenu)
         {

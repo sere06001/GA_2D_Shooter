@@ -6,7 +6,42 @@ public static class UIManager
     private static Texture2D middleWeapon;
     private static Vector2 pos;
 
-
+    public static void GetNonMiddleWepUI(Player player, int index)
+    {
+        if (player.WeaponList[index] == player.Weapon)
+        {
+            weaponTexture = player.WeaponList[index].WeaponIconSelected;
+        }
+        else
+        {
+            if (player.WeaponList[index].IsUnlocked)
+            {
+                weaponTexture = player.WeaponList[index].WeaponIcon;
+            }
+            else
+            {
+                weaponTexture = player.WeaponList[index].WeaponIconLocked;
+            }
+        }
+    }
+    public static void GetMiddleIndexWepUI(Player player, int index)
+    {
+        if (player.Weapon == player.WeaponList[index])
+        {
+            middleWeapon = player.WeaponList[index].WeaponIconSelected;
+        }
+        else
+        {
+            if (player.WeaponList[index].IsUnlocked)
+            {
+                middleWeapon = player.WeaponList[index].WeaponIcon;
+            }
+            else
+            {
+                middleWeapon = player.WeaponList[index].WeaponIconLocked;
+            }
+        }
+    }
     public static void Draw(Player player, Camera camera)
     {
         float windowWidth = Globals.Bounds.X;
@@ -30,21 +65,7 @@ public static class UIManager
         if (totalWeapons > 0)
         {
             int middleIndex = totalWeapons / 2;
-            if (player.Weapon == player.WeaponList[middleIndex])
-            {
-                middleWeapon = player.WeaponList[middleIndex].WeaponIconSelected;
-            }
-            else
-            {
-                if (player.WeaponList[middleIndex].IsUnlocked)
-                {
-                    middleWeapon = player.WeaponList[middleIndex].WeaponIcon;
-                }
-                else
-                {
-                    middleWeapon = player.WeaponList[middleIndex].WeaponIconLocked;
-                }
-            }
+            GetMiddleIndexWepUI(player, middleIndex);
             int middleWeaponWidth = middleWeapon.Width;
 
             float middleX = halfX - (middleWeaponWidth / 2);
@@ -52,21 +73,7 @@ public static class UIManager
             float currentX = middleX;
             for (int i = middleIndex - 1; i >= 0; i--)
             {
-                if (player.WeaponList[i] == player.Weapon)
-                {
-                    weaponTexture = player.WeaponList[i].WeaponIconSelected;
-                }
-                else
-                {
-                    if (player.WeaponList[i].IsUnlocked)
-                    {
-                        weaponTexture = player.WeaponList[i].WeaponIcon;
-                    }
-                    else
-                    {
-                        weaponTexture = player.WeaponList[i].WeaponIconLocked;
-                    }
-                }
+                GetNonMiddleWepUI(player, i);
                 currentX -= weaponTexture.Width + spacing;
                 pos = new (currentX + x/2, y-windowHeight*0.95f/2);
                 Globals.SpriteBatch.Draw(weaponTexture, pos, Color.White);
@@ -77,21 +84,7 @@ public static class UIManager
             currentX = middleX + middleWeaponWidth + spacing;
             for (int i = middleIndex + 1; i < totalWeapons; i++)
             {
-                if (player.WeaponList[i] == player.Weapon)
-                {
-                    weaponTexture = player.WeaponList[i].WeaponIconSelected;
-                }
-                else
-                {
-                    if (player.WeaponList[i].IsUnlocked)
-                    {
-                        weaponTexture = player.WeaponList[i].WeaponIcon;
-                    }
-                    else
-                    {
-                        weaponTexture = player.WeaponList[i].WeaponIconLocked;
-                    }
-                }
+                GetNonMiddleWepUI(player, i);
                 pos = new(currentX + x/2, y-windowHeight*0.95f/2);
                 Globals.SpriteBatch.Draw(weaponTexture, pos, Color.White);
                 currentX += weaponTexture.Width + spacing;

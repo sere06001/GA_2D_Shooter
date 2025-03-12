@@ -10,5 +10,6 @@ public class Tank : Zombie
         Speed = 75;
         HP = 1000;
         HitRange = tex.Width/1.5f;
+        XPAmountOnDeath = 5;
     }
 }

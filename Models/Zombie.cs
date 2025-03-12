@@ -6,18 +6,20 @@ public class Zombie : MovingSprite
 {
     public int HP { get; set; }
     public float HitRange { get; protected set; }
+    public int XPAmountOnDeath { get; protected set; }
 
     public Zombie(Texture2D tex, Vector2 pos) : base(tex, pos)
     {
         Speed = 100;
         HP = 200;
         HitRange = tex.Width;
+        XPAmountOnDeath = 1;
     }
 
     public void TakeDamage(int dmg, Player player)
     {
         HP -= dmg;
-        if (HP <= 0) player.AddExperience(1);
+        if (HP <= 0) player.AddExperience(XPAmountOnDeath);
     }
 
     public void Update(Player player)

@@ -9,6 +9,7 @@ public class Fastie : Zombie
     {
         Speed = 175;
         HP = 100;
-        HitRange = tex.Width/1.5f;
+        HitRange = tex.Width/1.75f;
+        XPAmountOnDeath = 2;
     }
 }
