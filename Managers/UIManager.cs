@@ -7,8 +7,8 @@ public static class UIManager
     private static Vector2 pos;
     public static float windowWidth = Globals.Bounds.X;
     public static float windowHeight = Globals.Bounds.Y;
-    public static float playerX = player.Position.X;
-    public static float playerY = player.Position.Y;
+    public static float playerX;
+    public static float playerY;
 
     public static void GetNonMiddleWepUI(Player player, int index)
     {
@@ -57,24 +57,12 @@ public static class UIManager
     }
     public static void Reset()
     {
-        
-    }
-    public static void DrawWeapons()
-    {
 
     }
-    public static void Draw(Player player)
+    public static void DrawWeapons(Player player)
     {
-
-
-        Color c = player.Weapon.Reloading ? Color.Red : Color.White;
-        
-        for (int i = 0; i < player.HP; i++)
-        {
-            pos = new(i*50+5+playerX-windowWidth/2, playerY-windowHeight/2+5);
-            Globals.SpriteBatch.Draw(player.HPTexture, pos, Color.White);
-        }
-
+        playerX = player.Position.X;
+        playerY = player.Position.Y;
         float halfX = playerX / 2;
         int totalWeapons = player.WeaponList.Count;
 
@@ -108,6 +96,22 @@ public static class UIManager
                 currentX += weaponTexture.Width + spacing;
             }
         }
+    }
+    public static void Draw(Player player, Game1 game)
+    {
+        playerX = player.Position.X;
+        playerY = player.Position.Y;
+
+        Color c = player.Weapon.Reloading ? Color.Red : Color.White;
+        
+        for (int i = 0; i < player.HP; i++)
+        {
+            pos = new(i*50+5+playerX-windowWidth/2, playerY-windowHeight/2+5);
+            Globals.SpriteBatch.Draw(player.HPTexture, pos, Color.White);
+        }
+        
+        DrawWeapons(player);
+        
 
         string timeString = $"{Globals.Minutes:D2}:{Globals.Seconds:D2}.{Globals.Hundredths:00}";
         pos = new(playerX+windowWidth/2-Globals.Font.MeasureString(timeString).X-5, playerY-windowHeight/2);

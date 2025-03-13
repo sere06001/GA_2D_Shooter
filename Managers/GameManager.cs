@@ -49,6 +49,6 @@ public class GameManager
         ProjectileManager.Draw();
         player.Draw();
         ZombieManager.Draw();
-        UIManager.Draw(player);
+        UIManager.Draw(player, game);
     }
 }
