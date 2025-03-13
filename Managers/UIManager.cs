@@ -5,6 +5,10 @@ public static class UIManager
     private static Texture2D weaponTexture;
     private static Texture2D middleWeapon;
     private static Vector2 pos;
+    public static float windowWidth = Globals.Bounds.X;
+    public static float windowHeight = Globals.Bounds.Y;
+    public static float playerX = player.Position.X;
+    public static float playerY = player.Position.Y;
 
     public static void GetNonMiddleWepUI(Player player, int index)
     {
@@ -51,12 +55,17 @@ public static class UIManager
         pos = new(x-100, y);
         Globals.SpriteBatch.DrawString(Globals.Font, $"Mouse Pos: {InputManager.MouseWorldPosition}", pos, Color.White);
     }
-    public static void Draw(Player player, Camera camera)
+    public static void Reset()
     {
-        float windowWidth = Globals.Bounds.X;
-        float windowHeight = Globals.Bounds.Y;
-        float playerX = player.Position.X;
-        float playerY = player.Position.Y;
+        
+    }
+    public static void DrawWeapons()
+    {
+
+    }
+    public static void Draw(Player player)
+    {
+
 
         Color c = player.Weapon.Reloading ? Color.Red : Color.White;
         

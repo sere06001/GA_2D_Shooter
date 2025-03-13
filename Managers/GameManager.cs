@@ -26,6 +26,7 @@ public class GameManager
         ProjectileManager.Reset();
         ZombieManager.Reset();
         player.Reset();
+        UIManager.Reset();
     }
 
     public void Update()
@@ -48,6 +49,6 @@ public class GameManager
         ProjectileManager.Draw();
         player.Draw();
         ZombieManager.Draw();
-        UIManager.Draw(player, camera);
+        UIManager.Draw(player);
     }
 }
