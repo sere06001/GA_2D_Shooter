@@ -38,6 +38,10 @@ public class Player : MovingSprite
 
     public void Reset()
     {
+        if (WeaponList.Count > 0)
+        {
+            WeaponList.Clear();
+        }
         Pistol = new Pistol();
         Sniper = new Sniper();
         Shotgun = new Shotgun();

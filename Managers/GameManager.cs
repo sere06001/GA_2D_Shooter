@@ -26,7 +26,6 @@ public class GameManager
         ProjectileManager.Reset();
         ZombieManager.Reset();
         player.Reset();
-        UIManager.Reset();
     }
 
     public void Update()
