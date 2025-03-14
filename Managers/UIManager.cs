@@ -95,6 +95,20 @@ public static class UIManager
             }
         }
     }
+    public static void DrawHP(Player player)
+    {
+        for (int i = 0; i < player.HP; i++)
+        {
+            pos = new(i*50+5+playerX-windowWidth/2, playerY-windowHeight/2+5);
+            Globals.SpriteBatch.Draw(player.HPTexture, pos, Color.White);
+        }
+    }
+    public static void DrawTimer()
+    {
+        string timeString = $"{Globals.Minutes:D2}:{Globals.Seconds:D2}.{Globals.Hundredths:00}";
+        pos = new(playerX+windowWidth/2-Globals.Font.MeasureString(timeString).X-5, playerY-windowHeight/2);
+        Globals.SpriteBatch.DrawString(Globals.Font, $"{timeString}", pos, Color.White);
+    }
     public static void Draw(Player player, Game1 game)
     {
         playerX = player.Position.X;
@@ -102,19 +116,9 @@ public static class UIManager
 
         Color c = player.Weapon.Reloading ? Color.Red : Color.White;
         
-        for (int i = 0; i < player.HP; i++)
-        {
-            pos = new(i*50+5+playerX-windowWidth/2, playerY-windowHeight/2+5);
-            Globals.SpriteBatch.Draw(player.HPTexture, pos, Color.White);
-        }
-        
+        DrawHP(player);
         DrawWeapons(player);
-        
-
-        string timeString = $"{Globals.Minutes:D2}:{Globals.Seconds:D2}.{Globals.Hundredths:00}";
-        pos = new(playerX+windowWidth/2-Globals.Font.MeasureString(timeString).X-5, playerY-windowHeight/2);
-        Globals.SpriteBatch.DrawString(Globals.Font, $"{timeString}", pos, Color.White);
-
+        DrawTimer();
         DebugUI(player, playerX, playerY);
 
         if (player.Weapon != null)
