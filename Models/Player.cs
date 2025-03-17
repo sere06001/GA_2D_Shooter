@@ -119,8 +119,8 @@ public class Player : MovingSprite
         {
             var dir = Vector2.Normalize(InputManager.Direction);
             Position = new(
-                MathHelper.Clamp(Position.X + (dir.X * Speed * Globals.TotalSeconds), 0, Globals.Bounds.X),
-                MathHelper.Clamp(Position.Y + (dir.Y * Speed * Globals.TotalSeconds), 0, Globals.Bounds.Y)
+                MathHelper.Clamp(Position.X + (dir.X * Speed * Globals.TotalSeconds), 0, Globals.MapBounds.X),
+                MathHelper.Clamp(Position.Y + (dir.Y * Speed * Globals.TotalSeconds), 0, Globals.MapBounds.Y)
             );
         }
 

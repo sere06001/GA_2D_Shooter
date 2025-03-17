@@ -11,6 +11,7 @@ public static class Globals
     public static ContentManager Content { get; set; }
     public static SpriteBatch SpriteBatch { get; set; }
     public static Point Bounds { get; set; }
+    public static Point MapBounds { get; set; }
     public static SpriteFont Font { get; set; }
     public static void Update(GameTime gt)
     {
@@ -18,6 +19,6 @@ public static class Globals
         Minutes = (int)(totalTime / 60);
         Seconds = (int)(totalTime % 60);
         Hundredths = totalTime % 1 * 100;
-        TotalSeconds = (float)gt.ElapsedGameTime.TotalSeconds;
+        TotalSeconds = (float)gt.TotalGameTime.TotalSeconds;
     }
 }

@@ -22,6 +22,11 @@ public class Background
                 tiles[x, y] = new(textures[r], new((x + 0.5f) * TileSize.X, (y + 0.5f) * TileSize.Y));
             }
         }
+        
+        int totalWidth = mapTileSize.X * tiles[0, 0].texture.Width;
+        int totalHeight = mapTileSize.Y * tiles[0, 0].texture.Height;
+
+        Globals.MapBounds = new(totalWidth, totalHeight);
     }
 
     public void Draw()

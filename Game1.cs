@@ -2,7 +2,7 @@ namespace GA_2d_shooter;
 
 public class Game1 : Game
 {
-    private readonly GraphicsDeviceManager _graphics;
+    public GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
     private GameManager gameManager;
     public Camera camera;
@@ -50,8 +50,6 @@ public class Game1 : Game
     {
         if (Keyboard.GetState().IsKeyDown(Keys.Escape))
             isInMenu = true;
-        if (Keyboard.GetState().IsKeyDown(Keys.F11))
-            _graphics.IsFullScreen = !_graphics.IsFullScreen;
 
         if (isInMenu)
         {

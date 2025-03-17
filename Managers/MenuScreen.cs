@@ -13,7 +13,7 @@ public class MenuScreen
     public MenuScreen(Game1 game)
     {
         this.game = game;
-        menuItems = new List<string> { "Resume", "Start new game", "Settings", "Exit" };
+        menuItems = new List<string> { "Resume", "Start new game", "Local leaderboard", "Settings", "Exit" };
         menuPositions = new List<Vector2>();
 
         float centerX = Globals.Bounds.X / 2;
@@ -34,6 +34,11 @@ public class MenuScreen
     }
 
     public void Settings()
+    {
+        game._graphics.IsFullScreen = !game._graphics.IsFullScreen;
+        game._graphics.ApplyChanges();
+    }
+    public void LocalLeaderboard()
     {
 
     }
@@ -65,9 +70,12 @@ public class MenuScreen
                     game.Restart();
                     break;
                 case 2:
-                    Settings();
+                    LocalLeaderboard();
                     break;
                 case 3:
+                    Settings();
+                    break;
+                case 4:
                     game.Exit();
                     break;
             }
