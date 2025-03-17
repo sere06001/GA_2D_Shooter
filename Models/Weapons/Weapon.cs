@@ -15,6 +15,7 @@ public abstract class Weapon
     public abstract Texture2D WeaponIconLocked { get;}
     public bool IsUnlocked { get; protected set; } = false;
     public int XPforUnlock { get; protected set; }
+    protected int Pierce { get; set; } = 0;
 
     protected Weapon()
     {

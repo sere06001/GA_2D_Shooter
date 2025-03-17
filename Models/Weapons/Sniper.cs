@@ -23,7 +23,8 @@ public class Sniper : Weapon
             Rotation = player.Rotation,
             Lifespan = 30f,
             Speed = 1250,
-            Damage = 200
+            Damage = 200,
+            Pierce = 3
         };
 
         ProjectileManager.AddProjectile(pd, this);

@@ -7,4 +7,5 @@ public sealed class ProjectileData
     public float Lifespan { get; set; }
     public int Speed { get; set; }
     public int Damage { get; set; }
+    public int Pierce { get; set; } = 0;
 }
