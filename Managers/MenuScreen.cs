@@ -40,7 +40,16 @@ public class MenuScreen
     }
     public void LocalLeaderboard()
     {
-
+        List<float> times = SaveManager.LoadTimes();
+        for (int i = 0; i < times.Count; i++)
+        {
+            int minutes = (int)times[i] / 60;
+            int seconds = (int)times[i] % 60;
+            float hundredths = times[i] % 1 * 100;
+            string timeString = $"{minutes:D2}:{seconds:D2}.{hundredths:00}";
+            Vector2 pos = new(Globals.Bounds.X/2, 100 + i * 50);
+            Globals.SpriteBatch.DrawString(Globals.Font, $"{timeString}", pos, Color.White);
+        }
     }
 
     public void Update(GameTime gameTime)
@@ -62,10 +71,10 @@ public class MenuScreen
             }
             switch (selectedIndex)
             {
-                case 0: //Resume/new game (if first time)
+                case 0: //Resume
                     game.isInMenu = false;
                     break;
-                case 1: //Restart/new game
+                case 1: //Restart
                     game.isInMenu = false;
                     game.Restart();
                     break;

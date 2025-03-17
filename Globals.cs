@@ -19,6 +19,6 @@ public static class Globals
         Minutes = (int)(totalTime / 60);
         Seconds = (int)(totalTime % 60);
         Hundredths = totalTime % 1 * 100;
-        TotalSeconds = (float)gt.TotalGameTime.TotalSeconds;
+        TotalSeconds = (float)gt.ElapsedGameTime.TotalSeconds;
     }
 }

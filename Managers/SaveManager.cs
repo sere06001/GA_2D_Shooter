@@ -63,7 +63,8 @@ public static class SaveManager
                 return new List<float>();
             }
         }
-
+        times.Sort();
+        times.Reverse();
         return times;
     }
 
