@@ -2,8 +2,8 @@ namespace GA_2d_shooter;
 
 public class Background
 {
-    private readonly Point mapTileSize = new(6, 4);
-    private readonly Sprite[,] tiles;
+    public readonly Point mapTileSize = new(6, 4);
+    public readonly Sprite[,] tiles;
 
     public Background()
     {
