@@ -16,7 +16,7 @@ public class Shotgun : Weapon
         MaxAmmo = 8;
         Ammo = MaxAmmo;
         reloadTime = 3f;
-        pelletCount = 3;
+        pelletCount = 4;
         ANGLE_STEP = (float)(Math.PI / 16);
     }
 
