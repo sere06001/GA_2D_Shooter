@@ -15,7 +15,6 @@ public class Game1 : Game
         _graphics = new GraphicsDeviceManager(this);
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
-        _graphics.IsFullScreen = true;
     }
     public void Restart()
     {
@@ -26,6 +25,7 @@ public class Game1 : Game
     {
         _graphics.PreferredBackBufferWidth = GraphicsDevice.Adapter.CurrentDisplayMode.Width;
         _graphics.PreferredBackBufferHeight = GraphicsDevice.Adapter.CurrentDisplayMode.Height;
+        Window.IsBorderless = true;
         _graphics.ApplyChanges();
 
         Globals.Bounds = new(_graphics.PreferredBackBufferWidth, _graphics.PreferredBackBufferHeight);

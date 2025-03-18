@@ -13,7 +13,7 @@ public class MenuScreen
     public MenuScreen(Game1 game)
     {
         this.game = game;
-        menuItems = new List<string> { "Resume", "Start new game", "Local leaderboard", "Settings", "Exit" };
+        menuItems = new List<string> { "Resume", "Start new game", "Local leaderboard", $"Fullscreen: {(game._graphics.IsFullScreen ? "ON" : "OFF")}", "Exit" };
         menuPositions = new List<Vector2>();
 
         float centerX = Globals.Bounds.X / 2;
@@ -35,8 +35,7 @@ public class MenuScreen
 
     public void Settings()
     {
-        game._graphics.IsFullScreen = !game._graphics.IsFullScreen;
-        game._graphics.ApplyChanges();
+        game.Window.IsBorderless = true;
     }
     public void LocalLeaderboard()
     {
@@ -54,6 +53,7 @@ public class MenuScreen
 
     public void Update(GameTime gameTime)
     {
+        menuItems[3] = $"Fullscreen: {(game._graphics.IsFullScreen ? "ON" : "OFF")}";
         KeyboardState currentKeyState = Keyboard.GetState();
         
         if (currentKeyState.IsKeyDown(Keys.Down) && !prevKeyState.IsKeyDown(Keys.Down))
