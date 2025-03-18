@@ -38,7 +38,7 @@ public static class ProjectileManager
                 {
                     widestDimensionTexture = z.texture.Height;
                 }
-                if ((p.Position - z.Position).Length() < widestDimensionTexture/1.5f)
+                if ((p.Position - z.Position).Length() < widestDimensionTexture/2)
                 {
                     z.TakeDamage(p.Damage, player);
                     p.Pierce--;
