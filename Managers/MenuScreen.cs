@@ -33,10 +33,24 @@ public class MenuScreen
         }
     }
 
-    public void Settings()
+    public void FullscreenMode()
     {
-        game.Window.IsBorderless = true;
-    }
+        if (game._graphics.IsFullScreen)
+        {
+            game._graphics.PreferredBackBufferWidth = 1280;
+            game._graphics.PreferredBackBufferHeight = 720;
+            game._graphics.IsFullScreen = false;
+            game._graphics.ApplyChanges();
+        }
+        else
+        {
+            game._graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
+            game._graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
+            game._graphics.IsFullScreen = true;
+            game._graphics.ApplyChanges();
+        }
+        menuItems[3] = $"Fullscreen: {(game._graphics.IsFullScreen ? "ON" : "OFF")}";
+}
     public void LocalLeaderboard()
     {
         List<float> times = SaveManager.LoadTimes();
@@ -53,7 +67,6 @@ public class MenuScreen
 
     public void Update(GameTime gameTime)
     {
-        menuItems[3] = $"Fullscreen: {(game._graphics.IsFullScreen ? "ON" : "OFF")}";
         KeyboardState currentKeyState = Keyboard.GetState();
         
         if (currentKeyState.IsKeyDown(Keys.Down) && !prevKeyState.IsKeyDown(Keys.Down))
@@ -82,7 +95,7 @@ public class MenuScreen
                     LocalLeaderboard();
                     break;
                 case 3:
-                    Settings();
+                    FullscreenMode();
                     break;
                 case 4:
                     game.Exit();
