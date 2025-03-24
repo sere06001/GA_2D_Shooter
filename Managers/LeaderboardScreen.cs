@@ -3,30 +3,26 @@ namespace GA_2d_shooter;
 public class LeaderboardScreen
 {
     private readonly Game1 game;
-    private readonly List<float> times;
-    private readonly List<Vector2> leaderboardPositions;
+    private List<float> times;
+    private List<Vector2> leaderboardPositions;
     private readonly Color textColor = Color.White;
 
     public LeaderboardScreen(Game1 game)
     {
         this.game = game;
         times = SaveManager.LoadTimes();
-        leaderboardPositions = new List<Vector2>();
-
-        float centerX = Globals.Bounds.X / 2;
-        float startY = 100;
-        float spacing = 50;
-
-        for (int i = 0; i < times.Count; i++)
-        {
-            leaderboardPositions.Add(new Vector2(centerX, startY + i * spacing));
-        }
+        UpdateLeaderboardPositions();
     }
 
     public void Update(GameTime gameTime)
     {
+        // Reload the times from the SaveManager to keep the leaderboard updated
+        times = SaveManager.LoadTimes();
+        UpdateLeaderboardPositions(); // Update positions to match the new times list
+
         KeyboardState currentKeyState = Keyboard.GetState();
 
+        // Return to the main menu when the user presses the Escape key
         if (currentKeyState.IsKeyDown(Keys.Escape))
         {
             game.isInMenu = true;
@@ -54,6 +50,20 @@ public class LeaderboardScreen
                 SpriteEffects.None,
                 0f
             );
+        }
+    }
+
+    private void UpdateLeaderboardPositions()
+    {
+        leaderboardPositions = new List<Vector2>();
+
+        float centerX = Globals.Bounds.X / 2;
+        float startY = 100;
+        float spacing = 50;
+
+        for (int i = 0; i < times.Count; i++)
+        {
+            leaderboardPositions.Add(new Vector2(centerX, startY + i * spacing));
         }
     }
 }

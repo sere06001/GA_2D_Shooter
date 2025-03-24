@@ -26,6 +26,7 @@ public class GameManager
         ProjectileManager.Reset();
         ZombieManager.Reset();
         player.Reset();
+        game.gameTimer = 0f;
     }
 
     public void Update()
@@ -35,7 +36,11 @@ public class GameManager
         player.Update(ZombieManager.Zombies, camera, game.gameTimer);
         ZombieManager.Update(player);
         ProjectileManager.Update(ZombieManager.Zombies, player);
-        if (player.Dead) Restart();
+
+        if (player.Dead)
+        {
+            Restart();
+        }
     }
 
     public void Draw()
