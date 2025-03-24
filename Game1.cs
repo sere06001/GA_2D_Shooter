@@ -7,8 +7,12 @@ public class Game1 : Game
     private GameManager gameManager;
     public Camera camera;
     private MenuScreen menuScreen;
+    private LeaderboardScreen leaderboardScreen;
     public bool isInMenu = true;
+    public bool isInLeaderboard = false;
     public bool isFirstTimeInMenu = true;
+
+    private float gameTimer;
 
     public Game1()
     {
@@ -16,9 +20,11 @@ public class Game1 : Game
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
     }
+
     public void Restart()
     {
         gameManager.Restart();
+        gameTimer = 0f;
     }
 
     protected override void Initialize()
@@ -38,6 +44,9 @@ public class Game1 : Game
 
         base.Initialize();
         menuScreen = new MenuScreen(this);
+        leaderboardScreen = new LeaderboardScreen(this);
+
+        gameTimer = 0f;
     }
 
     protected override void LoadContent()
@@ -49,14 +58,23 @@ public class Game1 : Game
     protected override void Update(GameTime gameTime)
     {
         if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+        {
             isInMenu = true;
+            isInLeaderboard = false;
+        }
 
         if (isInMenu)
         {
             menuScreen.Update(gameTime);
         }
+        else if (isInLeaderboard)
+        {
+            leaderboardScreen.Update(gameTime);
+        }
         else
         {
+            gameTimer += (float)gameTime.ElapsedGameTime.TotalSeconds;
+
             Globals.Update(gameTime);
             gameManager.Update();
 
@@ -65,31 +83,36 @@ public class Game1 : Game
                 camera.Follow(gameManager.player);
             }
         }
-        
+
         base.Update(gameTime);
     }
-
 
     protected override void Draw(GameTime gameTime)
     {
         GraphicsDevice.Clear(Color.Black);
 
-        
         if (isInMenu)
         {
             _spriteBatch.Begin();
             menuScreen.Draw(_spriteBatch);
             _spriteBatch.End();
         }
+        else if (isInLeaderboard)
+        {
+            _spriteBatch.Begin();
+            leaderboardScreen.Draw(_spriteBatch);
+            _spriteBatch.End();
+        }
         else
         {
             _spriteBatch.Begin(transformMatrix: camera.Transform);
             gameManager.Draw();
+
+            UIManager.DrawGameTimer(gameTimer);
+
             _spriteBatch.End();
         }
-        
 
         base.Draw(gameTime);
     }
-
 }

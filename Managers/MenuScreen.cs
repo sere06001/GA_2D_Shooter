@@ -38,11 +38,10 @@ public class MenuScreen
         if (game._graphics.IsFullScreen)
         {
             Globals.WindowModeOffset = 20;
-            game._graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width-Globals.WindowModeOffset;
-            game._graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height-Globals.WindowModeOffset;
+            game._graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width - Globals.WindowModeOffset;
+            game._graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height - Globals.WindowModeOffset;
             game._graphics.IsFullScreen = false;
             game._graphics.ApplyChanges();
-            
         }
         else
         {
@@ -54,30 +53,17 @@ public class MenuScreen
         }
         menuItems[3] = $"Fullscreen: {(game._graphics.IsFullScreen ? "ON" : "OFF")}";
     }
-    public void LocalLeaderboard()
-    {
-        List<float> times = SaveManager.LoadTimes();
-        for (int i = 0; i < times.Count; i++)
-        {
-            int minutes = (int)times[i] / 60;
-            int seconds = (int)times[i] % 60;
-            float hundredths = times[i] % 1 * 100;
-            string timeString = $"{minutes:D2}:{seconds:D2}.{hundredths:00}";
-            Vector2 pos = new(Globals.Bounds.X/2, 100 + i * 50);
-            Globals.SpriteBatch.DrawString(Globals.Font, $"{timeString}", pos, Color.White);
-        }
-    }
 
     public void Update(GameTime gameTime)
     {
         KeyboardState currentKeyState = Keyboard.GetState();
-        
+
         if (currentKeyState.IsKeyDown(Keys.Down) && !prevKeyState.IsKeyDown(Keys.Down))
             selectedIndex = (selectedIndex + 1) % menuItems.Count;
-        
+
         if (currentKeyState.IsKeyDown(Keys.Up) && !prevKeyState.IsKeyDown(Keys.Up))
             selectedIndex = (selectedIndex - 1 + menuItems.Count) % menuItems.Count;
-        
+
         if (currentKeyState.IsKeyDown(Keys.Enter) && !prevKeyState.IsKeyDown(Keys.Enter))
         {
             if (game.isFirstTimeInMenu)
@@ -87,25 +73,26 @@ public class MenuScreen
             }
             switch (selectedIndex)
             {
-                case 0: //Resume
+                case 0: // Resume
                     game.isInMenu = false;
                     break;
-                case 1: //Restart
+                case 1: // Restart
                     game.isInMenu = false;
                     game.Restart();
                     break;
-                case 2:
-                    LocalLeaderboard();
+                case 2: // Local leaderboard
+                    game.isInMenu = false;
+                    game.isInLeaderboard = true;
                     break;
-                case 3:
+                case 3: // Fullscreen toggle
                     FullscreenMode();
                     break;
-                case 4:
+                case 4: // Exit
                     game.Exit();
                     break;
             }
         }
-        
+
         prevKeyState = currentKeyState;
     }
 
