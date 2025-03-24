@@ -6,6 +6,7 @@ public class LeaderboardScreen
     private List<float> times;
     private List<Vector2> leaderboardPositions;
     private readonly Color textColor = Color.White;
+    private int amountOfTimesToShow = 10;
 
     public LeaderboardScreen(Game1 game)
     {
@@ -16,13 +17,11 @@ public class LeaderboardScreen
 
     public void Update(GameTime gameTime)
     {
-        // Reload the times from the SaveManager to keep the leaderboard updated
         times = SaveManager.LoadTimes();
-        UpdateLeaderboardPositions(); // Update positions to match the new times list
+        UpdateLeaderboardPositions();
 
         KeyboardState currentKeyState = Keyboard.GetState();
 
-        // Return to the main menu when the user presses the Escape key
         if (currentKeyState.IsKeyDown(Keys.Escape))
         {
             game.isInMenu = true;
@@ -32,12 +31,28 @@ public class LeaderboardScreen
 
     public void Draw(SpriteBatch spriteBatch)
     {
-        for (int i = 0; i < times.Count; i++)
+        for (int i = 0; i < amountOfTimesToShow; i++)
         {
-            int minutes = (int)times[i] / 60;
-            int seconds = (int)times[i] % 60;
-            float hundredths = times[i] % 1 * 100;
-            string timeString = $"{minutes:D2}:{seconds:D2}.{hundredths:00}";
+            int minutes;
+            int seconds;
+            float hundredths;
+            string timeString;
+
+            if (i < times.Count)
+            {
+                minutes = (int)times[i] / 60;
+                seconds = (int)times[i] % 60;
+                hundredths = times[i] % 1 * 100;
+                timeString = $"{i + 1}:  {minutes:D2}:{seconds:D2}.{hundredths:00}";
+            }
+            else if (i+1 >= 10)
+            {
+                timeString = $"{i + 1}:  00:00.00";
+            }
+            else
+            {
+                timeString = $"{i + 1}:   00:00.00";
+            }
 
             spriteBatch.DrawString(
                 Globals.Font,
@@ -58,12 +73,13 @@ public class LeaderboardScreen
         leaderboardPositions = new List<Vector2>();
 
         float centerX = Globals.Bounds.X / 2;
-        float startY = 100;
-        float spacing = 50;
+        float centerY = Globals.Bounds.Y / 2;
+        float spacing = (Globals.Bounds.Y-200)/amountOfTimesToShow;
 
-        for (int i = 0; i < times.Count; i++)
+        for (int i = 0; i < amountOfTimesToShow; i++)
         {
-            leaderboardPositions.Add(new Vector2(centerX, startY + i * spacing));
+            float offset = (i - 4.5f) * spacing;
+            leaderboardPositions.Add(new Vector2(centerX, centerY + offset));
         }
     }
 }

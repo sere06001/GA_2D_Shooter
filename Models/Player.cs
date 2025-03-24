@@ -58,7 +58,7 @@ public class Player : MovingSprite
         WeaponList.Add(Minigun);
 
         Dead = false;
-        HP = 3;
+        HP = 1;
         Weapon = Pistol;
         prevWeapon = Weapon;
         Position = GetStartPosition();
