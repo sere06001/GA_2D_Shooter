@@ -30,15 +30,12 @@ public class GameManager
 
     public void Update()
     {
-        //if (game.IsActive)
-        //{
-            InputManager.Update(player);
-            ExperienceManager.Update(player);
-            player.Update(ZombieManager.Zombies, camera);
-            ZombieManager.Update(player);
-            ProjectileManager.Update(ZombieManager.Zombies, player);
-            if (player.Dead) Restart(); //Add menu screen
-        //}
+        InputManager.Update(player);
+        ExperienceManager.Update(player);
+        player.Update(ZombieManager.Zombies, camera, game.gameTimer);
+        ZombieManager.Update(player);
+        ProjectileManager.Update(ZombieManager.Zombies, player);
+        if (player.Dead) Restart();
     }
 
     public void Draw()

@@ -12,7 +12,7 @@ public class Game1 : Game
     public bool isInLeaderboard = false;
     public bool isFirstTimeInMenu = true;
 
-    private float gameTimer;
+    public float gameTimer;
 
     public Game1()
     {

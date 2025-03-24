@@ -14,7 +14,7 @@ public class Player : MovingSprite
     public int HP { get; private set; }
     public bool Dead { get; private set; }
     public int Experience { get; private set; }
-    private float Iframe { get;  set; }
+    private float Iframe { get; set; }
     private DateTime lastHitTime = DateTime.MinValue;
 
     public Player(Texture2D tex) : base(tex, GetStartPosition())
@@ -22,7 +22,7 @@ public class Player : MovingSprite
         Reset();
         Speed = 200;
         Experience = SaveManager.LoadExperience();
-        Iframe = 3f; //3 sec iframe
+        Iframe = 3f; // 3 seconds iframe
     }
 
     private static Vector2 GetStartPosition()
@@ -30,7 +30,7 @@ public class Player : MovingSprite
         Background bg = new();
         float totalWidth = bg.mapTileSize.X * bg.tiles[0, 0].texture.Width;
         float totalHeight = bg.mapTileSize.Y * bg.tiles[0, 0].texture.Height;
-        
+
         return new Vector2(totalWidth / 2, totalHeight / 2);
     }
 
@@ -56,7 +56,7 @@ public class Player : MovingSprite
         WeaponList.Add(Shotgun);
         WeaponList.Add(SMG);
         WeaponList.Add(Minigun);
-        
+
         Dead = false;
         HP = 3;
         Weapon = Pistol;
@@ -67,7 +67,7 @@ public class Player : MovingSprite
     public void EquipSlot(int slot)
     {
         if (Weapon != null && prevWeapon != Weapon)
-        {  
+        {
             prevWeapon = Weapon;
         }
 
@@ -85,7 +85,7 @@ public class Player : MovingSprite
         }
     }
 
-    private void CheckDeath(List<Zombie> zombies)
+    private void CheckDeath(List<Zombie> zombies, float gameTimer)
     {
         foreach (var z in zombies)
         {
@@ -99,7 +99,10 @@ public class Player : MovingSprite
                     lastHitTime = DateTime.Now;
                     if (HP <= 0)
                     {
-                        //Dead = true;
+                        Dead = true;
+
+                        // Save the game timer when the player dies
+                        SaveManager.SaveTime(gameTimer);
                     }
                     break;
                 }
@@ -107,14 +110,8 @@ public class Player : MovingSprite
         }
     }
 
-    public void Update(List<Zombie> zombies, Camera camera)
+    public void Update(List<Zombie> zombies, Camera camera, float gameTimer)
     {
-        /*if (prevWeapon != null && prevWeapon != Weapon && prevWeapon != Minigun && 
-        prevWeapon.Ammo < prevWeapon.MaxAmmo && !prevWeapon.Reloading)
-        {
-            prevWeapon.Reload();
-        }*/ //Auto reloader
-
         if (InputManager.Direction != Vector2.Zero)
         {
             var dir = Vector2.Normalize(InputManager.Direction);
@@ -157,6 +154,6 @@ public class Player : MovingSprite
             Weapon.Fire(this);
         }
 
-        CheckDeath(zombies);
+        CheckDeath(zombies, gameTimer);
     }
 }

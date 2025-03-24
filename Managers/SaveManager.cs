@@ -1,8 +1,9 @@
 namespace GA_2d_shooter;
+
 public static class SaveManager
 {
-    private static string saveFile = "save.dat";
-    private static string timeFile = "times.dat";
+    private static readonly string saveFile = "save.dat";
+    private static readonly string timeFile = "times.dat";
 
     public static void SaveExperience(int experience)
     {
@@ -11,12 +12,14 @@ public static class SaveManager
             writer.Write(experience);
         }
     }
+
     public static int LoadExperience()
     {
         if (!File.Exists(saveFile))
         {
             return 0;
         }
+
         using (BinaryReader reader = new BinaryReader(File.Open(saveFile, FileMode.Open)))
         {
             return reader.ReadInt32();
@@ -27,10 +30,12 @@ public static class SaveManager
     {
         List<float> times = LoadTimes();
         times.Add(time);
-        
+        times.Sort();
+        times.Reverse();
+
         using (BinaryWriter writer = new BinaryWriter(File.Open(timeFile, FileMode.Create)))
         {
-            writer.Write(times.Count);  // Write number of times first
+            writer.Write(times.Count);
             foreach (float t in times)
             {
                 writer.Write(t);
@@ -41,7 +46,7 @@ public static class SaveManager
     public static List<float> LoadTimes()
     {
         List<float> times = new List<float>();
-        
+
         if (!File.Exists(timeFile))
         {
             return times;
@@ -54,15 +59,15 @@ public static class SaveManager
                 int count = reader.ReadInt32();
                 for (int i = 0; i < count; i++)
                 {
-                    times.Add(reader.ReadSingle());  // ReadSingle for float
+                    times.Add(reader.ReadSingle());
                 }
             }
             catch (EndOfStreamException)
             {
-                // Handle corrupted file
                 return new List<float>();
             }
         }
+
         times.Sort();
         times.Reverse();
         return times;
