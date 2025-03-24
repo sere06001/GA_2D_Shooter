@@ -110,8 +110,11 @@ public static class UIManager
 
     public static void DrawGameTimer(float gameTimer)
     {
-        string timerText = $"Time: {gameTimer:F2} seconds";
-        pos = new(playerX + windowWidth / 2 - Globals.Font.MeasureString(timerText).X - Globals.WindowModeOffset, playerY - windowHeight / 2 + 10);
+        int minutes = (int)(gameTimer / 60);
+        int seconds = (int)(gameTimer % 60);
+        float hundredths = gameTimer % 1 * 100;
+        string timerText = $"{minutes:D2}:{seconds:D2}.{hundredths:00}";
+        pos = new(playerX + windowWidth / 2 - Globals.Font.MeasureString(timerText).X - 10 - Globals.WindowModeOffset, playerY - windowHeight / 2 + 10);
         Globals.SpriteBatch.DrawString(Globals.Font, timerText, pos, Color.White);
     }
 
