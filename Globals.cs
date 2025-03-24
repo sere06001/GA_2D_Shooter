@@ -13,6 +13,7 @@ public static class Globals
     public static Point Bounds { get; set; }
     public static Point MapBounds { get; set; }
     public static SpriteFont Font { get; set; }
+    public static int WindowModeOffset { get; set; } = 0;
     public static void Update(GameTime gt)
     {
         float totalTime = (float)gt.TotalGameTime.TotalSeconds;

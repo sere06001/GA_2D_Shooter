@@ -15,7 +15,7 @@ public static class ExperienceManager
 
     public static void Update(Player player)
     {
-        position = new(player.Position.X, player.Position.Y);
+        position = new(player.Position.X - Globals.WindowModeOffset, player.Position.Y);
     
         position = new(
             position.X + Globals.Bounds.X/2 - texture.Width*2,  // Account for 2x scale

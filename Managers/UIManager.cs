@@ -106,7 +106,7 @@ public static class UIManager
     public static void DrawTimer()
     {
         string timeString = $"{Globals.Minutes:D2}:{Globals.Seconds:D2}.{Globals.Hundredths:00}";
-        pos = new(playerX+windowWidth/2-Globals.Font.MeasureString(timeString).X-5, playerY-windowHeight/2);
+        pos = new(playerX+windowWidth/2-Globals.Font.MeasureString(timeString).X-5-Globals.WindowModeOffset, playerY-windowHeight/2);
         Globals.SpriteBatch.DrawString(Globals.Font, $"{timeString}", pos, Color.White);
     }
     public static void Draw(Player player, Game1 game)

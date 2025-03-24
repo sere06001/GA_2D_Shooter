@@ -37,10 +37,12 @@ public class MenuScreen
     {
         if (game._graphics.IsFullScreen)
         {
-            game._graphics.PreferredBackBufferWidth = 1280;
-            game._graphics.PreferredBackBufferHeight = 720;
+            Globals.WindowModeOffset = 20;
+            game._graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width-Globals.WindowModeOffset;
+            game._graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height-Globals.WindowModeOffset;
             game._graphics.IsFullScreen = false;
             game._graphics.ApplyChanges();
+            
         }
         else
         {
@@ -48,9 +50,10 @@ public class MenuScreen
             game._graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
             game._graphics.IsFullScreen = true;
             game._graphics.ApplyChanges();
+            Globals.WindowModeOffset = 0;
         }
         menuItems[3] = $"Fullscreen: {(game._graphics.IsFullScreen ? "ON" : "OFF")}";
-}
+    }
     public void LocalLeaderboard()
     {
         List<float> times = SaveManager.LoadTimes();
