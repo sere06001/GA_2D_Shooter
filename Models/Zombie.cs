@@ -32,7 +32,6 @@ public class Zombie : MovingSprite
             var dir = Vector2.Normalize(toPlayer);
             Vector2 newPosition = Position + dir * Speed * Globals.TotalSeconds;
 
-            // Check collision with other zombies
             bool canMove = true;
             foreach (var otherZombie in ZombieManager.Zombies)
             {
@@ -50,7 +49,6 @@ public class Zombie : MovingSprite
                     if (distance < minDistance)
                     {
                         canMove = false;
-                        // Add slight repulsion to prevent stacking
                         Vector2 awayFromOther = Vector2.Normalize(Position - otherZombie.Position);
                         Position += awayFromOther * Speed * Globals.TotalSeconds * 0.1f;
                         break;

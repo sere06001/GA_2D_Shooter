@@ -100,8 +100,6 @@ public class Player : MovingSprite
                     if (HP <= 0)
                     {
                         Dead = true;
-
-                        // Save the game timer when the player dies
                         SaveManager.SaveTime(gameTimer);
                     }
                     break;
