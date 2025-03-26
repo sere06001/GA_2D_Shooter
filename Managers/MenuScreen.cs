@@ -15,7 +15,11 @@ public class MenuScreen
         this.game = game;
         menuItems = new List<string> { "Resume", "Start new game", "Local leaderboard", $"Fullscreen: {(game._graphics.IsFullScreen ? "ON" : "OFF")}", "Exit" };
         menuPositions = new List<Vector2>();
-
+        UpdateMenuPositions();
+    }
+        private void UpdateMenuPositions()
+    {
+        menuPositions.Clear();
         float centerX = Globals.Bounds.X / 2;
         float centerY = Globals.Bounds.Y / 2;
 
@@ -37,7 +41,7 @@ public class MenuScreen
     {
         if (game._graphics.IsFullScreen)
         {
-            Globals.WindowModeOffset = 20;
+            Globals.WindowModeOffset = 200;
             game._graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width - Globals.WindowModeOffset;
             game._graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height - Globals.WindowModeOffset;
             game._graphics.IsFullScreen = false;
@@ -51,7 +55,9 @@ public class MenuScreen
             game._graphics.ApplyChanges();
             Globals.WindowModeOffset = 0;
         }
+        Globals.Bounds = new(game._graphics.PreferredBackBufferWidth, game._graphics.PreferredBackBufferHeight);
         menuItems[3] = $"Fullscreen: {(game._graphics.IsFullScreen ? "ON" : "OFF")}";
+        UpdateMenuPositions();
     }
 
     public void Update(GameTime gameTime)

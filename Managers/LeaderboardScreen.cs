@@ -42,12 +42,12 @@ public class LeaderboardScreen
                 int seconds = (int)pair.Time % 60;
                 float hundredths = pair.Time % 1 * 100;
                 timeString = $"{i + 1}:  {minutes:D2}:{seconds:D2}.{hundredths:00}";
-                scoreString = $"Score: {pair.Score}";
+                scoreString = $"Kills: {pair.Score}";
             }
             else
             {
                 timeString = $"{i + 1}:   00:00.00";
-                scoreString = "Score: 0";
+                scoreString = "Kills: 0";
             }
 
             spriteBatch.DrawString(
@@ -83,12 +83,17 @@ public class LeaderboardScreen
 
         float centerX = Globals.Bounds.X / 2;
         float centerY = Globals.Bounds.Y / 2;
-        float spacing = (Globals.Bounds.Y-200)/amountOfTimesToShow;
+
+        float maxSpacing = Globals.Bounds.Y / 10;
+        float spacing = Math.Min((Globals.Bounds.Y - 200) / amountOfTimesToShow, maxSpacing);
+
+        float totalHeight = spacing * (amountOfTimesToShow - 1);
+
+        float startY = centerY - totalHeight / 2;
 
         for (int i = 0; i < amountOfTimesToShow; i++)
         {
-            float offset = (i - 4.5f) * spacing;
-            leaderboardPositions.Add(new Vector2(centerX, centerY + offset));
+            leaderboardPositions.Add(new Vector2(centerX, startY + (i * spacing)));
         }
     }
 }

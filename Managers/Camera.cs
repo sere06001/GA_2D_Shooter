@@ -22,6 +22,7 @@ namespace GA_2d_shooter
             if (player == null) return;
 
             Vector2 targetPosition = player.Position;
+            
             Position = Vector2.Lerp(Position, targetPosition, LerpFactor);
 
             Transform = Matrix.CreateTranslation(new Vector3(-Position, 0)) *
