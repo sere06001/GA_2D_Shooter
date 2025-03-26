@@ -77,10 +77,6 @@ public class Player : MovingSprite
             case 4: Weapon = SMG; break;
             case 5: Weapon = Minigun; break;
         }
-        if (Weapon == prevWeapon && Weapon.Reloading)
-        {
-            Weapon.Reloading = false;
-        }
     }
 
     private void CheckDeath(List<Zombie> zombies, float gameTimer)
@@ -120,8 +116,10 @@ public class Player : MovingSprite
         var toMouse = InputManager.MouseWorldPosition - Position;
         Rotation = (float)Math.Atan2(toMouse.Y, toMouse.X);
 
-        Weapon.Update();
-        if (prevWeapon != Weapon) prevWeapon?.Update();
+        foreach (var weapon in WeaponList)
+        {
+            weapon.Update();
+        }
 
         if (InputManager.WeaponKey.HasValue)
         {

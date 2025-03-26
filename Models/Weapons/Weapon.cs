@@ -74,10 +74,11 @@ public abstract class Weapon
         if (cooldownLeft > 0)
         {
             cooldownLeft -= Globals.TotalSeconds;
-        }
-        else if (Reloading)
-        {
-            Reloading = false;
+            if (cooldownLeft <= 0 && Reloading)
+            {
+                Reloading = false;
+                cooldownLeft = 0;
+            }
         }
     }
 }

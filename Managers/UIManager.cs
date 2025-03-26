@@ -110,7 +110,6 @@ public static class UIManager
             int spacing = 25;
             int offset = 20;
 
-            // Draw timers for weapons to the left of middle
             float currentX = middleX;
             for (int i = middleIndex - 1; i >= 0; i--)
             {
@@ -137,7 +136,6 @@ public static class UIManager
                 }
             }
 
-            // Draw timer for middle weapon
             if (player.WeaponList[middleIndex].Reloading)
             {
                 string timerText = player.WeaponList[middleIndex].GetReloadProgress();
@@ -158,7 +156,6 @@ public static class UIManager
                 );
             }
 
-            // Draw timers for weapons to the right of middle
             currentX = middleX + middleWeaponWidth + spacing;
             for (int i = middleIndex + 1; i < totalWeapons; i++)
             {
