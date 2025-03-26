@@ -117,13 +117,18 @@ public static class UIManager
         pos = new(playerX + windowWidth / 2 - Globals.Font.MeasureString(timerText).X - 10 - Globals.WindowModeOffset, playerY - windowHeight / 2 + 10);
         Globals.SpriteBatch.DrawString(Globals.Font, timerText, pos, Color.White);
     }
+    public static void DrawAmmo(Player player)
+    {
+        Color c = player.Weapon.Reloading ? Color.Red : Color.White;
+        string ammo = player.Weapon.GetAmmo();
+        pos = new(playerX + windowWidth / 2 - Globals.Font.MeasureString(ammo).X - 10 - Globals.WindowModeOffset, playerY + windowHeight / 2 - Globals.Font.MeasureString(ammo).Y);
+        Globals.SpriteBatch.DrawString(Globals.Font, ammo, pos, c);
+    }
 
     public static void Draw(Player player, Game1 game)
     {
         playerX = player.Position.X;
         playerY = player.Position.Y;
-
-        Color c = player.Weapon.Reloading ? Color.Red : Color.White;
 
         DrawHP(player);
         DrawWeapons(player);
@@ -131,8 +136,7 @@ public static class UIManager
 
         if (player.Weapon != null)
         {
-            pos = new(playerX + 400, playerY + 200);
-            Globals.SpriteBatch.DrawString(Globals.Font, player.Weapon.GetAmmo(), pos, c);
+            DrawAmmo(player);
         }
     }
 }
