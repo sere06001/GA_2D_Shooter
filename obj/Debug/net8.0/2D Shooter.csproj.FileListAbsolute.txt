@@ -33,7 +33,6 @@ C:\Users\Kreedy\Documents\GitHub\GA_2D_Shooter\obj\Debug\net8.0\refint\2D Shoote
 C:\Users\Kreedy\Documents\GitHub\GA_2D_Shooter\obj\Debug\net8.0\2D Shooter.pdb
 C:\Users\Kreedy\Documents\GitHub\GA_2D_Shooter\obj\Debug\net8.0\2D Shooter.genruntimeconfig.cache
 C:\Users\Kreedy\Documents\GitHub\GA_2D_Shooter\obj\Debug\net8.0\ref\2D Shooter.dll
-C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\bullet.xnb
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\exp.xnb
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\font.xnb
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\player.xnb
@@ -68,7 +67,6 @@ C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\obj\Debug\net8.0\refint\2D Shooter.dll
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\obj\Debug\net8.0\2D Shooter.pdb
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\obj\Debug\net8.0\2D Shooter.genruntimeconfig.cache
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\obj\Debug\net8.0\ref\2D Shooter.dll
-C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\PistolBullet.xnb
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\PistolBulletUI.xnb
 C:\Users\Kreedy\Documents\GitHub\GA_2D_Shooter\bin\Debug\net8.0\Content\PistolBullet.xnb
 C:\Users\Kreedy\Documents\GitHub\GA_2D_Shooter\bin\Debug\net8.0\Content\PistolBulletUI.xnb
@@ -88,7 +86,6 @@ C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\Zombie3.xnb
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\Zombie4.xnb
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\ZombieFastie1.xnb
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\ZombieFastie2.xnb
-C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\zombieold.xnb
 C:\Users\Kreedy\Documents\GitHub\GA_2D_Shooter\bin\Debug\net8.0\Content\Heart.xnb
 C:\Users\Kreedy\Documents\GitHub\GA_2D_Shooter\bin\Debug\net8.0\Content\Heart50.xnb
 C:\Users\Kreedy\Documents\GitHub\GA_2D_Shooter\bin\Debug\net8.0\Content\MinigunIcon.xnb
@@ -111,11 +108,6 @@ C:\Users\Kreedy\Documents\GitHub\GA_2D_Shooter\bin\Debug\net8.0\Content\ZombieFa
 C:\Users\Kreedy\Documents\GitHub\GA_2D_Shooter\bin\Debug\net8.0\Content\ZombieFastie2.xnb
 C:\Users\Kreedy\Documents\GitHub\GA_2D_Shooter\bin\Debug\net8.0\Content\zombieold.xnb
 C:\Users\Kreedy\Documents\GitHub\GA_2D_Shooter\bin\Debug\net8.0\Content\ZombieTank.xnb
-C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\MinigunIcon.xnb
-C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\PistolIcon.xnb
-C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\ShotgunIcon.xnb
-C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\SMGIcon.xnb
-C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\SniperIcon.xnb
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\MinigunIconKey.xnb
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\SniperIconKey.xnb
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Debug\net8.0\Content\MinigunIconKey2.xnb

@@ -2,13 +2,7 @@ namespace GA_2d_shooter;
 
 public static class ProjectileManager
 {
-    private static Texture2D texture;
     public static List<Projectile> Projectiles { get; } = [];
-
-    public static void Init(Texture2D tex)
-    {
-        texture = tex;
-    }
 
     public static void Reset()
     {
