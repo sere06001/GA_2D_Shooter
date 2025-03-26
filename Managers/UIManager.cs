@@ -127,7 +127,7 @@ public static class UIManager
 
         DrawHP(player);
         DrawWeapons(player);
-        DebugUI(player, playerX, playerY);
+        //DebugUI(player, playerX, playerY);
 
         if (player.Weapon != null)
         {
