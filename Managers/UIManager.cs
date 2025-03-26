@@ -121,7 +121,7 @@ public static class UIManager
     {
         Color c = player.Weapon.Reloading ? Color.Red : Color.White;
         string ammo = player.Weapon.GetAmmo();
-        pos = new(playerX + windowWidth / 2 - Globals.Font.MeasureString(ammo).X - 10 - Globals.WindowModeOffset, playerY + windowHeight / 2 - Globals.Font.MeasureString(ammo).Y);
+        pos = new(playerX + windowWidth / 2 - Globals.Font.MeasureString(ammo).X - 10 - windowWidth/40 - Globals.WindowModeOffset, playerY + windowHeight / 2 - Globals.Font.MeasureString(ammo).Y - windowHeight/20);
         Globals.SpriteBatch.DrawString(Globals.Font, ammo, pos, c);
     }
 
