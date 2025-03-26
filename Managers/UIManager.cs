@@ -98,6 +98,93 @@ public static class UIManager
             }
         }
     }
+    public static void DrawWeaponTimer(Player player)
+    {
+        int totalWeapons = player.WeaponList.Count;
+        if (totalWeapons > 0)
+        {
+            int middleIndex = totalWeapons / 2;
+            int middleWeaponWidth = middleWeapon.Width;
+            float halfX = playerX / 2;
+            float middleX = halfX - (middleWeaponWidth / 2);
+            int spacing = 25;
+            int offset = 20;
+
+            // Draw timers for weapons to the left of middle
+            float currentX = middleX;
+            for (int i = middleIndex - 1; i >= 0; i--)
+            {
+                GetNonMiddleWepUI(player, i);
+                currentX -= weaponTexture.Width + spacing;
+                if (player.WeaponList[i].Reloading)
+                {
+                    string timerText = player.WeaponList[i].GetReloadProgress();
+                    Vector2 timerPos = new(
+                        currentX + playerX / 2 + weaponTexture.Width / 2,
+                        playerY - windowHeight * 0.95f / 2 + weaponTexture.Height + offset
+                    );
+                    Globals.SpriteBatch.DrawString(
+                        Globals.Font,
+                        timerText,
+                        timerPos,
+                        Color.Red,
+                        0f,
+                        Globals.Font.MeasureString(timerText) / 2,
+                        0.75f,
+                        SpriteEffects.None,
+                        0f
+                    );
+                }
+            }
+
+            // Draw timer for middle weapon
+            if (player.WeaponList[middleIndex].Reloading)
+            {
+                string timerText = player.WeaponList[middleIndex].GetReloadProgress();
+                Vector2 timerPos = new(
+                    middleX + playerX / 2 + middleWeaponWidth / 2,
+                    playerY - windowHeight * 0.95f / 2 + middleWeapon.Height + offset
+                );
+                Globals.SpriteBatch.DrawString(
+                    Globals.Font,
+                    timerText,
+                    timerPos,
+                    Color.Red,
+                    0f,
+                    Globals.Font.MeasureString(timerText) / 2,
+                    0.75f,
+                    SpriteEffects.None,
+                    0f
+                );
+            }
+
+            // Draw timers for weapons to the right of middle
+            currentX = middleX + middleWeaponWidth + spacing;
+            for (int i = middleIndex + 1; i < totalWeapons; i++)
+            {
+                if (player.WeaponList[i].Reloading)
+                {
+                    string timerText = player.WeaponList[i].GetReloadProgress();
+                    Vector2 timerPos = new(
+                        currentX + playerX / 2 + weaponTexture.Width / 2,
+                        playerY - windowHeight * 0.95f / 2 + weaponTexture.Height + offset
+                    );
+                    Globals.SpriteBatch.DrawString(
+                        Globals.Font,
+                        timerText,
+                        timerPos,
+                        Color.Red,
+                        0f,
+                        Globals.Font.MeasureString(timerText) / 2,
+                        0.75f,
+                        SpriteEffects.None,
+                        0f
+                    );
+                }
+                currentX += weaponTexture.Width + spacing;
+            }
+        }
+    }
 
     public static void DrawHP(Player player)
     {
@@ -132,6 +219,7 @@ public static class UIManager
 
         DrawHP(player);
         DrawWeapons(player);
+        DrawWeaponTimer(player);
         //DebugUI(player, playerX, playerY);
 
         if (player.Weapon != null)

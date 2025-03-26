@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace GA_2d_shooter;
 
 public abstract class Weapon
@@ -59,6 +61,12 @@ public abstract class Weapon
     public void UnlockGun()
     {
         IsUnlocked = true;
+    }
+    public virtual string GetReloadProgress()
+    {
+        if (!Reloading) return string.Empty;
+        if (cooldownLeft < 0) return string.Empty;
+        return string.Format(CultureInfo.InvariantCulture, "{0:F1}s", cooldownLeft);
     }
 
     public virtual void Update()
