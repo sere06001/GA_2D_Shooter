@@ -28,10 +28,7 @@ public class Player : MovingSprite
     private static Vector2 GetStartPosition()
     {
         Background bg = new();
-        float totalWidth = bg.mapTileSize.X * bg.tiles[0, 0].texture.Width;
-        float totalHeight = bg.mapTileSize.Y * bg.tiles[0, 0].texture.Height;
-
-        return new Vector2(totalWidth / 2, totalHeight / 2);
+        return bg.GetCenterPosition();
     }
 
     public void AddExperience(int exp)

@@ -13,7 +13,6 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin Heart50.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -25,7 +24,6 @@
 /processorParam:TextureFormat=Color
 /build:Heart50.png
 
-#begin Pellet25.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -37,7 +35,6 @@
 /processorParam:TextureFormat=Color
 /build:Pellet25.png
 
-#begin ShotgunShell.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -49,7 +46,6 @@
 /processorParam:TextureFormat=Color
 /build:ShotgunShell.png
 
-#begin SniperBullet25.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -61,7 +57,6 @@
 /processorParam:TextureFormat=Color
 /build:SniperBullet25.png
 
-#begin PistolBulletNew25.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -73,7 +68,6 @@
 /processorParam:TextureFormat=Color
 /build:PistolBulletNew25.png
 
-#begin exp.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -85,14 +79,12 @@
 /processorParam:TextureFormat=Color
 /build:exp.png
 
-#begin font.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor
 /processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Compressed
 /build:font.spritefont
 
-#begin player.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -104,7 +96,17 @@
 /processorParam:TextureFormat=Color
 /build:player.png
 
-#begin tile1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Map.png
+
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -116,7 +118,6 @@
 /processorParam:TextureFormat=Color
 /build:tile1.png
 
-#begin tile2.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -128,7 +129,6 @@
 /processorParam:TextureFormat=Color
 /build:tile2.png
 
-#begin tile3.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -140,7 +140,6 @@
 /processorParam:TextureFormat=Color
 /build:tile3.png
 
-#begin tile4.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -152,7 +151,6 @@
 /processorParam:TextureFormat=Color
 /build:tile4.png
 
-#begin tile5.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -164,7 +162,6 @@
 /processorParam:TextureFormat=Color
 /build:tile5.png
 
-#begin zombie1.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -176,7 +173,6 @@
 /processorParam:TextureFormat=Color
 /build:Zombie1.png
 
-#begin zombie2.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -188,7 +184,6 @@
 /processorParam:TextureFormat=Color
 /build:Zombie2.png
 
-#begin zombie3.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -200,7 +195,6 @@
 /processorParam:TextureFormat=Color
 /build:Zombie3.png
 
-#begin zombie4.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -212,7 +206,6 @@
 /processorParam:TextureFormat=Color
 /build:Zombie4.png
 
-#begin ZombieTank.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -224,7 +217,6 @@
 /processorParam:TextureFormat=Color
 /build:ZombieTank.png
 
-#begin ZombieFastie1.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -236,7 +228,6 @@
 /processorParam:TextureFormat=Color
 /build:ZombieFastie1.png
 
-#begin ZombieFastie2.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -248,7 +239,6 @@
 /processorParam:TextureFormat=Color
 /build:ZombieFastie2.png
 
-#begin PistolIconLocked.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -260,7 +250,6 @@
 /processorParam:TextureFormat=Color
 /build:PistolIconLocked.png
 
-#begin PistolIconKey.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -272,7 +261,6 @@
 /processorParam:TextureFormat=Color
 /build:PistolIconKey.png
 
-#begin PistolIconKey2.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -284,7 +272,6 @@
 /processorParam:TextureFormat=Color
 /build:PistolIconKey2.png
 
-#begin SniperIconLocked.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -296,7 +283,6 @@
 /processorParam:TextureFormat=Color
 /build:SniperIconLocked.png
 
-#begin SniperIconKey.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -308,7 +294,6 @@
 /processorParam:TextureFormat=Color
 /build:SniperIconKey.png
 
-#begin SniperIconKey2.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -320,7 +305,6 @@
 /processorParam:TextureFormat=Color
 /build:SniperIconKey2.png
 
-#begin ShotgunIconLocked.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -332,7 +316,6 @@
 /processorParam:TextureFormat=Color
 /build:ShotgunIconLocked.png
 
-#begin ShotgunIconKey.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -344,7 +327,6 @@
 /processorParam:TextureFormat=Color
 /build:ShotgunIconKey.png
 
-#begin ShotgunIconKey2.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -356,7 +338,6 @@
 /processorParam:TextureFormat=Color
 /build:ShotgunIconKey2.png
 
-#begin SMGIconLocked.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -368,7 +349,6 @@
 /processorParam:TextureFormat=Color
 /build:SMGIconLocked.png
 
-#begin SMGIconKey.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -380,7 +360,6 @@
 /processorParam:TextureFormat=Color
 /build:SMGIconKey.png
 
-#begin SMGIconKey2.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -392,7 +371,6 @@
 /processorParam:TextureFormat=Color
 /build:SMGIconKey2.png
 
-#begin MinigunIconLocked.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -404,7 +382,6 @@
 /processorParam:TextureFormat=Color
 /build:MinigunIconLocked.png
 
-#begin MinigunIconKey.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -416,7 +393,6 @@
 /processorParam:TextureFormat=Color
 /build:MinigunIconKey.png
 
-#begin MinigunIconKey2.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255

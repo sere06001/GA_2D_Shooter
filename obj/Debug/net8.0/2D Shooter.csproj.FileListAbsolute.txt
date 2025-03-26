@@ -130,3 +130,4 @@ C:\Users\Kreedy\Documents\GitHub\GA_2D_Shooter\bin\Debug\net8.0\Content\SMGIconL
 C:\Users\Kreedy\Documents\GitHub\GA_2D_Shooter\bin\Debug\net8.0\Content\SniperIconKey.xnb
 C:\Users\Kreedy\Documents\GitHub\GA_2D_Shooter\bin\Debug\net8.0\Content\SniperIconKey2.xnb
 C:\Users\Kreedy\Documents\GitHub\GA_2D_Shooter\bin\Debug\net8.0\Content\SniperIconLocked.xnb
+c:\Users\Kreedy\Documents\GitHub\GA_2D_Shooter\bin\Debug\net8.0\Content\Map.xnb

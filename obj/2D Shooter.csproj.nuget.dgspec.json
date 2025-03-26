@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kreedy\\Documents\\GitHub\\GA_2D_Shooter\\2D Shooter.csproj": {}
+    "c:\\Users\\Kreedy\\Documents\\GitHub\\GA_2D_Shooter\\2D Shooter.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kreedy\\Documents\\GitHub\\GA_2D_Shooter\\2D Shooter.csproj": {
+    "c:\\Users\\Kreedy\\Documents\\GitHub\\GA_2D_Shooter\\2D Shooter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kreedy\\Documents\\GitHub\\GA_2D_Shooter\\2D Shooter.csproj",
+        "projectUniqueName": "c:\\Users\\Kreedy\\Documents\\GitHub\\GA_2D_Shooter\\2D Shooter.csproj",
         "projectName": "2D Shooter",
-        "projectPath": "C:\\Users\\Kreedy\\Documents\\GitHub\\GA_2D_Shooter\\2D Shooter.csproj",
+        "projectPath": "c:\\Users\\Kreedy\\Documents\\GitHub\\GA_2D_Shooter\\2D Shooter.csproj",
         "packagesPath": "C:\\Users\\Kreedy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kreedy\\Documents\\GitHub\\GA_2D_Shooter\\obj\\",
+        "outputPath": "c:\\Users\\Kreedy\\Documents\\GitHub\\GA_2D_Shooter\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Kreedy\\AppData\\Roaming\\NuGet\\NuGet.Config"

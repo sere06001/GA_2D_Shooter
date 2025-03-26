@@ -2,38 +2,29 @@ namespace GA_2d_shooter;
 
 public class Background
 {
-    public readonly Point mapTileSize = new(6, 4);
-    public readonly Sprite[,] tiles;
+    private readonly Sprite mapSprite;
+    public readonly Vector2 MapSize;
 
     public Background()
     {
-        tiles = new Sprite[mapTileSize.X, mapTileSize.Y];
+        Texture2D mapTexture = Globals.Content.Load<Texture2D>("Map");
+        MapSize = new Vector2(mapTexture.Width, mapTexture.Height);
 
-        List<Texture2D> textures = new(5);
-        for (int i = 1; i < 6; i++) textures.Add(Globals.Content.Load<Texture2D>($"tile{i}"));
+        // Center the map
+        Vector2 mapPosition = MapSize / 2;
+        mapSprite = new Sprite(mapTexture, mapPosition);
 
-        Point TileSize = new(textures[0].Width, textures[0].Height);
-        Random random = new();
-        for (int y = 0; y < mapTileSize.Y; y++)
-        {
-            for (int x = 0; x < mapTileSize.X; x++)
-            {
-                int r = random.Next(0, textures.Count);
-                tiles[x, y] = new(textures[r], new((x + 0.5f) * TileSize.X, (y + 0.5f) * TileSize.Y));
-            }
-        }
-        
-        int totalWidth = mapTileSize.X * tiles[0, 0].texture.Width;
-        int totalHeight = mapTileSize.Y * tiles[0, 0].texture.Height;
+        // Set the map bounds for player movement and other calculations
+        Globals.MapBounds = new Point((int)MapSize.X, (int)MapSize.Y);
+    }
 
-        Globals.MapBounds = new(totalWidth, totalHeight);
+    public Vector2 GetCenterPosition()
+    {
+        return MapSize / 2;
     }
 
     public void Draw()
     {
-        for (int y = 0; y < mapTileSize.Y; y++)
-        {
-            for (int x = 0; x < mapTileSize.X; x++) tiles[x, y].Draw();
-        }
+        mapSprite.Draw();
     }
 }
