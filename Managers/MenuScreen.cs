@@ -58,6 +58,7 @@ public class MenuScreen
         Globals.Bounds = new(game._graphics.PreferredBackBufferWidth, game._graphics.PreferredBackBufferHeight);
         menuItems[3] = $"Fullscreen: {(game._graphics.IsFullScreen ? "ON" : "OFF")}";
         UpdateMenuPositions();
+        UIManager.UpdateUIBounds();
     }
 
     public void Update(GameTime gameTime)

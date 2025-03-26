@@ -59,7 +59,11 @@ public static class UIManager
         pos = new(x - 100, y + 100);
         Globals.SpriteBatch.DrawString(Globals.Font, $"WeaponList Count: {player.WeaponList.Count}", pos, Color.White);
     }
-
+    public static void UpdateUIBounds()
+    {
+        windowWidth = Globals.Bounds.X;
+        windowHeight = Globals.Bounds.Y;
+    }
     public static void DrawWeapons(Player player)
     {
         playerX = player.Position.X;
