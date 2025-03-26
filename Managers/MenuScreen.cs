@@ -73,19 +73,24 @@ public class MenuScreen
 
         if (currentKeyState.IsKeyDown(Keys.Enter) && !prevKeyState.IsKeyDown(Keys.Enter))
         {
-            if (game.isFirstTimeInMenu)
-            {
-                game.isFirstTimeInMenu = false;
-                menuItems[1] = "Restart";
-            }
             switch (selectedIndex)
             {
                 case 0: //Resume
                     game.isInMenu = false;
+                    if (game.isFirstTimeInMenu)
+                    {
+                        game.isFirstTimeInMenu = false;
+                        menuItems[1] = "Restart";
+                    }
                     break;
-                case 1: //Restart
+                case 1: //Start new game or Restart
                     game.isInMenu = false;
                     game.Restart();
+                    if (game.isFirstTimeInMenu)
+                    {
+                        game.isFirstTimeInMenu = false;
+                        menuItems[1] = "Restart";
+                    }
                     break;
                 case 2: //Local leaderboard
                     game.isInMenu = false;
