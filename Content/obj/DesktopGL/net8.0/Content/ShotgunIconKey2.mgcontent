@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>c:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/ShotgunIconKey2.png</SourceFile>
-  <SourceTime>2025-02-25T12:21:11.2867605+01:00</SourceTime>
-  <DestFile>c:/GA-Monogame/GA_2DSpel/GA_2D_Shooter/Content/bin/DesktopGL/Content/ShotgunIconKey2.xnb</DestFile>
-  <DestTime>2025-03-26T08:37:26.6695181+01:00</DestTime>
+  <SourceFile>c:/Users/Kreedy/Documents/GitHub/GA_2D_Shooter/Content/ShotgunIconKey2.png</SourceFile>
+  <SourceTime>2025-03-13T16:45:11.5789449+01:00</SourceTime>
+  <DestFile>c:/Users/Kreedy/Documents/GitHub/GA_2D_Shooter/Content/bin/DesktopGL/Content/ShotgunIconKey2.xnb</DestFile>
+  <DestTime>2025-03-26T11:34:56.5166213+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

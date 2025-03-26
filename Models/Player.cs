@@ -21,7 +21,6 @@ public class Player : MovingSprite
     {
         Reset();
         Speed = 200;
-        Experience = SaveManager.LoadExperience();
         Iframe = 3f; // 3 seconds iframe
     }
 
@@ -37,7 +36,6 @@ public class Player : MovingSprite
     public void AddExperience(int exp)
     {
         Experience += exp;
-        SaveManager.SaveExperience(Experience);
     }
 
     public void Reset()
@@ -62,6 +60,7 @@ public class Player : MovingSprite
         Weapon = Pistol;
         prevWeapon = Weapon;
         Position = GetStartPosition();
+        Experience = 0;
     }
 
     public void EquipSlot(int slot)

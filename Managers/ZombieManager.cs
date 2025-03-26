@@ -27,6 +27,7 @@ public static class ZombieManager
     public static void Reset()
     {
         Zombies.Clear();
+        totalZombieCount = 0;
         spawnCooldown = spawnCooldownReset;
         spawnTime = spawnCooldown;
     }
@@ -118,9 +119,9 @@ public static class ZombieManager
             totalZombieCount++;
         }
 
-        if (totalZombieCount % 5 == 0 && totalZombieCount > 0 && spawnCooldown > 1f)
+        if (totalZombieCount == 50)
         {
-            spawnCooldown -= 0.5f;
+            spawnCooldown = 0.5f;
         }
     }
 

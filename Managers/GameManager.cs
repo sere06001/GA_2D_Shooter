@@ -37,6 +37,7 @@ public class GameManager
 
         if (player.Dead)
         {
+            game.isInMenu = true;
             Restart();
         }
     }
