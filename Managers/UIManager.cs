@@ -9,6 +9,11 @@ public static class UIManager
     public static float windowHeight = Globals.Bounds.Y;
     public static float playerX;
     public static float playerY;
+    private static Game1 game;
+    public static void Init(Game1 game1)
+    {
+        game = game1;
+    }
 
     public static void GetNonMiddleWepUI(Player player, int index)
     {
@@ -202,14 +207,24 @@ public static class UIManager
         int seconds = (int)(gameTimer % 60);
         float hundredths = gameTimer % 1 * 100;
         string timerText = $"{minutes:D2}:{seconds:D2}.{hundredths:00}";
-        pos = new(playerX + windowWidth / 2 - Globals.Font.MeasureString(timerText).X - 10 - Globals.WindowModeOffset, playerY - windowHeight / 2 + 10);
+        // Adjust position by actual window bounds
+        float adjustedX = playerX + (Globals.Bounds.X - (game._graphics.IsFullScreen ? 0 : Globals.WindowModeOffset)) / 2 
+            - Globals.Font.MeasureString(timerText).X - 10;
+        pos = new(adjustedX, playerY - windowHeight / 2 + 10);
         Globals.SpriteBatch.DrawString(Globals.Font, timerText, pos, Color.White);
     }
+
     public static void DrawAmmo(Player player)
     {
         Color c = player.Weapon.Reloading ? Color.Red : Color.White;
         string ammo = player.Weapon.GetAmmo();
-        pos = new(playerX + windowWidth / 2 - Globals.Font.MeasureString(ammo).X - 10 - windowWidth/40 - Globals.WindowModeOffset, playerY + windowHeight / 2 - Globals.Font.MeasureString(ammo).Y - windowHeight/20);
+        Vector2 ammoSize = Globals.Font.MeasureString(ammo);
+        // Adjust position by actual window bounds
+        float adjustedX = playerX + (Globals.Bounds.X - (game._graphics.IsFullScreen ? 0 : Globals.WindowModeOffset)) / 2 
+            - ammoSize.X - 10 - windowWidth/40;
+        float adjustedY = playerY + (Globals.Bounds.Y - (game._graphics.IsFullScreen ? 0 : Globals.WindowModeOffset)) / 2 
+            - ammoSize.Y - windowHeight/20;
+        pos = new(adjustedX, adjustedY);
         Globals.SpriteBatch.DrawString(Globals.Font, ammo, pos, c);
     }
 

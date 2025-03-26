@@ -41,6 +41,7 @@ public class Game1 : Game
         Globals.Font = Content.Load<SpriteFont>("font");
         Globals.Content = Content;
         gameManager = new(this);
+        UIManager.Init(this);
 
         camera = new Camera(GraphicsDevice.Viewport);
 
