@@ -4,13 +4,15 @@ public class Game1 : Game
 {
     public GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
-    private GameManager gameManager;
+    public GameManager gameManager;
     public Camera camera;
     private MenuScreen menuScreen;
     private LeaderboardScreen leaderboardScreen;
     public bool isInMenu = true;
     public bool isInLeaderboard = false;
     public bool isFirstTimeInMenu = true;
+    public DeathScreen deathScreen;
+    public bool isInDeathScreen = false;
 
     public float gameTimer;
 
@@ -61,6 +63,7 @@ public class Game1 : Game
         {
             isInMenu = true;
             isInLeaderboard = false;
+            isInDeathScreen = false;
         }
 
         if (isInMenu)
@@ -70,6 +73,10 @@ public class Game1 : Game
         else if (isInLeaderboard)
         {
             leaderboardScreen.Update(gameTime);
+        }
+        else if (isInDeathScreen)
+        {
+            deathScreen.Update(gameTime);
         }
         else
         {
@@ -101,6 +108,12 @@ public class Game1 : Game
         {
             _spriteBatch.Begin();
             leaderboardScreen.Draw(_spriteBatch);
+            _spriteBatch.End();
+        }
+        else if (isInDeathScreen)
+        {
+            _spriteBatch.Begin();
+            deathScreen.Draw(_spriteBatch);
             _spriteBatch.End();
         }
         else

@@ -1,33 +1,34 @@
-namespace GA_2d_shooter;
+using GA_2d_shooter;
 
 public static class SaveManager
 {
     private static readonly string timeFile = "times.dat";
-
-    public static void SaveTime(float time)
+    public static void SaveTime(float time, int score)
     {
-        List<float> times = LoadTimes();
-        times.Add(time);
-        times.Sort();
-        times.Reverse();
+        List<TimeScorePair> pairs = LoadTimes();
+        pairs.Add(new TimeScorePair(time, score));
+        
+        // Sort by time (descending)
+        pairs = pairs.OrderByDescending(p => p.Time).ToList();
 
         using (BinaryWriter writer = new BinaryWriter(File.Open(timeFile, FileMode.Create)))
         {
-            writer.Write(times.Count);
-            foreach (float t in times)
+            writer.Write(pairs.Count);
+            foreach (var pair in pairs)
             {
-                writer.Write(t);
+                writer.Write(pair.Time);
+                writer.Write(pair.Score);
             }
         }
     }
 
-    public static List<float> LoadTimes()
+    public static List<TimeScorePair> LoadTimes()
     {
-        List<float> times = new List<float>();
+        List<TimeScorePair> pairs = new List<TimeScorePair>();
 
         if (!File.Exists(timeFile))
         {
-            return times;
+            return pairs;
         }
 
         using (BinaryReader reader = new BinaryReader(File.Open(timeFile, FileMode.Open)))
@@ -37,18 +38,18 @@ public static class SaveManager
                 int count = reader.ReadInt32();
                 for (int i = 0; i < count; i++)
                 {
-                    times.Add(reader.ReadSingle());
+                    float time = reader.ReadSingle();
+                    int score = reader.ReadInt32();
+                    pairs.Add(new TimeScorePair(time, score));
                 }
             }
             catch (EndOfStreamException)
             {
-                return new List<float>();
+                return new List<TimeScorePair>();
             }
         }
 
-        times.Sort();
-        times.Reverse();
-        return times;
+        return pairs;
     }
 
     public static void ResetTimes()

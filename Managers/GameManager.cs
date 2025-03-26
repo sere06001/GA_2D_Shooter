@@ -37,7 +37,8 @@ public class GameManager
 
         if (player.Dead)
         {
-            game.isInMenu = true;
+            game.deathScreen = new DeathScreen(game, game.gameTimer);
+            game.isInDeathScreen = true;
             Restart();
         }
     }

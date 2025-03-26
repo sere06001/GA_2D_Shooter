@@ -14,6 +14,7 @@ public class Player : MovingSprite
     public int HP { get; private set; }
     public bool Dead { get; private set; }
     public int Experience { get; private set; }
+    public int ScoreToDisplay { get; private set; }
     private float Iframe { get; set; }
     private DateTime lastHitTime = DateTime.MinValue;
 
@@ -60,6 +61,7 @@ public class Player : MovingSprite
         Weapon = Pistol;
         prevWeapon = Weapon;
         Position = GetStartPosition();
+        ScoreToDisplay = Experience;
         Experience = 0;
     }
 
@@ -89,7 +91,7 @@ public class Player : MovingSprite
         foreach (var z in zombies)
         {
             if (z.HP <= 0) continue;
-
+    
             if ((Position - z.Position).Length() < z.HitRange)
             {
                 if ((DateTime.Now - lastHitTime).TotalSeconds >= Iframe)
@@ -99,7 +101,7 @@ public class Player : MovingSprite
                     if (HP <= 0)
                     {
                         Dead = true;
-                        SaveManager.SaveTime(gameTimer);
+                        SaveManager.SaveTime(gameTimer, Experience);
                     }
                     break;
                 }
