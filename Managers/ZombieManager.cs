@@ -114,8 +114,10 @@ public static class ZombieManager
                 Zombies.Add(new Fastie(textureFastie, RandomPosition(player)));
                 totalZombieCount++;
             }
-            //Spawn regular zombies even if other zombie type spawns
-            Zombies.Add(new(textureZombie, RandomPosition(player)));
+            else
+            {
+                Zombies.Add(new(textureZombie, RandomPosition(player)));
+            }
             totalZombieCount++;
         }
 
