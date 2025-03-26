@@ -219,7 +219,6 @@ public static class UIManager
         Color c = player.Weapon.Reloading ? Color.Red : Color.White;
         string ammo = player.Weapon.GetAmmo();
         Vector2 ammoSize = Globals.Font.MeasureString(ammo);
-        // Adjust position by actual window bounds
         float adjustedX = playerX + (Globals.Bounds.X - (game._graphics.IsFullScreen ? 0 : Globals.WindowModeOffset)) / 2 
             - ammoSize.X - 10 - windowWidth/40;
         float adjustedY = playerY + (Globals.Bounds.Y - (game._graphics.IsFullScreen ? 0 : Globals.WindowModeOffset)) / 2 

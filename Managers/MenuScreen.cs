@@ -41,7 +41,7 @@ public class MenuScreen
     {
         if (game._graphics.IsFullScreen)
         {
-            Globals.WindowModeOffset = 200;
+            Globals.WindowModeOffset = 10;
             game._graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width - Globals.WindowModeOffset;
             game._graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height - Globals.WindowModeOffset;
             game._graphics.IsFullScreen = false;
