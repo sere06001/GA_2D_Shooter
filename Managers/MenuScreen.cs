@@ -80,21 +80,21 @@ public class MenuScreen
             }
             switch (selectedIndex)
             {
-                case 0: // Resume
+                case 0: //Resume
                     game.isInMenu = false;
                     break;
-                case 1: // Restart
+                case 1: //Restart
                     game.isInMenu = false;
                     game.Restart();
                     break;
-                case 2: // Local leaderboard
+                case 2: //Local leaderboard
                     game.isInMenu = false;
                     game.isInLeaderboard = true;
                     break;
-                case 3: // Fullscreen toggle
+                case 3: //Fullscreen toggle
                     FullscreenMode();
                     break;
-                case 4: // Exit
+                case 4: //Exit
                     game.Exit();
                     break;
             }

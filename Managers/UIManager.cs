@@ -207,7 +207,6 @@ public static class UIManager
         int seconds = (int)(gameTimer % 60);
         float hundredths = gameTimer % 1 * 100;
         string timerText = $"{minutes:D2}:{seconds:D2}.{hundredths:00}";
-        // Adjust position by actual window bounds
         float adjustedX = playerX + (Globals.Bounds.X - (game._graphics.IsFullScreen ? 0 : Globals.WindowModeOffset)) / 2 
             - Globals.Font.MeasureString(timerText).X - 10;
         pos = new(adjustedX, playerY - windowHeight / 2 + 10);
