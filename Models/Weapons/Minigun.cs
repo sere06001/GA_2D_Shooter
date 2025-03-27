@@ -6,7 +6,6 @@ public class Minigun : Weapon
     public override Texture2D WeaponIcon => Globals.Content.Load<Texture2D>("MinigunIconKey2");
     public override Texture2D WeaponIconSelected => Globals.Content.Load<Texture2D>("MinigunIconKey");
     public override Texture2D WeaponIconLocked => Globals.Content.Load<Texture2D>("MinigunIconLocked");
-    private float ANGLE_STEP;
     public Minigun()
     {
         XPforUnlock = 1;

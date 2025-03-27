@@ -6,17 +6,16 @@ public class Shotgun : Weapon
     public override Texture2D WeaponIcon => Globals.Content.Load<Texture2D>("ShotgunIconKey2");
     public override Texture2D WeaponIconSelected => Globals.Content.Load<Texture2D>("ShotgunIconKey");
     public override Texture2D WeaponIconLocked => Globals.Content.Load<Texture2D>("ShotgunIconLocked");
-    private float ANGLE_STEP;
     private int pelletCount;
 
     public Shotgun()
     {
-        XPforUnlock = 20;
+        XPforUnlock = 0;
         cooldown = 0.75f;
         MaxAmmo = 8;
         Ammo = MaxAmmo;
         reloadTime = 3f;
-        pelletCount = 4;
+        pelletCount = 5;
         ANGLE_STEP = (float)(Math.PI / 16);
     }
 
@@ -27,8 +26,8 @@ public class Shotgun : Weapon
         {
             Position = player.Position,
             Rotation = startAngle,
-            Lifespan = 0.3f,
-            Speed = 900,
+            Lifespan = 0.5f,
+            Speed = 650,
             Damage = 100
         };
 

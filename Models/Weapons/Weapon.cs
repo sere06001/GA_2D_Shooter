@@ -18,7 +18,8 @@ public abstract class Weapon
     public bool IsUnlocked { get; protected set; } = false;
     public int XPforUnlock { get; protected set; }
     protected int Pierce { get; set; } = 0;
-    Random random = new Random();
+    protected Random random = new Random();
+    protected float ANGLE_STEP;
 
     protected Weapon()
     {
