@@ -93,7 +93,7 @@ public class LeaderboardScreen
 
         for (int i = 0; i < amountOfTimesToShow; i++)
         {
-            leaderboardPositions.Add(new Vector2(centerX, startY + (i * spacing)));
+            leaderboardPositions.Add(new Vector2(centerX-150, startY + (i * spacing)));
         }
     }
 }
