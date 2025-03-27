@@ -13,11 +13,12 @@ public class SMG : Weapon
         MaxAmmo = 30;
         Ammo = MaxAmmo;
         reloadTime = 2f;
-        ANGLE_STEP = (float)(Math.PI / 25);
     }
 
     protected override void CreateProjectiles(Player player)
     {
+        ANGLE_STEP = (float)(Math.PI / 25);
+        
         ProjectileData pd = new()
         {
             Position = player.Position,

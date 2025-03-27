@@ -13,11 +13,12 @@ public class Minigun : Weapon
         MaxAmmo = 150;
         Ammo = MaxAmmo;
         reloadTime = 10f;
-        ANGLE_STEP = (float)(Math.PI / 16);
     }
 
     protected override void CreateProjectiles(Player player)
     {
+        ANGLE_STEP = (float)(Math.PI / 16);
+        
         ProjectileData pd = new()
         {
             Position = player.Position,

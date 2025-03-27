@@ -19,7 +19,7 @@ public abstract class Weapon
     public int XPforUnlock { get; protected set; }
     protected int Pierce { get; set; } = 0;
     protected Random random = new Random();
-    protected float ANGLE_STEP;
+    protected virtual float ANGLE_STEP { get; set; } = 0;
 
     protected Weapon()
     {

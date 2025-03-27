@@ -16,11 +16,12 @@ public class Shotgun : Weapon
         Ammo = MaxAmmo;
         reloadTime = 3f;
         pelletCount = 5;
-        ANGLE_STEP = (float)(Math.PI / 16);
     }
 
     protected override void CreateProjectiles(Player player)
     {
+        ANGLE_STEP = (float)(Math.PI / 16);
+        
         float startAngle = player.Rotation - (pelletCount - 1) / 2f * ANGLE_STEP;
         ProjectileData pd = new()
         {
