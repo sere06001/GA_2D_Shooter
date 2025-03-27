@@ -15,7 +15,7 @@ public class Zombie : MovingSprite
     {
         Speed = 100;
         HP = 200;
-        HitRange = tex.Width;
+        HitRange = tex.Width-20;
         XPAmountOnDeath = 1;
         hitByProjectile = new Dictionary<Projectile, bool>();
         iframeTimer = 0f;

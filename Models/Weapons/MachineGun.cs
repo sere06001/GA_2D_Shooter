@@ -24,7 +24,7 @@ public class SMG : Weapon
             Lifespan = 2f,
             Speed = 750,
             Damage = 75,
-            Pierce = 1
+            Pierce = 2
         };
 
         ProjectileManager.AddProjectile(pd, this);
