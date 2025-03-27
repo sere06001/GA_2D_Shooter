@@ -23,7 +23,7 @@ public class SMG : Weapon
             Position = player.Position,
             Rotation = player.Rotation,
             Lifespan = 2f,
-            Speed = 750,
+            Speed = 800,
             Damage = 75
         };
 
