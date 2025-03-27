@@ -13,6 +13,7 @@ public class SMG : Weapon
         MaxAmmo = 30;
         Ammo = MaxAmmo;
         reloadTime = 2f;
+        ANGLE_STEP = (float)(Math.PI / 25);
     }
 
     protected override void CreateProjectiles(Player player)
@@ -26,6 +27,8 @@ public class SMG : Weapon
             Damage = 75,
             Pierce = 1
         };
+
+        pd.Rotation = Spread(player, ANGLE_STEP);
 
         ProjectileManager.AddProjectile(pd, this);
     }

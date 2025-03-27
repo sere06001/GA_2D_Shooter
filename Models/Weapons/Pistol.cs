@@ -13,6 +13,7 @@ public class Pistol : Weapon
         MaxAmmo = 10;
         Ammo = MaxAmmo;
         reloadTime = 1f;
+        ANGLE_STEP = (float)(Math.PI / 16)/2;
     }
 
     protected override void CreateProjectiles(Player player)
@@ -25,6 +26,8 @@ public class Pistol : Weapon
             Speed = 500,
             Damage = 50
         };
+
+        pd.Rotation = Spread(player, ANGLE_STEP);
 
         ProjectileManager.AddProjectile(pd, this);
     }
