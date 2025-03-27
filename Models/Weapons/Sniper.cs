@@ -24,7 +24,7 @@ public class Sniper : Weapon
             Lifespan = 30f,
             Speed = 1250,
             Damage = 200,
-            Pierce = 3
+            Pierce = 5
         };
 
         ProjectileManager.AddProjectile(pd, this);

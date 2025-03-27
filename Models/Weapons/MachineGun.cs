@@ -13,7 +13,6 @@ public class SMG : Weapon
         MaxAmmo = 30;
         Ammo = MaxAmmo;
         reloadTime = 2f;
-        Pierce = 2;
     }
 
     protected override void CreateProjectiles(Player player)
@@ -24,7 +23,8 @@ public class SMG : Weapon
             Rotation = player.Rotation,
             Lifespan = 2f,
             Speed = 750,
-            Damage = 75
+            Damage = 75,
+            Pierce = 1
         };
 
         ProjectileManager.AddProjectile(pd, this);

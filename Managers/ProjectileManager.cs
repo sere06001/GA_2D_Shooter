@@ -23,24 +23,20 @@ public static class ProjectileManager
             foreach (var z in zombies)
             {
                 if (z.HP <= 0) continue;
-                float widestDimensionTexture = 0;
-                if (z.texture.Width > z.texture.Height)
-                {
-                    widestDimensionTexture = z.texture.Width;
-                }
-                else
-                {
-                    widestDimensionTexture = z.texture.Height;
-                }
+                float widestDimensionTexture = Math.Max(z.texture.Width, z.texture.Height);
+                
                 if ((p.Position - z.Position).Length() < widestDimensionTexture/2)
                 {
-                    z.TakeDamage(p.Damage, player);
-                    p.Pierce--;
-                    if (p.Pierce <= 0)
+                    z.TakeDamage(p.Damage, player, p);
+                    if (z.HP <= 0 || p.Pierce <= 1)
                     {
-                        p.Destroy();
+                        p.Pierce--;
+                        if (p.Pierce <= 0)
+                        {
+                            p.Destroy();
+                            break;
+                        }
                     }
-                    break;
                 }
             }
         }

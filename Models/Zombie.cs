@@ -7,6 +7,9 @@ public class Zombie : MovingSprite
     public int HP { get; set; }
     public float HitRange { get; protected set; }
     public int XPAmountOnDeath { get; protected set; }
+    private float iframeTimer;
+    private float IFRAME_DURATION = 0.1f; //Duration in seconds
+    private Dictionary<Projectile, bool> hitByProjectile;
 
     public Zombie(Texture2D tex, Vector2 pos) : base(tex, pos)
     {
@@ -14,16 +17,34 @@ public class Zombie : MovingSprite
         HP = 200;
         HitRange = tex.Width;
         XPAmountOnDeath = 1;
+        hitByProjectile = new Dictionary<Projectile, bool>();
+        iframeTimer = 0f;
     }
 
-    public void TakeDamage(int dmg, Player player)
+    public void TakeDamage(int dmg, Player player, Projectile projectile)
     {
+        if (hitByProjectile.ContainsKey(projectile))
+            return;
+
         HP -= dmg;
-        if (HP <= 0) player.AddExperience(XPAmountOnDeath);
+        hitByProjectile[projectile] = true;
+        iframeTimer = IFRAME_DURATION;
+
+        if (HP <= 0) 
+            player.AddExperience(XPAmountOnDeath);
     }
 
     public void Update(Player player)
     {
+        if (iframeTimer > 0)
+        {
+            iframeTimer -= Globals.TotalSeconds;
+            if (iframeTimer <= 0)
+            {
+                hitByProjectile.Clear();
+            }
+        }
+
         var toPlayer = player.Position - Position;
         Rotation = (float)Math.Atan2(toPlayer.Y, toPlayer.X);
 
