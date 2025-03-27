@@ -4,7 +4,6 @@ public class Player : MovingSprite
 {
     public Texture2D HPTexture => Globals.Content.Load<Texture2D>("Heart50");
     public Weapon Weapon { get; set; }
-    public Weapon prevWeapon { get; set; }
     public Weapon Pistol;
     public Weapon Sniper;
     public Weapon Shotgun;
@@ -56,7 +55,6 @@ public class Player : MovingSprite
         Dead = false;
         HP = 3;
         Weapon = Pistol;
-        prevWeapon = Weapon;
         Position = GetStartPosition();
         ScoreToDisplay = Experience;
         Experience = 0;
@@ -64,11 +62,6 @@ public class Player : MovingSprite
 
     public void EquipSlot(int slot)
     {
-        if (Weapon != null && prevWeapon != Weapon)
-        {
-            prevWeapon = Weapon;
-        }
-
         switch (slot)
         {
             case 1: Weapon = Pistol; break;

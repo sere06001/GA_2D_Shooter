@@ -8,11 +8,12 @@ public class SMG : Weapon
     public override Texture2D WeaponIconLocked => Globals.Content.Load<Texture2D>("SMGIconLocked");
     public SMG()
     {
-        XPforUnlock = 30;
-        cooldown = 0.2f;
+        XPforUnlock = 1;
+        cooldown = 0.08f;
         MaxAmmo = 30;
         Ammo = MaxAmmo;
         reloadTime = 2f;
+        Pierce = 2;
     }
 
     protected override void CreateProjectiles(Player player)
@@ -23,7 +24,7 @@ public class SMG : Weapon
             Rotation = player.Rotation,
             Lifespan = 2f,
             Speed = 750,
-            Damage = 50
+            Damage = 75
         };
 
         ProjectileManager.AddProjectile(pd, this);
