@@ -24,8 +24,7 @@ public class SMG : Weapon
             Rotation = player.Rotation,
             Lifespan = 2f,
             Speed = 750,
-            Damage = 75,
-            Pierce = 1
+            Damage = 75
         };
 
         pd.Rotation = Spread(player, ANGLE_STEP);
