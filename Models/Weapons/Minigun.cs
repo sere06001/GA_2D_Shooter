@@ -19,7 +19,6 @@ public class Minigun : Weapon
 
     protected override void CreateProjectiles(Player player)
     {
-        float startAngle = player.Rotation;
         ProjectileData pd = new()
         {
             Position = player.Position,
@@ -28,8 +27,8 @@ public class Minigun : Weapon
             Speed = 1000,
             Damage = 30
         };
-        Random random = new Random();
-        pd.Rotation = startAngle + ((float)random.NextDouble() * ANGLE_STEP);
+
+        pd.Rotation = Spread(player, ANGLE_STEP);
 
         ProjectileManager.AddProjectile(pd, this);
     }

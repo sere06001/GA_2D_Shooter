@@ -18,6 +18,7 @@ public abstract class Weapon
     public bool IsUnlocked { get; protected set; } = false;
     public int XPforUnlock { get; protected set; }
     protected int Pierce { get; set; } = 0;
+    Random random = new Random();
 
     protected Weapon()
     {
@@ -35,6 +36,12 @@ public abstract class Weapon
     }
 
     protected abstract void CreateProjectiles(Player player);
+    protected virtual float Spread(Player player, float step)
+    {
+        int flipDirection = random.Next(2) == 0 ? -1 : 1;
+        float rotation = player.Rotation + (float)random.NextDouble() * step * flipDirection;
+        return rotation;
+    }
 
     public virtual void Fire(Player player)
     {
