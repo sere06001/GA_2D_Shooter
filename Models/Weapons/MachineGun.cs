@@ -8,7 +8,7 @@ public class SMG : Weapon
     public override Texture2D WeaponIconLocked => Globals.Content.Load<Texture2D>("SMGIconLocked");
     public SMG()
     {
-        XPforUnlock = 1;
+        XPforUnlock = 0;
         cooldown = 0.08f;
         MaxAmmo = 30;
         Ammo = MaxAmmo;

@@ -8,7 +8,7 @@ public class Sniper : Weapon
     public override Texture2D WeaponIconLocked => Globals.Content.Load<Texture2D>("SniperIconLocked");
     public Sniper()
     {
-        XPforUnlock = 10;
+        XPforUnlock = 0;
         cooldown = 1.5f;
         MaxAmmo = 3;
         Ammo = MaxAmmo;
