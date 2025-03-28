@@ -1,4 +1,4 @@
-C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Release\net8.0\win-x64\publish\2D Shooter.pdb
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Release\net8.0\win-x64\publish\Shadows of the Undead.pdb
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Release\net8.0\win-x64\publish\Content/bullet.xnb
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Release\net8.0\win-x64\publish\Content/exp.xnb
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Release\net8.0\win-x64\publish\Content/font.xnb
@@ -11,4 +11,4 @@ C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Release\net8.0\win-x64\publish\Conten
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Release\net8.0\win-x64\publish\Content/zombie.xnb
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Release\net8.0\win-x64\publish\SDL2.dll
 C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Release\net8.0\win-x64\publish\soft_oal.dll
-C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Release\net8.0\win-x64\publish\2D Shooter.exe
+C:\GA-Monogame\GA_2DSpel\GA_2D_Shooter\bin\Release\net8.0\win-x64\publish\Shadows of the Undead.exe
