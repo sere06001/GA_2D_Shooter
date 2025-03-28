@@ -10,7 +10,7 @@ public class Shotgun : Weapon
 
     public Shotgun()
     {
-        XPforUnlock = 0;
+        XPforUnlock = 30;
         cooldown = 0.75f;
         MaxAmmo = 8;
         Ammo = MaxAmmo;
