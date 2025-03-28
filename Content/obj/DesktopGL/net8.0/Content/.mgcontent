@@ -13,11 +13,6 @@
     <File>C:/Users/Kreedy/Documents/GitHub/GA_2D_Shooter/Content/font.spritefont</File>
     <File>C:/Users/Kreedy/Documents/GitHub/GA_2D_Shooter/Content/player.png</File>
     <File>C:/Users/Kreedy/Documents/GitHub/GA_2D_Shooter/Content/Map.png</File>
-    <File>C:/Users/Kreedy/Documents/GitHub/GA_2D_Shooter/Content/tile1.png</File>
-    <File>C:/Users/Kreedy/Documents/GitHub/GA_2D_Shooter/Content/tile2.png</File>
-    <File>C:/Users/Kreedy/Documents/GitHub/GA_2D_Shooter/Content/tile3.png</File>
-    <File>C:/Users/Kreedy/Documents/GitHub/GA_2D_Shooter/Content/tile4.png</File>
-    <File>C:/Users/Kreedy/Documents/GitHub/GA_2D_Shooter/Content/tile5.png</File>
     <File>C:/Users/Kreedy/Documents/GitHub/GA_2D_Shooter/Content/Zombie1.png</File>
     <File>C:/Users/Kreedy/Documents/GitHub/GA_2D_Shooter/Content/Zombie2.png</File>
     <File>C:/Users/Kreedy/Documents/GitHub/GA_2D_Shooter/Content/Zombie3.png</File>
@@ -42,11 +37,6 @@
     <File>C:/Users/Kreedy/Documents/GitHub/GA_2D_Shooter/Content/MinigunIconKey2.png</File>
   </SourceFiles>
   <DestFiles>
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
